@@ -28,6 +28,13 @@ $(window).on('orientationchange', function() {
 
 
 /* Get Discord Data */
-//$.getJSON("https://discordapp.com/api/servers/142339595105861632/widget.json", function(data) {
-//    console.log(JSON.stringify(data));
-//});
+(function queryOnlineUsers() {
+    $.getJSON("https://discordapp.com/api/servers/142339595105861632/widget.json", function(data) {
+        console.log(data.members);
+        $.each(data.members, function() {
+            $('#discord-userlist ul').append('<li><img src="' + this.avatar_url + '" class="user_avatar" /><span>' + this.username + "</span></li>");
+        });
+    });
+})();
+
+
