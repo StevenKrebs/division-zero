@@ -1,0 +1,176 @@
+/* Imports */
+@import 'resets.css';
+@import url(https://fonts.googleapis.com/css?family=Titillium+Web:400,700,300);
+@import url(ionicons.min.css);
+
+/* Variables */
+@body : #23272A;
+@bg : #2C2F33;
+@color : #fff;
+@active : #555;
+@highlight : #e76113;
+@font : 'Titillium Web', sans-serif;
+@border : 1px solid @active;
+@size : 16px;
+@tablet : 1025px;
+@mobile : 767px;
+@bottom-border-stub : 3px solid transparent;
+
+/* Mixins */
+.highlight {
+  //background-color: @active;
+  border-bottom: 3px solid @highlight;
+}
+
+.float {
+  position: fixed;
+  top: 0px;
+}
+
+.font {
+  font-size: @size;
+  font-family: @font;
+}
+
+.blink {
+  animation-duration: 1.5s;
+  animation-name: blink;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+@keyframes blink {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.text-shadow {
+  text-shadow: 1px 1px 1px black;
+}
+
+/* Basic setup */
+html {
+  .font;
+}
+
+body {
+  .font;
+  color: @color;
+  background-color: @body;
+  -webkit-font-smoothing: antialiased;
+  width: 100%;
+
+}
+
+a {
+  text-decoration: none;
+  color: @color;
+}
+
+.x1 {
+  font-size: @size;
+}
+
+.x2 {
+  font-size: 2 * @size;
+}
+
+.x3 {
+  font-size: 3 * @size;
+}
+
+.i {
+  &:before {
+    padding-right: 3px;
+  }
+}
+
+.top-shadow {
+  @media (min-width: @tablet) {
+    position: fixed;
+    width: 100%;
+    box-shadow: 0 0 3px 1px black;
+  }
+}
+
+/* Sections */
+
+header, section, footer {
+  width: 100%;
+  .text-shadow;
+}
+
+header {
+  background: url(../img/bg.jpg) no-repeat center;
+  background-size: cover;
+  display: block;
+  margin: 0;
+  max-width: none;
+  text-align: center;
+  box-shadow: inset 0 0 3px 1px black;
+  @media (min-width: @tablet) {
+    background-attachment: fixed;
+  }
+  .header-wrapper {
+    width: 100%;
+    background-color: fade(black,20%);
+  }
+  cover {
+    display: block;
+    vertical-align: middle;
+    padding: 300px 0;
+    @media (max-width: @tablet) {
+      padding: 50px 0;
+    }
+    h1 {
+      font-size: 3* @size;
+    }
+    sub {
+      font-size: @size;
+    }
+  }
+  forward {
+    i {
+      font-size: @size * 3;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+section {
+  text-align: center;
+  padding: @size;
+  &:nth-child(even) {
+    background-color: @color;
+    color: @body;
+  }
+  &:nth-child(odd) {
+    text-shadow: 1px 1px 1px white;
+  }
+}
+
+footer {
+  text-align: center;
+  vertical-align: middle;
+  background: url(../img/backdrop2.jpg) top center no-repeat;
+  background-size: cover;
+  box-shadow: inset 0 0 3px 1px black;
+  .footer-wrapper {
+    padding: 5 * @size;
+    background-color: fade(black,60%);
+    i {
+      color: indianred;
+    }
+    a {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
