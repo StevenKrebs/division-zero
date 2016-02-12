@@ -11,7 +11,7 @@ $('i.blink').click(function() {
     $('html, body').animate({
         scrollTop: $('section:first').offset().top
     }, 1000);
-})
+});
 
 function getHeightForElements() {
     height = $(window).height();
@@ -25,14 +25,6 @@ $(window).load(function() {
 $(window).on('orientationchange', function() {
     getHeightForElements();
 });
-
-$(window).scroll(function() {
-    if ($(window).scrollTop() > 0) {
-        $('.top-shadow').show();
-    } else {
-        $('.top-shadow').hide();
-    }
-})
 
 
 /* Get Discord Data */
