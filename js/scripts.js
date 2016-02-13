@@ -24,7 +24,7 @@ $(window).load(function() {
 });
 $(document).ready(function() {
     setTimeout(function() {
-        $('.filter').fadeOut('slow');
+        $('.loader').fadeOut('slow');
         $('section').each(function() {
             $(this).fadeIn('slow').css('display','table');
         });
