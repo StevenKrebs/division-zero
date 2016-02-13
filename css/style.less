@@ -215,6 +215,7 @@ section {
     display: block;
     @media (min-width: @tablet) {
       display: flex;
+      flex-direction: row;
       justify-content: center;
       align-items: stretch;
       align-content: center;
@@ -231,11 +232,20 @@ section {
 }
 
 #discord-userlist {
+  position: relative;
   ul {
     display: inline-block;
+    text-align: right;
+    margin-bottom: 2* @size;
     li {
       text-align: left;
-      margin: 5px 0;
+      margin: 5px;
+      display: inline-block;
+      &:not(:last-child), :not(:only-child) {
+        span:after {
+          content: ",";
+        }
+      }
       img {
         width: 2 * @size;
         height: auto;
@@ -249,9 +259,10 @@ section {
       }
     }
   }
-  button {
-    margin-top: @size;
-    display: inline-block;
+  .join {
+    position: absolute;
+    bottom: 0;
+    width:100%;
   }
 }
 

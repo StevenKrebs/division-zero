@@ -6,23 +6,18 @@ var mobile = 768;
 var height;
 
 /* Generic Functions */
-$("html, body").animate({ scrollTop: 0 });
 $('i.blink').click(function() {
     $('html, body').animate({
         scrollTop: $('section:first').offset().top
     }, 1000);
 });
 
-function getHeightForElements() {
-    height = $(window).height();
-    $('header').css('min-height',height + 'px');
-    $('.header-wrapper').css('min-height',height + 'px');
-}
-
-
 $(window).load(function() {
+    $("html, body").animate({ scrollTop: 0 });
     getHeightForElements();
 });
+
+/* Loading animation handler */
 $(document).ready(function() {
     setTimeout(function() {
         $('.loader').fadeOut('slow');
@@ -32,9 +27,18 @@ $(document).ready(function() {
         $('footer').fadeIn('slow').css('display','table');
     }, 2000);
 });
+
+/* Element resizer */
 $(window).on('orientationchange', function() {
     getHeightForElements();
 });
+
+
+function getHeightForElements() {
+    height = $(window).height();
+    $('header').css('min-height',height + 'px');
+    $('.header-wrapper').css('min-height',height + 'px');
+}
 
 
 /* Get Discord Data */
