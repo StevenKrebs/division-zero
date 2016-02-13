@@ -40,9 +40,20 @@ $(window).on('orientationchange', function() {
 (function queryOnlineUsers() {
     var serverID = $('#discord-serverlink').data('server-id');
     $.getJSON("https://discordapp.com/api/servers/" + serverID + "/widget.json", function(data) {
-        $.each(data.members, function() {
-            $('#discord-userlist ul').append('<li><img src="' + this.avatar_url + '" class="user_avatar" /><span>' + this.username + "</span></li>");
-        });
+        var membersOnline = data.members.length;
+        if (membersOnline > 0) {
+            if (membersOnline == 1) {
+                $('#discord-userlist h3').text(membersOnline + ' Agent online:');
+            } else {
+                $('#discord-userlist h3').text(membersOnline + ' Agenten online:');
+            }
+            $.each(data.members, function() {
+                $('#discord-userlist ul').append('<li><img src="' + this.avatar_url + '" class="user_avatar" /><span class="user_name">' + this.username + "</span></li>");
+            });
+        } else {
+            $('#discord-userlist h3').text('Kein Agent online!');
+        }
+
     });
 })();
 
