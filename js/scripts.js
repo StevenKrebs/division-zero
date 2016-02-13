@@ -19,6 +19,7 @@ function getHeightForElements() {
     $('.header-wrapper').css('min-height',height + 'px');
 }
 
+
 $(window).load(function() {
     getHeightForElements();
 });
