@@ -89,10 +89,27 @@ a {
   }
 }
 
+.filter {
+  display: table;
+  table-layout: fixed;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: url(../img/loader.gif) white center no-repeat;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
 /* Sections */
 
 header, section, footer {
   width: 100%;
+}
+
+header, footer {
   .text-shadow;
 }
 
@@ -134,9 +151,17 @@ header {
       }
     }
     img {
+      margin: 0 5px;
       width: 90px;
       height: auto;
       vertical-align: middle;
+      filter: drop-shadow(1px 1px 1px black);
+      -webkit-filter: drop-shadow(1px 1px 1px black);
+      &:hover {
+        transform: scale(1.2);
+        transition: all 0.2s ease;
+        -webkit-transition: all 0.2s ease;
+      }
     }
   }
   .cover {
@@ -170,19 +195,19 @@ header {
 }
 
 section {
+  display: none;
   text-align: center;
   padding: @size;
-  display: table;
   table-layout: auto;
   &:nth-child(even) {
     background-color: @color;
     color: @body;
   }
-  &:nth-child(odd) {
-    text-shadow: 1px 1px 1px white;
-  }
   .headline, .content {
     display: table-row;
+  }
+  .headline {
+    .text-shadow;
   }
   .flex-container {
     width: 100%;
@@ -206,6 +231,8 @@ section {
 
 #discord-userlist {
   ul {
+    display: inline-block;
+    padding-left: @size;
     li {
       text-align: left;
       margin: 5px 0;
@@ -213,7 +240,7 @@ section {
         width: 2 * @size;
         height: auto;
         border-radius: 50%;
-        border: 1px solid white;
+        border: 1px solid @body;
         vertical-align: middle;
       }
       span {
@@ -222,10 +249,14 @@ section {
       }
     }
   }
+  button {
+    margin-top: @size;
+    display: inline-block;
+  }
 }
 
 footer {
-  display: table;
+  display: none;
   text-align: center;
   vertical-align: middle;
   background: url(../img/backdrop2.jpg) top center no-repeat;

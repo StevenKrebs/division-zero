@@ -22,6 +22,15 @@ function getHeightForElements() {
 $(window).load(function() {
     getHeightForElements();
 });
+$(document).ready(function() {
+    setTimeout(function() {
+        $('.filter').fadeOut('slow');
+        $('section').each(function() {
+            $(this).fadeIn('slow').css('display','table');
+        });
+        $('footer').fadeIn('slow').css('display','table');
+    }, 2000);
+});
 $(window).on('orientationchange', function() {
     getHeightForElements();
 });
@@ -29,8 +38,8 @@ $(window).on('orientationchange', function() {
 
 /* Get Discord Data */
 (function queryOnlineUsers() {
-    $.getJSON("https://discordapp.com/api/servers/142339595105861632/widget.json", function(data) {
-        console.log(data.members);
+    var serverID = $('#discord-serverlink').data('server-id');
+    $.getJSON("https://discordapp.com/api/servers/" + serverID + "/widget.json", function(data) {
         $.each(data.members, function() {
             $('#discord-userlist ul').append('<li><img src="' + this.avatar_url + '" class="user_avatar" /><span>' + this.username + "</span></li>");
         });
