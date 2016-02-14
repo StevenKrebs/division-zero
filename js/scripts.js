@@ -37,14 +37,14 @@ function getHeightForElements() {
     height = $(window).height();
     $('header').css('min-height',height + 'px');
     $('.header-wrapper').css('min-height',height + 'px');
-    /*$('section').each(function() {
+    $('section').each(function() {
         if(height > mobile) {
             $(this).css('min-height', height/2 + 'px');
         } else {
             $(this).css('min-height', height + 'px');
-        }*/
-    $('main').css('min-height',height + 'px');
-    //});
+        }
+    //$('main').css('min-height',height + 'px');
+    });
     //$('.flex-container').css('min-height', height/2 + 'px');
 }
 
