@@ -12,7 +12,7 @@
         if ( empty($name) OR empty($account) OR !filter_var($email, FILTER_VALIDATE_EMAIL)) {
             // Set a 400 (bad request) response code and exit.
             http_response_code(400);
-            echo "Oops! There was a problem with your submission. Please complete the form and try again.";
+            echo "Your application data is incomplete. Program aborted.";
             exit;
         }
 
@@ -35,11 +35,11 @@
         if (mail($recipient, $subject, $email_content, $email_headers)) {
             // Set a 200 (okay) response code.
             http_response_code(200);
-            echo "Thank You! Your message has been sent.";
+            echo "Application received, agent.";
         } else {
             // Set a 500 (internal server error) response code.
             http_response_code(500);
-            echo "Oops! Something went wrong and we couldn't send your message.";
+            echo "The network experienced an outage, please try again.";
         }
 
     } else {
