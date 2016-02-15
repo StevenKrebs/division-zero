@@ -73,29 +73,36 @@
     </section>
     <section>
         <div class="flexbox">
-            <article id="info-demands">
+            <article id="community-apply">
                 <div class="headline"><i class="icon ion-person-add x2"></i><span>Want to join?</span></div>
                 <div class="content">
                     <div id="form-result"></div>
                     <div id="form">
                         <h2>Information</h2>
                         <form id="application" method="post" action="application.php">
-                            <div class="formfield">
-                                <label for="Agent-handle">Your handle: </label>
-                                <input type="text" id="Agent-handle" name="Agent-handle" required placeholder="Your nickname..." data-error="Please state your agent-handle!">
-
-                                <label for="Agent-email">Your email: </label>
-                                <input type="email" id="Agent-email" name="Agent-email" required placeholder="Your e-mail address..." data-error="Please state your contact-address!">
-
-                                <label for="Agent-account">Your uplay account: </label>
-                                <input type="text" id="Agent-account" name="Agent-account" required placeholder="Your account..." data-error="Please state your uplay-account!">
+                            <div class="formfields">
+                                <div class="formfield">
+                                    <label for="Agent-handle">Your handle: </label>
+                                    <input type="text" id="Agent-handle" name="Agent-handle" required placeholder="Your nickname..." data-error="Please state your agent-handle!">
+                                </div>
+                                <div class="formfield">
+                                    <label for="Agent-email">Your email: </label>
+                                    <input type="email" id="Agent-email" name="Agent-email" required placeholder="Your e-mail address..." data-error="Please state your contact-address!">
+                                </div>
+                                <div class="formfield">
+                                    <label for="Agent-account">Your uplay account: </label>
+                                    <input type="text" id="Agent-account" name="Agent-account" required placeholder="Your account..." data-error="Please state your uplay-account!">
+                                </div>
                             </div>
-                            <div class="checkfield">
-                                <label for="Agent-age" class="label-inline">I hereby assure that I am age 18 or over. </label>
-                                <input type="checkbox" id="Agent-age" name="Agent-age" required data-error="You must be age 18 or over!">
-
-                                <label for="Agent-read" class="label-inline">I hereby assure that I have read the team-information. </label>
-                                <input type="checkbox" id="Agent-read" name="Agent-rad" required data-error="Please make sure you've read the information!">
+                            <div class="checkfields">
+                                <div class="checkfield">
+                                    <label for="Agent-age" class="label-inline">I hereby assure that I am age 18 or over. </label>
+                                    <input type="checkbox" id="Agent-age" name="Agent-age" required data-error="You must be age 18 or over!">
+                                </div>
+                                <div class="checkfield">
+                                    <label for="Agent-read" class="label-inline">I hereby assure that I have read the team-information. </label>
+                                    <input type="checkbox" id="Agent-read" name="Agent-rad" required data-error="Please make sure you've read the information!">
+                                </div>
                             </div>
                             <div class="submitfield text-center">
                                 <span class="submit" id="submit"><i class="icon ion-android-send"></i>Submit</span>
@@ -104,7 +111,7 @@
                     </div>
                 </div>
             </article>
-            <article id="community-online">
+            <article id="community-discord">
                 <div class="headline"><i class="icon ion-android-wifi x2"></i><span>Team-Network</span></div>
                 <div class="content">
                     <div id="discord-userlist">

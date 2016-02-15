@@ -230,8 +230,10 @@ i {
 
 header, main, footer {
   width: 100%;
+  max-width: 2560px;
   display: table;
   table-layout: fixed;
+  margin: 0 auto;
 }
 
 header, footer {
@@ -242,7 +244,6 @@ header {
   background: url(../img/backdrop1.jpg) no-repeat center;
   background-size: cover;
   position: relative;
-  margin: 0;
   height: 100vh;
   text-align: center;
   box-shadow: inset 0 0 3px 1px black;
@@ -310,7 +311,6 @@ main {
     text-align: center;
     margin:0 auto;
     min-height: 50vh;
-    max-width: 2560px;
     .flexbox {
       text-align: left;
       display: flex;
@@ -426,7 +426,8 @@ form {
     display: block;
   }
   .submitfield {
-
+    vertical-align: bottom;
+    margin-top: @size;
   }
   .text-center {
     text-align: center;
