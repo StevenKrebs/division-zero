@@ -21,7 +21,6 @@ $(document).ready(function() {
     });
 });
 
-
 /* Form management */
 $('#submit').click(function() {
     $('.form-error').each(function() {
