@@ -69,12 +69,11 @@ $('#submit').click(function() {
                 if (data.responseText !== '') {
                     $(returnMessage).text(data.responseText);
                 } else {
-                    $(returnMessage).text('Oops! An error occured and your message could not be sent.');
+                    $(returnMessage).text("The network experienced an outage, please try again.");
                 }
             });
     }
 });
-
 
 /* Get Discord Data */
 function setupDiscord() {
