@@ -21,7 +21,7 @@ $(document).ready(function() {
 
     $('.backward i').click(function () {
         $('html, body').animate({
-            scrollTop: 1
+            scrollTop: 0
         }, 1000);
     });
 });
@@ -42,7 +42,42 @@ $('#submit').click(function() {
         }
     });
     if (err == false) {
-        $('#application').submit();
+        var form = $('#application');
+        var returnMessage = $('#form-result');
+        var formData = $(form).serialize();
+        $.ajax({
+            type: 'POST',
+            url: $(form).attr('action'),
+            data: formData
+        })
+            .done(function(response) {
+                // Make sure that the formMessages div has the 'success' class.
+                $(returnMessage).removeClass('error');
+                $(returnMessage).addClass('success');
+
+                // Set the message text.
+                $(returnMessage).text(response);
+
+                // Clear the form.
+                $('#application input:not([type="checkbox"])').each(function(){
+                    $(this).val('');
+                });
+                $('#application input[type="checkbox"]').each(function(){
+                    $(this).attr('checked',false);
+                });
+            })
+            .fail(function(data) {
+                // Make sure that the formMessages div has the 'error' class.
+                $(returnMessage).removeClass('success');
+                $(returnMessage).addClass('error');
+
+                // Set the message text.
+                if (data.responseText !== '') {
+                    $(returnMessage).text(data.responseText);
+                } else {
+                    $(returnMessage).text('Oops! An error occured and your message could not be sent.');
+                }
+            });
     }
 });
 
