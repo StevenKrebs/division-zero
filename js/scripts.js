@@ -7,7 +7,6 @@ var height;
 
 /* Loading animation handler */
 $(document).ready(function() {
-    getHeightForElements();
     setTimeout(function () {
         $('.loader').fadeOut('slow');
         $('main').fadeIn('slow').addClass('table');
@@ -27,26 +26,25 @@ $(document).ready(function() {
     });
 });
 
-/* Element resizer */
-$(window).on('orientationchange', function() {
-    getHeightForElements();
-});
 
-
-function getHeightForElements() {
-    height = $(window).height();
-    $('header').css('min-height',height + 'px');
-    $('.header-wrapper').css('min-height',height + 'px');
-    $('section').each(function() {
-        if(height > mobile) {
-            $(this).css('min-height', height/2 + 'px');
-        } else {
-            $(this).css('min-height', height + 'px');
-        }
-    //$('main').css('min-height',height + 'px');
+/* Form management */
+$('#submit').click(function() {
+    $('.form-error').each(function() {
+        $(this).remove();
     });
-    //$('.flex-container').css('min-height', height/2 + 'px');
-}
+    var err = false;
+    $('input:not(#submit)').each(function() {
+        var thiz = document.getElementById($(this).attr('id'));
+        if(thiz.checkValidity() == false) {
+            $(this).after('<span class="form-error">' + $(this).data('error') + '</span>');
+            err = true;
+            return;
+        }
+    });
+    if (err == false) {
+        $('#application').submit();
+    }
+});
 
 
 /* Get Discord Data */

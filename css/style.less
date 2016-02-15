@@ -37,10 +37,12 @@
   cursor: pointer;
   &:hover {
     &:before {
-      transform: scale(1.2);
-      transition: all 0.2s ease;
-      -webkit-transition: all 0.2s ease;
-      color: @highlight;
+      @media (min-width: @tablet) {
+        transform: scale(1.2);
+        transition: all 0.2s ease;
+        -webkit-transition: all 0.2s ease;
+        color: @highlight;
+      }
     }
   }
 }
@@ -241,10 +243,11 @@ header {
   background-size: cover;
   position: relative;
   margin: 0;
-  max-width: none;
+  height: 100vh;
   text-align: center;
   box-shadow: inset 0 0 3px 1px black;
   .header-wrapper {
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -304,7 +307,12 @@ header {
 main {
   display: none;
   section {
+    text-align: center;
+    margin:0 auto;
+    min-height: 50vh;
+    max-width: 2560px;
     .flexbox {
+      text-align: left;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -400,9 +408,30 @@ main {
     text-align: center;
     a {
       &:hover {
-        transition-duration: .5s;
-        color: @highlight;
+        @media (min-width: @tablet) {
+          transition-duration: .5s;
+          color: @highlight;
+        }
       }
+    }
+  }
+}
+
+form {
+  .formfield {
+    margin: @size auto;
+  }
+  label {
+    &:not[type="checkbox"] {
+      display: block;
+    }
+  }
+  input{
+    border: 1px solid transparent;
+    &:focus {
+      outline: none !important;
+      border:1px solid @highlight;
+      box-shadow: 0 0 10px @highlight;
     }
   }
 }
