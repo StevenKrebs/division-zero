@@ -26,7 +26,7 @@
         // Build the email content.
         $email_content = "Name: $name\n";
         $email_content .= "Email: $email\n";
-        $email_content .= "Uplay-Account: $account\n";
+        $email_content .= "Uplay-Account: $account";
 
         // Build the email headers.
         $email_headers = "From: $name <$email>";
