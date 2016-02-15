@@ -1,10 +1,5 @@
 window.$ = require('jquery');
 
-/*Definition of variables */
-var tablet = 1024;
-var mobile = 768;
-var height;
-
 /* Loading animation handler */
 $(document).ready(function() {
     setTimeout(function () {
