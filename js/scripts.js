@@ -30,7 +30,7 @@ $('#submit').click(function() {
     $('input:not(#submit)').each(function() {
         var thiz = document.getElementById($(this).attr('id'));
         if(thiz.checkValidity() == false) {
-            $(this).after('<span class="form-error">' + $(this).data('error') + '</span>');
+            $(this).after('<span class="form-input-error">' + $(this).data('error') + '</span>');
             err = true;
             return;
         }
