@@ -186,6 +186,11 @@ a {
   color: white;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 .x1 {
   font-size: @size;
 }
@@ -421,7 +426,48 @@ main {
   }
 }
 
-
+form {
+  .formfield {
+    margin: @size auto;
+    display: inline-block;
+  }
+  .checkfield {
+    display: block;
+  }
+  .submitfield {
+    vertical-align: bottom;
+    margin-top: @size;
+  }
+  .text-center {
+    text-align: center;
+  }
+  .submit {
+    cursor: pointer;
+    &:hover {
+      @media (min-width: @tablet) {
+        transition-duration: .5s;
+        color: @highlight;
+      }
+    }
+  }
+  label {
+    &:not(.label-inline) {
+      display: block;
+      margin-bottom: 4px;
+    }
+  }
+  input{
+    border: 1px solid transparent;
+    &:focus {
+      outline: none !important;
+      border:1px solid @highlight;
+      box-shadow: 0 0 10px @highlight;
+    }
+    &[type="checkbox"] {
+      vertical-align: text-bottom;
+    }
+  }
+}
 
 footer {
   display: none;
