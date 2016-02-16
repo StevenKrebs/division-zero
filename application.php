@@ -12,7 +12,7 @@
         if ( empty($name) OR empty($account) OR !filter_var($email, FILTER_VALIDATE_EMAIL)) {
             // Set a 400 (bad request) response code and exit.
             http_response_code(400);
-            echo "Your application data is incomplete. Program aborted.";
+            echo "Deine Anfrage ist unvollständig. Programm abgebrochen, Agent.";
             exit;
         }
 
@@ -21,7 +21,7 @@
         $recipient = "application@division-zero.org";
 
         // Set the email subject.
-        $subject = "New application from $name for Team ZERO";
+        $subject = "Neue Bewerbung von $name für Team ZERO";
 
         // Build the email content.
         $email_content = "Name: $name\n";
@@ -35,17 +35,17 @@
         if (mail($recipient, $subject, $email_content, $email_headers)) {
             // Set a 200 (okay) response code.
             http_response_code(200);
-            echo "Application received, agent.";
+            echo "Anfrage erhalten, Agent";
         } else {
             // Set a 500 (internal server error) response code.
             http_response_code(500);
-            echo "The network experienced an outage, please try again.";
+            echo "Es gab einen Ausfall im Netzwerk, versuche es nochmal!";
         }
 
     } else {
         // Not a POST request, set a 403 (forbidden) response code.
         http_response_code(403);
-        echo "Nice try, rogue. Nice try.";
+        echo "Ah ah ah, du hast das Zauberwort nicht gesagt!";
     }
 
 ?>

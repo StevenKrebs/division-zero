@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-EN">
+<html lang="de-DE">
 <head>
     <meta charset="UTF-8">
     <title>Team /0/</title>
@@ -37,7 +37,7 @@
     <section>
         <div class="flexbox">
             <article id="info-about">
-                <div class="headline"><i class="icon ion-person-stalker x2"></i><span>Who we are</span></div>
+                <div class="headline"><i class="icon ion-eye x2"></i><span>Info</span></div>
                 <div class="content">
                 <ul>
                     <li>First thing to mention</li>
@@ -47,8 +47,8 @@
                 </ul>
                 </div>
             </article>
-            <article id="info-offering">
-                <div class="headline"><i class="icon ion-android-done-all x2"></i><span>What we offer</span></div>
+            <article id="info-rules">
+                <div class="headline"><i class="icon ion-flash x2"></i><span>Regeln</span></div>
                 <div class="content">
                     <ul>
                         <li>First thing to mention</li>
@@ -59,7 +59,7 @@
                 </div>
             </article>
             <article id="info-goals">
-                <div class="headline"><i class="icon ion-android-locate x2"></i><span>What we want</span></div>
+                <div class="headline"><i class="icon ion-android-locate x2"></i><span>Ziele</span></div>
                 <div class="content">
                     <ul>
                         <li>First thing to mention</li>
@@ -74,45 +74,44 @@
     <section>
         <div class="flexbox">
             <article id="community-apply">
-                <div class="headline"><i class="icon ion-person-add x2"></i><span>Want to join?</span></div>
+                <div class="headline"><i class="icon ion-person-add x2"></i><span>Beitreten</span></div>
                 <div class="content">
                     <div id="form-result"></div>
                     <div id="form">
-                        <h2>Information</h2>
+                        <div id="community-apply-info">
+                            <h2>Du willst dich dem Team anschließen?</h2>
+                            <span>Dann fülle diesen kurzen Fragebogen aus. Wir werden dich kontaktieren.<br />Optional kannst du uns bereits auf unserem Discord-Server besuchen kommen!</span>
+                        </div>
                         <form id="application" method="post" action="application.php">
                             <div class="formfields">
                                 <div class="formfield">
-                                    <label for="Agent-handle">Your handle: </label>
-                                    <input type="text" id="Agent-handle" name="Agent-handle" required placeholder="Your nickname..." data-error="Please state your agent-handle!">
+                                    <label for="Agent-handle">Dein Rufzeichen: </label>
+                                    <input type="text" id="Agent-handle" name="Agent-handle" required placeholder="Your nickname..." data-error="Wir brauchen deinen Rufnamen, Agent!">
                                 </div>
                                 <div class="formfield">
-                                    <label for="Agent-email">Your email: </label>
-                                    <input type="email" id="Agent-email" name="Agent-email" required placeholder="Your e-mail address..." data-error="Please state your contact-address!">
+                                    <label for="Agent-email">Deine E-Mail: </label>
+                                    <input type="email" id="Agent-email" name="Agent-email" required placeholder="Your e-mail address..." data-error="Wir brauchen deine Kontaktadresse, Agent!">
                                 </div>
                                 <div class="formfield">
-                                    <label for="Agent-account">Your uplay account: </label>
-                                    <input type="text" id="Agent-account" name="Agent-account" required placeholder="Your account..." data-error="Please state your uplay-account!">
+                                    <label for="Agent-account">Dein UPlay-Account: </label>
+                                    <input type="text" id="Agent-account" name="Agent-account" required placeholder="Your account..." data-error="Wir brauchen deine Netzwerk-ID, Agent!">
                                 </div>
                             </div>
                             <div class="checkfields">
                                 <div class="checkfield">
-                                    <label for="Agent-verification" class="label-inline">I hereby assure that I am age 18 or over and that I've read the team information. </label>
-                                    <input type="checkbox" id="Agent-verification" name="Agent-verification" required data-error="You must accept the terms!">
+                                    <label for="Agent-verification" class="label-inline">Ich versichere, dass ich die Informationen gelesen habe und mindestens 18 Jahre alt bin!</label>
+                                    <input type="checkbox" id="Agent-verification" name="Agent-verification" required data-error="Du solltest diese Seite gelesen haben und mindestens 18 Jahre alt sein!">
                                 </div>
-                                <!--<div class="checkfield">-->
-                                    <!--<label for="Agent-read" class="label-inline">I hereby assure that I have read the team-information. </label>-->
-                                    <!--<input type="checkbox" id="Agent-read" name="Agent-rad" required data-error="Please make sure you've read the information!">-->
-                                <!--</div>-->
                             </div>
                             <div class="submitfield text-center">
-                                <span class="submit" id="submit"><i class="icon ion-android-send"></i>Submit</span>
+                                <span class="submit" id="submit"><i class="icon ion-android-send"></i>Senden</span>
                             </div>
                         </form>
                     </div>
                 </div>
             </article>
             <article id="community-discord">
-                <div class="headline"><i class="icon ion-android-wifi x2"></i><span>Team-Network</span></div>
+                <div class="headline"><i class="icon ion-android-wifi x2"></i><span>Team-Netzwerk</span></div>
                 <div class="content">
                     <div id="discord-userlist">
                         <h3></h3>
