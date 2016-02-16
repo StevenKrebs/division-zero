@@ -6,6 +6,7 @@ No buildscripts available yet.
 Required:
 
 browserify + uglifyify
+
 less + clean-css
 
 /js browserify -g uglifyify scripts.js -c -o scripts.min.js
