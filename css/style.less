@@ -180,6 +180,12 @@ body {
 a {
   text-decoration: none;
   color: white;
+  &:hover {
+     @media (min-width: @tablet) {
+      transition-duration: .5s;
+      color: @highlight;
+    }
+  }
 }
 
 img {
@@ -346,6 +352,15 @@ main {
         }
         .content {
           padding: 4px 4px 0;
+          li {
+            &.bullet {
+              font-size: 1.5 * @size;
+              margin: .5 * @size 0;
+              &:before {
+                margin-right: 4px;
+              }
+            }
+          }
         }
         &:nth-child(odd) {
           @media (max-width: @tablet) {
