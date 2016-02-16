@@ -84,27 +84,26 @@
                             <span>Dann fülle diesen kurzen Fragebogen aus. Wir werden dich kontaktieren.<br />Optional kannst du uns bereits auf unserem Discord-Server besuchen kommen!</span>
                         </div>
                         <form id="application" method="post" action="application.php">
-                            <div class="formfields">
                                 <div class="formfield">
                                     <label for="Agent-handle">Dein Rufzeichen: </label>
-                                    <input type="text" id="Agent-handle" name="Agent-handle" required placeholder="Your nickname..." data-error="Wir brauchen deinen Rufnamen, Agent!">
+                                    <input type="text" id="Agent-handle" name="Agent-handle" required placeholder="Dein Nickname..." data-error="Wir brauchen deinen Rufnamen, Agent!">
                                 </div>
                                 <div class="formfield">
                                     <label for="Agent-email">Deine E-Mail: </label>
-                                    <input type="email" id="Agent-email" name="Agent-email" required placeholder="Your e-mail address..." data-error="Wir brauchen deine Kontaktadresse, Agent!">
+                                    <input type="email" id="Agent-email" name="Agent-email" required placeholder="Deine Email-adresse..." data-error="Wir brauchen deine Kontaktadresse, Agent!">
                                 </div>
                                 <div class="formfield">
                                     <label for="Agent-account">Dein UPlay-Account: </label>
-                                    <input type="text" id="Agent-account" name="Agent-account" required placeholder="Your account..." data-error="Wir brauchen deine Netzwerk-ID, Agent!">
+                                    <input type="text" id="Agent-account" name="Agent-account" required placeholder="Dein Accountname..." data-error="Wir brauchen deine Netzwerk-ID, Agent!">
                                 </div>
-                            </div>
                             <div class="checkfields">
                                 <div class="checkfield">
-                                    <label for="Agent-verification" class="label-inline">Ich versichere, dass ich die Informationen gelesen habe und mindestens 18 Jahre alt bin!</label>
                                     <input type="checkbox" id="Agent-verification" name="Agent-verification" required data-error="Du solltest diese Seite gelesen haben und mindestens 18 Jahre alt sein!">
-                                </div>
+                                    <label for="Agent-verification" class="label-inline">Ich versichere, dass ich die Informationen gelesen habe<br />
+                                        und mindestens 18 Jahre alt bin!</label>
+                                    </div>
                             </div>
-                            <div class="submitfield text-center">
+                            <div class="submitfield">
                                 <span class="submit" id="submit"><i class="icon ion-android-send"></i>Senden</span>
                             </div>
                         </form>
