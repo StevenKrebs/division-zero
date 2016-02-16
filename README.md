@@ -7,8 +7,8 @@ Required:
 
 browserify + uglifyify
 
-less + clean-css
-
 /js browserify -g uglifyify scripts.js -c -o scripts.min.js
+
+less + clean-css
 
 /css less --no-color style.less --clean-css="--s1" 
