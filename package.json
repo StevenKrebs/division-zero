@@ -26,6 +26,7 @@
     "build":"gulp build",
     "watch":"gulp watch",
     "script":"gulp browserify",
-    "styles":"gulp less"
+    "styles":"gulp less",
+    "sync":"gulp sync"
   }
 }
