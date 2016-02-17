@@ -27,7 +27,7 @@ gulp.task('sync', function() {
     });
     gulp.watch("index.html").on("change", reload);
     gulp.watch("css/scripts.min.js").on("change", reload);
-    gulp.watch("js/styles.min.js").on("change", reload);
+    gulp.watch("js/styles.min.css").on("change", reload);
 });
 
 gulp.task('build', ['browserify','less']);
