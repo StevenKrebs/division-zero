@@ -2,12 +2,16 @@ window.$ = require('jquery');
 
 /* Loading animation handler */
 $(document).ready(function() {
-    setTimeout(function () {
-        $('header').fadeIn('slow').css('display','table');
-        $('.loader').fadeOut('slow');
-        $('main').fadeIn('slow').css('display','table');
-        $('footer').fadeIn('slow').css('display','table');
-    }, 2000);
+    $('.imgChecker1').attr('src','img/backdrop2.jpg').load(function() {
+        $('.imgChecker2').attr('src','img/backdrop1.jpg').load(function() {
+            setTimeout(function() {
+                $('header').fadeIn('slow').css('display','table');
+                $('.loader').fadeOut('slow');
+                $('main').fadeIn('slow').css('display','table');
+                $('footer').fadeIn('slow').css('display','table');
+            }, 2000);
+        });
+    });
 
     $('.forward i').click(function () {
         $('html, body').animate({
