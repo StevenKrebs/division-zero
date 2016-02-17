@@ -11,8 +11,8 @@ var less = require('gulp-less');
 var minifyCSS = require('gulp-minify-css');
 
 gulp.task('watch', function() {
-    gulp.watch('dev/js/scripts.js', ['browserify']);
-    gulp.watch('dev/js/style.less', ['less']);
+    gulp.watch('js/scripts.js', ['browserify']);
+    gulp.watch('js/styles.less', ['less']);
 });
 
 gulp.task('build', ['browserify','less']);
