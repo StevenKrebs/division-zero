@@ -3,7 +3,6 @@ var gulp = require('gulp');
 var rename = require('gulp-rename');
 
 // Browser sync
-
 var browserSync = require('browser-sync').create();
 var reload = browserSync.reload();
 
