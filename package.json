@@ -13,15 +13,17 @@
     "node": ">=0.12.0"
   },
   "devDependencies": {
-    "uglifyify":"^3.0.1",
-    "less":"^2.6.0",
-    "browserify":"^13.0.0",
-    "jquery":"^2.2.0",
-    "less-plugin-clean-css":"^1.5.1"
+    "gulp": "",
+    "gulp-rename": "",
+    "gulp-browserify": "",
+    "gulp-uglify": "",
+    "gulp-less": "",
+    "gulp-minify-css": ""
   },
   "scripts": {
-    "build":"npm run style && npm run script",
-    "style":"lessc --no-color css/style.less --clean-css='--s1' css/style.css",
-    "script":"browserify -g uglifyify js/scripts.js -c -o js/scripts.min.js"
+    "build":"gulp build",
+    "watch":"gulp watch",
+    "script":"gulp browserify",
+    "styles":"gulp less"
   }
 }
