@@ -2,6 +2,10 @@
 var gulp = require('gulp');
 var rename = require('gulp-rename');
 
+// Browser sync
+
+var browserSync = require('browser-sync').create();
+
 // Build Dependencies
 var browserify = require('gulp-browserify');
 var uglify = require('gulp-uglify');
@@ -13,6 +17,14 @@ var minifyCSS = require('gulp-minify-css');
 gulp.task('watch', function() {
     gulp.watch('js/scripts.js', ['browserify']);
     gulp.watch('js/styles.less', ['less']);
+});
+
+gulp.task('browser-sync', function() {
+    browserSync.init({
+        server: {
+            baseDir: "./"
+        }
+    });
 });
 
 gulp.task('build', ['browserify','less']);
