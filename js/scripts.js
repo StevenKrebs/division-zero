@@ -9,7 +9,7 @@ $(document).ready(function() {
                 $('.loader').fadeOut('slow');
                 $('main').fadeIn('slow').css('display','table');
                 $('footer').fadeIn('slow').css('display','table');
-            }, 2000);
+            }, 200);
         });
     });
 
