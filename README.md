@@ -1,14 +1,16 @@
 # division-zero
 Covers the development of the website available @ division-zero.org
 
-No buildscripts available yet.
+### Dependencies
+ - run `npm install`
+ - *done*
 
-Required:
+### Build steps
 
-browserify + uglifyify
+##### Do this
+ - run `npm run build`
+ - *get coffee*
 
-/js browserify -g uglifyify scripts.js -c -o scripts.min.js
-
-less + clean-css
-
-/css less --no-color style.less --clean-css="--s1" 
+##### Alternative build commands
+ - `npm run script` to only build the script file
+ - `npm run style` to only build the style file
