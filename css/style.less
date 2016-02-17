@@ -354,7 +354,7 @@ main {
           padding: 4px 4px 0;
           li {
             &.bullet {
-              font-size: 1.5 * @size;
+              font-size: 1.25 * @size;
               margin: .5 * @size 0;
               &:before {
                 margin-right: 4px;
@@ -463,6 +463,7 @@ form {
     }
   }
   label {
+
     &:not(.label-inline) {
       display: block;
       margin-bottom: 4px;
@@ -480,6 +481,9 @@ form {
     }
     &[type="checkbox"] {
       vertical-align: middle;
+    }
+    &:not([type="checkbox"]) {
+      width: 150px;
     }
   }
 }
