@@ -31,7 +31,11 @@ $('#submit').click(function() {
     $('input:not(#submit)').each(function() {
         var thiz = document.getElementById($(this).attr('id'));
         if(thiz.checkValidity() == false) {
-            $(this).after('<span class="form-input-error">' + $(this).data('error') + '</span>');
+            if($(this).attr('type') == 'checkbox') {
+                $(this).find('label').after('<span class="form-input-error">' + $(this).data('error') + '</span>');
+            } else {
+                $(this).after('<span class="form-input-error">' + $(this).data('error') + '</span>');
+            }
             err = true;
             return;
         }
@@ -76,6 +80,7 @@ $('#submit').click(function() {
     }
 });
 
+
 /* Get Discord Data */
 function setupDiscord() {
     var serverID = $('#discord-serverlink').data('server-id');
@@ -94,7 +99,7 @@ function setupDiscord() {
                 $('#discord-userlist h3').text(membersOnline + ' Agenten online:');
             }
             $.each(data.members, function() {
-                $('#discord-userlist ul').append('<li><img src="' + this.avatar_url + '" class="user_avatar" /><span class="user_name">' + this.username + "</span></li>");
+                $('#discord-userlist ul').append('<li><img src="' + this.avatar_url + '" class="user_avatar" /><span class="user_name role-' + this.discriminator + '">' + this.username + "</span></li>");
             });
         } else {
             $('#discord-userlist h3').text('Kein Agent aktiv!').addClass('center');

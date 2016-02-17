@@ -13,7 +13,7 @@
 @border : 1px solid @active;
 @size : 16px;
 @tablet : 1025px;
-@mobile : 767px;
+@mobile : 736px;
 @bottom-border-stub : 3px solid transparent;
 @shadow: 1px 1px 1px black;
 
@@ -295,14 +295,19 @@ header {
       max-width: 90%;
       margin: 0 auto;
       img {
-        max-width: 100%;
+        max-width: 900px;
+        margin-top: -@size;
         height: auto;
+        filter: drop-shadow(1px 1px 1px black);
+        -webkit-filter: drop-shadow(1px 1px 1px black);
+        @media (max-width: @mobile) {
+          max-width: 320px;
+        }
       }
     }
     sub {
       font-size: @size;
       display: block;
-      padding-top: @size;
     }
   }
   .forward {
@@ -352,12 +357,16 @@ main {
         }
         .content {
           padding: 4px 4px 0;
-          li {
-            &.bullet {
-              font-size: 1.25 * @size;
-              margin: .5 * @size 0;
-              &:before {
-                margin-right: 4px;
+          ul {
+            width: 305px;
+            margin: 0 auto;
+            li {
+              &.bullet {
+                font-size: 1.25 * @size;
+                margin: .5 * @size 0;
+                &:before {
+                  margin-right: 4px;
+                }
               }
             }
           }
@@ -392,10 +401,18 @@ main {
 }
 
 #discord-userlist {
-  width: 100%;
+  width: 350px;
+  margin: 0 auto;
+  position: relative;
+  min-height: 320px;
+  h3 {
+    line-height: 200%;
+    text-align: center;
+  }
   ul {
     display: inline-block;
     margin-bottom: 2* @size;
+    width: 100%;
     li {
       text-align: left;
       margin: 5px;
@@ -415,14 +432,17 @@ main {
       }
       span {
         vertical-align: middle;
-
+        //&.role-5381 {
+        //  color: @highlight;
+        //}
       }
     }
   }
   .join {
     width:100%;
-    padding-bottom: @size;
     text-align: center;
+    position: absolute;
+    bottom: 0;
     a {
       &:hover {
         @media (min-width: @tablet) {
@@ -437,10 +457,7 @@ main {
 form {
   .formfield {
     margin: @size auto;
-    width: 45%;
-    @media (min-width: @tablet) {
-      width: 28%;
-    }
+    width: 182px;
   }
   .checkfield {
     display: block;
@@ -483,14 +500,17 @@ form {
       vertical-align: middle;
     }
     &:not([type="checkbox"]) {
-      width: 150px;
+      width: 180px;
     }
   }
 }
 
 #community-apply-info {
+  width: 320px;
+  margin: 0 auto;
   h2 {
     font-style: italic;
+    line-height: 200%;
   }
 }
 
