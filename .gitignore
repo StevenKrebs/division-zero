@@ -1,3 +1,4 @@
+/google*.html
 node_modules/
 js/*.min.js
 css/*.css
