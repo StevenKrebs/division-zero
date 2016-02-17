@@ -55,6 +55,7 @@ $('#submit').click(function() {
         })
             .done(function(response) {
                 // Make sure that the formMessages div has the 'success' class.
+                //TODO Implement removal of form once submitted succesully!
                 $(returnMessage).removeClass('error');
                 $(returnMessage).addClass('success');
 
