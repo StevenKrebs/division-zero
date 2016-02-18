@@ -19,6 +19,7 @@
     "gulp-uglify": "",
     "gulp-less": "",
     "gulp-minify-css": "",
+    "gulp-sourcemaps": "",
     "browser-sync": "",
     "jquery": ""
   },

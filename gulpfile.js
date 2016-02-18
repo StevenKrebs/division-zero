@@ -14,24 +14,31 @@ var uglify = require('gulp-uglify');
 var less = require('gulp-less');
 var minifyCSS = require('gulp-minify-css');
 
+//Source mapping Dependencies
+var sourcemaps = require('gulp-sourcemaps');
+
 gulp.task('js', function() {
     return gulp.src('js/scripts.js')
+        .pipe(sourcemaps.init())
         .pipe(browserify({
             insertGlobals: true
         }))
         .pipe(uglify())
         .pipe(rename('scripts.min.js'))
+        .pipe(sourcemaps.write('../maps'))
         .pipe(gulp.dest('js/'))
         .pipe(browserSync.reload({stream:true, once: true}));
 });
 
 gulp.task('css', function() {
     return gulp.src('css/styles.less')
+        .pipe(sourcemaps.init())
         .pipe(less())
         .pipe(minifyCSS({
             processImport: false
         }))
         .pipe(rename('styles.min.css'))
+        .pipe(sourcemaps.write('../maps'))
         .pipe(gulp.dest('css/'))
         .pipe(browserSync.reload({stream:true}));
 });
