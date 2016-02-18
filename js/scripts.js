@@ -76,7 +76,7 @@ $('#submit').click(function() {
                 $(returnMessage).addClass('error');
 
                 // Set the message text.
-                    $(returnMessage).text("Es gab einen Ausfall im Netzwerk, versuche es nochmal!");
+                    $(returnMessage).text("There was a network outage. Please try again!");
             });
     }
 });
@@ -95,15 +95,15 @@ function setupDiscord() {
         var membersOnline = data.members.length;
         if (membersOnline > 0) {
             if (membersOnline == 1) {
-                $('#discord-userlist h3').text(membersOnline + ' Agent online:');
+                $('#discord-userlist h3').text(membersOnline + ' agent online:');
             } else {
-                $('#discord-userlist h3').text(membersOnline + ' Agenten online:');
+                $('#discord-userlist h3').text(membersOnline + ' agents online:');
             }
             $.each(data.members, function() {
                 $('#discord-userlist ul').append('<li><img src="' + this.avatar_url + '" class="user_avatar" /><span class="user_name role-' + this.discriminator + '">' + this.username + "</span></li>");
             });
         } else {
-            $('#discord-userlist h3').text('Kein Agent aktiv!').addClass('center');
+            $('#discord-userlist h3').text('No agent online!').addClass('center');
         }
     },$('#discord-userlist').fadeIn('slow'));
 };
