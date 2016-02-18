@@ -8,9 +8,13 @@ Covers the development of the website available @ division-zero.org
 ### Build steps
 
 ##### Do this
- - run `npm run build`
+ - run `gulp build`
  - *get coffee*
 
-##### Alternative build commands
- - `npm run script` to only build the script file
- - `npm run style` to only build the style file
+##### or this
+ - run `gulp serve`
+ - *feel the joy*
+
+  `gulp serve` is the default command while you do actual development.
+  It serves the files via Browser-Sync and recompiles everything while
+  you're doing your work AND beams it directly to your eyes.

@@ -17,6 +17,7 @@
     "gulp-rename": "",
     "gulp-browserify": "",
     "gulp-uglify": "",
+    "gulp-rename": "",
     "gulp-less": "",
     "gulp-minify-css": "",
     "browser-sync": "",
