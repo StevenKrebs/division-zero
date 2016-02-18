@@ -1,15 +1,27 @@
 window.$ = require('jquery');
+var s = require('skrollr');
+
+
+
+$(document).load(function() {
+    $('main').hide();
+    $('footer').hide();
+})
 
 /* Loading animation handler */
 $(document).ready(function() {
     $('.imgChecker1').attr('src','img/backdrop2.jpg').load(function() {
         $('.imgChecker2').attr('src','img/backdrop1.jpg').load(function() {
             setTimeout(function() {
-                $('header').fadeIn('slow').css('display','table');
                 $('.loader').fadeOut('slow');
-                $('main').fadeIn('slow').css('display','table');
-                $('footer').fadeIn('slow').css('display','table');
-            }, 200);
+                $('main').fadeIn('slow');
+                $('footer').fadeIn('slow');
+            },2000);
+            setTimeout(function(){
+                s.init({
+                    forceHeight: false
+                })
+            },2001);
         });
     });
 
@@ -28,7 +40,9 @@ $(document).ready(function() {
     $('#retry').click(function() {
         $('#form-result').hide();
         $('#form').show();
-    })
+    });
+
+
 });
 
 /* Form management */
