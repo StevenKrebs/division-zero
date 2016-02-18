@@ -76,11 +76,7 @@ $('#submit').click(function() {
                 $(returnMessage).addClass('error');
 
                 // Set the message text.
-                if (data.responseText !== '') {
-                    $(returnMessage).text(data.responseText);
-                } else {
                     $(returnMessage).text("Es gab einen Ausfall im Netzwerk, versuche es nochmal!");
-                }
             });
     }
 });
