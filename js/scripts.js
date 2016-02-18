@@ -28,7 +28,7 @@ $(document).ready(function() {
 
 /* Form management */
 $('#submit').click(function() {
-    $('.form-error').each(function() {
+    $('.form-input-error').each(function() {
         $(this).remove();
     });
     var err = false;
