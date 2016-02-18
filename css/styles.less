@@ -466,13 +466,23 @@ main {
   }
 }
 
+#form-result {
+  text-align: center;
+  span {
+    line-height: 300px;
+    color: @highlight;
+  }
+  button {
+    display: none;
+    margin: 0 auto;
+  }
+}
+
+
 form {
   .formfield {
     margin: @size auto;
     width: 182px;
-    .form-input-error {
-      color: @highlight;
-    }
   }
   .checkfield {
     display: block;
@@ -484,6 +494,9 @@ form {
     vertical-align: bottom;
     margin-top: @size;
     text-align: center;
+  }
+  .form-input-error {
+    color: @highlight;
   }
   .submit {
     cursor: pointer;

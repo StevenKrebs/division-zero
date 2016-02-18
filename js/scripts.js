@@ -36,7 +36,8 @@ $('#submit').click(function() {
         var thiz = document.getElementById($(this).attr('id'));
         if(thiz.checkValidity() == false) {
             if($(this).attr('type') == 'checkbox') {
-                $(this).find('label').after('<span class="form-input-error">' + $(this).data('error') + '</span>');
+                console.log($(this).find('label'))
+                $(this).next('label').after('<br /><span class="form-input-error">' + $(this).data('error') + '</span>');
             } else {
                 $(this).after('<span class="form-input-error">' + $(this).data('error') + '</span>');
             }
@@ -45,8 +46,10 @@ $('#submit').click(function() {
         }
     });
     if (err == false) {
+        $('#form').hide();
         var form = $('#application');
-        var returnMessage = $('#form-result');
+        var returnMessage = $('#form-result span');
+        var retryButton = $('#form-result button');
         var formData = $(form).serialize();
         $.ajax({
             type: 'POST',
@@ -54,11 +57,6 @@ $('#submit').click(function() {
             data: formData
         })
             .done(function(response) {
-                // Make sure that the formMessages div has the 'success' class.
-                //TODO Implement removal of form once submitted succesully!
-                $(returnMessage).removeClass('error');
-                $(returnMessage).addClass('success');
-
                 // Set the message text.
                 $(returnMessage).text(response);
 
@@ -72,8 +70,7 @@ $('#submit').click(function() {
             })
             .fail(function(data) {
                 // Make sure that the formMessages div has the 'error' class.
-                $(returnMessage).removeClass('success');
-                $(returnMessage).addClass('error');
+                    $(retryButton).show().css('display', 'block');
 
                 // Set the message text.
                     $(returnMessage).text("There was a network outage. Please try again!");
