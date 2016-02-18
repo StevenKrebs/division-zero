@@ -332,9 +332,9 @@ main {
   section {
     text-align: center;
     margin:0 auto;
-    min-height: 50vh;
-    .flexbox {
-      max-width: 1280px;
+    //min-height: 50vh;
+    &.flexbox {
+      //max-width: 1280px;
       margin: 0 auto;
       text-align: left;
       display: flex;
@@ -348,12 +348,12 @@ main {
         align-content: stretch;
       }
       article {
-        padding: 0 0 2 * @size;
+        padding: 2 * @size 0;
         width: 100%;
         @media (min-width: @tablet) {
           width: 50%;
           margin: @size;
-          padding: 0;
+          padding: 10vh 0;
         }
         .headline {
           text-align: center;

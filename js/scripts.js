@@ -4,7 +4,6 @@ var tablet = 1025
 
 /* Loading animation handler */
 $(document).ready(function() {
-    $(document).scrollTop();
     $('.imgChecker1').attr('src','img/backdrop2.jpg').load(function() {
         $('.imgChecker2').attr('src','img/backdrop1.jpg').load(function() {
             setTimeout(function() {
@@ -17,6 +16,7 @@ $(document).ready(function() {
                         smoothScrolling: true
                     });
                 }
+                $(window).scrollTop();
             },2000);
         });
     });
