@@ -34,9 +34,7 @@ gulp.task('css', function() {
     return gulp.src('css/styles.less')
         .pipe(sourcemaps.init())
         .pipe(less())
-        .pipe(minifyCSS({
-            processImport: false
-        }))
+        .pipe(minifyCSS())
         .pipe(rename('styles.min.css'))
         .pipe(sourcemaps.write('../maps'))
         .pipe(gulp.dest('css/'))
