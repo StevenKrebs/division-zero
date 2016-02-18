@@ -1,27 +1,23 @@
 window.$ = require('jquery');
-var s = require('skrollr');
-
-
-
-$(document).load(function() {
-    $('main').hide();
-    $('footer').hide();
-})
+var skrollr = require('skrollr');
+var tablet = 1025
 
 /* Loading animation handler */
 $(document).ready(function() {
+    $(document).scrollTop();
     $('.imgChecker1').attr('src','img/backdrop2.jpg').load(function() {
         $('.imgChecker2').attr('src','img/backdrop1.jpg').load(function() {
             setTimeout(function() {
                 $('.loader').fadeOut('slow');
                 $('main').fadeIn('slow');
                 $('footer').fadeIn('slow');
+                if($(window).height() >= tablet || $(window).width() >= tablet) {
+                    skrollr.init({
+                        forceHeight: false,
+                        smoothScrolling: true
+                    });
+                }
             },2000);
-            setTimeout(function(){
-                s.init({
-                    forceHeight: false
-                })
-            },2001);
         });
     });
 
