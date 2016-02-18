@@ -24,6 +24,11 @@ $(document).ready(function() {
             scrollTop: 0
         }, 1000);
     });
+
+    $('#retry').click(function() {
+        $('#form-result').hide();
+        $('#form').show();
+    })
 });
 
 /* Form management */
@@ -48,7 +53,7 @@ $('#submit').click(function() {
     if (err == false) {
         $('#form').hide();
         var form = $('#application');
-        var returnMessage = $('#form-result span');
+        var returnMessage = $('#form-result');
         var retryButton = $('#form-result button');
         var formData = $(form).serialize();
         $.ajax({
@@ -58,7 +63,8 @@ $('#submit').click(function() {
         })
             .done(function(response) {
                 // Set the message text.
-                $(returnMessage).text(response);
+                $(returnMessage).show();
+                $(returnMessage).find('span').text(response);
 
                 // Clear the form.
                 $('#application input:not([type="checkbox"])').each(function(){
@@ -71,9 +77,11 @@ $('#submit').click(function() {
             .fail(function(data) {
                 // Make sure that the formMessages div has the 'error' class.
                     $(retryButton).show().css('display', 'block');
+                    $(returnMessage).show();
+
 
                 // Set the message text.
-                    $(returnMessage).text("There was a network outage. Please try again!");
+                    $(returnMessage).find('span').text("There was a network outage. Please try again!");
             });
     }
 });
