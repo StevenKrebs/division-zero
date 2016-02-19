@@ -1,5 +1,5 @@
 {
-  "author": "Steven Krebs",
+  "author": "Steven Krebs & Tim Kopplow",
   "description": "Covers the development of the website available @ division-zero.org",
   "keywords": [],
   "license": "MIT",
@@ -8,7 +8,7 @@
     "type": "git",
     "url": "https://github.com/StevenKrebs/division-zero.git"
   },
-  "version": "1.0.0",
+  "version": "1.2.0",
   "engines": {
     "node": ">=0.12.0"
   },
