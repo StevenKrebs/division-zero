@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-EN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Team /0/</title>
@@ -22,26 +22,26 @@
         <img class="imgChecker2" src=""/>
     </div>
 </div>
+<div  id="skrollr-body">
 <header>
     <div class="header-wrapper">
-        <div class="shortlinks">
+        <div class="shortlinks" data-top="opacity:1;" data-top-bottom="opacity:0;">
            <a href="//voice.division-zero.org" target="_blank" data-server-id="148016303809101825" id="discord-serverlink"><img src="img/Discord-Logo+Wordmark-White.svg" /></a>
         </div>
-        <div class="cover">
+        <div class="cover" data-top="opacity:1;" data-top-bottom="opacity:0;">
             <div class="cover-content">
                 <img src="img/logo.svg" />
                 <sub>First to respond - Last to retreat</sub>
             </div>
         </div>
-        <div class="forward">
+        <div class="forward" data-top="opacity:1;" data-top-bottom="opacity:0;">
             <i class="icon ion-ios-arrow-down blink x3"></i>
         </div>
     </div>
 </header>
 <main>
-    <section>
-        <div class="flexbox">
-            <article id="info-about">
+    <section class="flexbox">
+            <article id="info-about"  data-bottom-top="opacity:0;" data-center-top="opacity:1;">
                 <div class="headline"><i class="icon ion-eye x2"></i><span>Who we are</span></div>
                 <div class="content">
                     <ul>
@@ -50,44 +50,42 @@
                         <li class="icon bullet ion-arrow-right-b">Tag: /0/</li>
                         <li class="icon bullet ion-arrow-right-b">Languages: English, German</li>
                         <li class="icon bullet ion-arrow-right-b">Time Zone: CET</li>
-                        <li class="icon bullet ion-arrow-right-b">Audience: Casual/Mid-Core</li>
+                        <li class="icon bullet ion-arrow-right-b">Audience: casual/mid-core</li>
                     </ul>
                 </div>
             </article>
-            <article id="info-rules">
-                <div class="headline"><i class="icon ion-flash x2"></i><span>Rules</span></div>
+            <article id="info-rules"  data-bottom-top="opacity:0;" data-center-top="opacity:1;">
+                <div class="headline"><i class="icon ion-flash x2"></i><span>What we expect</span></div>
                 <div class="content">
                     <ul>
                         <li class="icon bullet ion-arrow-graph-up-right">Minimum age: 18</li>
                         <li class="icon bullet ion-arrow-graph-up-right">Headset for team coms</li>
                         <li class="icon bullet ion-arrow-graph-up-right">Regular activity</li>
-                        <li class="icon bullet ion-arrow-graph-up-right">No Exploiting</li>
-                        <li class="icon bullet ion-arrow-graph-up-right">No Hacking</li>
-                        <li class="icon bullet ion-arrow-graph-up-right">No Griefplay!</li>
+                        <li class="icon bullet ion-arrow-graph-up-right">No exploiting</li>
+                        <li class="icon bullet ion-arrow-graph-up-right">No hacking</li>
+                        <li class="icon bullet ion-arrow-graph-up-right">No griefplay!</li>
                     </ul>
                 </div>
             </article>
-            <article id="info-goals">
-                <div class="headline"><i class="icon ion-android-locate x2"></i><span>What we want</span></div>
+            <article id="info-goals"  data-bottom-top="opacity:0;" data-center-top="opacity:1;">
+                <div class="headline"><i class="icon ion-android-locate x2"></i><span>What we offer</span></div>
                 <div class="content">
                     <ul>
                         <li class="icon bullet ion-checkmark-round">Enjoying the game together</li>
-                        <li class="icon bullet ion-checkmark-round">Being a relaxed community</li>
-                        <li class="icon bullet ion-checkmark-round">Finding reliable peers</li>
+                        <li class="icon bullet ion-checkmark-round">Relaxed community</li>
+                        <li class="icon bullet ion-checkmark-round">Reliable peers</li>
                     </ul>
                 </div>
             </article>
-        </div>
     </section>
-    <section>
-        <div class="flexbox">
-            <article id="community-apply">
+    <section class="flexbox">
+            <article id="community-apply"  data-bottom-top="opacity:0;" data-center-top="opacity:1;">
                 <div class="headline"><i class="icon ion-person-add x2"></i><span>Join up!</span></div>
                 <div class="content">
-                    <div id="form-result"></div>
+                    <div id="form-result"><span></span><button id="retry">Retry</button></div>
                     <div id="form">
                         <div id="community-apply-info">
-                            <h2>So, you want to join the team?</h2>
+                            <h2>You want to join the team?</h2>
                             <span>Please fill out this short form<br />We will contact you as soon as possible!</span>
                         </div>
                         <form id="application" method="post" action="application.php">
@@ -101,13 +99,13 @@
                                 </div>
                                 <div class="formfield">
                                     <label for="Agent-account">You Uplay-account: </label>
-                                    <input type="text" id="Agent-account" name="Agent-account" required placeholder="Ypur accountname" data-error="We need your network ID, agent!">
+                                    <input type="text" id="Agent-account" name="Agent-account" required placeholder="Your accountname" data-error="We need your network ID, agent!">
                                 </div>
                             <div class="checkfields">
                                 <div class="checkfield">
-                                    <input type="checkbox" id="Agent-verification" name="Agent-verification" required data-error="You must have the information and be at least age 18, agent!">
-                                    <label for="Agent-verification" class="label-inline">I ensure that I have ready the information<br />
-                                        and that I am at least age 18!</label>
+                                    <input type="checkbox" id="Agent-verification" name="Agent-verification" required data-error="You must have read the information<br />and be at least age 18, agent!">
+                                    <label for="Agent-verification" class="label-inline">I have read the information<br />
+                                        and I am at least age 18!</label>
                                     </div>
                             </div>
                             <div class="submitfield">
@@ -117,7 +115,7 @@
                     </div>
                 </div>
             </article>
-            <article id="community-discord">
+            <article id="community-discord" data-bottom-top="opacity:0;" data-center-top="opacity:1;">
                 <div class="headline"><i class="icon ion-android-wifi x2"></i><span>Team Network</span></div>
                 <div class="content">
                     <div id="discord-userlist">
@@ -126,9 +124,9 @@
                     </div>
                 </div>
             </article>
-        </div>
     </section>
 </main>
+</div>
 <footer>
     <div class="footer-wrapper">
         <div class="backward">

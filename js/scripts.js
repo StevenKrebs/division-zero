@@ -1,15 +1,23 @@
 window.$ = require('jquery');
+var skrollr = require('skrollr');
+var tablet = 1025
 
 /* Loading animation handler */
 $(document).ready(function() {
     $('.imgChecker1').attr('src','img/backdrop2.jpg').load(function() {
         $('.imgChecker2').attr('src','img/backdrop1.jpg').load(function() {
             setTimeout(function() {
-                $('header').fadeIn('slow').css('display','table');
                 $('.loader').fadeOut('slow');
-                $('main').fadeIn('slow').css('display','table');
-                $('footer').fadeIn('slow').css('display','table');
-            }, 200);
+                $('main').fadeIn('slow');
+                $('footer').fadeIn('slow');
+                if($(window).height() >= tablet || $(window).width() >= tablet) {
+                    skrollr.init({
+                        forceHeight: false,
+                        smoothScrolling: true
+                    });
+                }
+                $(window).scrollTop();
+            },2000);
         });
     });
 
@@ -24,6 +32,13 @@ $(document).ready(function() {
             scrollTop: 0
         }, 1000);
     });
+
+    $('#retry').click(function() {
+        $('#form-result').hide();
+        $('#form').show();
+    });
+
+
 });
 
 /* Form management */
@@ -36,7 +51,8 @@ $('#submit').click(function() {
         var thiz = document.getElementById($(this).attr('id'));
         if(thiz.checkValidity() == false) {
             if($(this).attr('type') == 'checkbox') {
-                $(this).find('label').after('<span class="form-input-error">' + $(this).data('error') + '</span>');
+                console.log($(this).find('label'))
+                $(this).next('label').after('<br /><span class="form-input-error">' + $(this).data('error') + '</span>');
             } else {
                 $(this).after('<span class="form-input-error">' + $(this).data('error') + '</span>');
             }
@@ -45,8 +61,10 @@ $('#submit').click(function() {
         }
     });
     if (err == false) {
+        $('#form').hide();
         var form = $('#application');
         var returnMessage = $('#form-result');
+        var retryButton = $('#form-result button');
         var formData = $(form).serialize();
         $.ajax({
             type: 'POST',
@@ -54,13 +72,9 @@ $('#submit').click(function() {
             data: formData
         })
             .done(function(response) {
-                // Make sure that the formMessages div has the 'success' class.
-                //TODO Implement removal of form once submitted succesully!
-                $(returnMessage).removeClass('error');
-                $(returnMessage).addClass('success');
-
                 // Set the message text.
-                $(returnMessage).text(response);
+                $(returnMessage).show();
+                $(returnMessage).find('span').text(response);
 
                 // Clear the form.
                 $('#application input:not([type="checkbox"])').each(function(){
@@ -72,11 +86,12 @@ $('#submit').click(function() {
             })
             .fail(function(data) {
                 // Make sure that the formMessages div has the 'error' class.
-                $(returnMessage).removeClass('success');
-                $(returnMessage).addClass('error');
+                    $(retryButton).show().css('display', 'block');
+                    $(returnMessage).show();
+
 
                 // Set the message text.
-                    $(returnMessage).text("There was a network outage. Please try again!");
+                    $(returnMessage).find('span').text("There was a network outage. Please try again!");
             });
     }
 });

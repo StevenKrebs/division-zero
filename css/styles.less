@@ -234,7 +234,7 @@ i {
 header, main, footer {
   width: 100%;
   max-width: 2560px;
-  display: table;
+  //display: table;
   table-layout: fixed;
   margin: 0 auto;
 }
@@ -254,7 +254,6 @@ header, footer {
 }
 
 header {
-  display: none;
   background: url(../img/backdrop1.jpg) no-repeat center;
   background-size: cover;
   position: relative;
@@ -333,8 +332,10 @@ main {
   section {
     text-align: center;
     margin:0 auto;
-    min-height: 50vh;
-    .flexbox {
+    //min-height: 50vh;
+    &.flexbox {
+      //max-width: 1280px;
+      margin: 0 auto;
       text-align: left;
       display: flex;
       flex-direction: column;
@@ -347,12 +348,12 @@ main {
         align-content: stretch;
       }
       article {
-        padding: 0 0 2 * @size;
+        padding: 2 * @size 0;
         width: 100%;
         @media (min-width: @tablet) {
           width: 50%;
           margin: @size;
-          padding: 0;
+          padding: 10vh 0;
         }
         .headline {
           text-align: center;
@@ -368,7 +369,7 @@ main {
         .content {
           padding: 4px 4px 0;
           ul {
-            width: 305px;
+            width: 290px;
             margin: 0 auto;
             li {
               &.bullet {
@@ -464,13 +465,23 @@ main {
   }
 }
 
+#form-result {
+  text-align: center;
+  span {
+    line-height: 300px;
+    color: @highlight;
+  }
+  button {
+    display: none;
+    margin: 0 auto;
+  }
+}
+
+
 form {
   .formfield {
     margin: @size auto;
     width: 182px;
-    .form-input-error {
-      color: @highlight;
-    }
   }
   .checkfield {
     display: block;
@@ -482,6 +493,9 @@ form {
     vertical-align: bottom;
     margin-top: @size;
     text-align: center;
+  }
+  .form-input-error {
+    color: @highlight;
   }
   .submit {
     cursor: pointer;
@@ -519,7 +533,7 @@ form {
 }
 
 #community-apply-info {
-  width: 320px;
+  width: 270px;
   margin: 0 auto;
   h2 {
     font-style: italic;
