@@ -1,5 +1,4 @@
 /* Get Discord Data */
-
 function setupDiscord() {
     var serverID = $('#discord-serverlink').data('server-id');
     $('#discord-userlist').fadeOut('slow');

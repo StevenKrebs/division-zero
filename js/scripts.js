@@ -5,9 +5,9 @@ window.skrollr = require('skrollr');
 window.tablet_resolution = 1025;
 
 /* JS-Modules */
-require('./listeners.js');
-require('./form_management.js');
-require('./discord_viewer.js');
+require('./modules/listeners.js');
+require('./modules/form_management.js');
+require('./modules/discord_viewer.js');
 
 
 
