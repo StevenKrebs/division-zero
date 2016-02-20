@@ -55,8 +55,8 @@ gulp.task('bs-reload', function () {
 });
 
 gulp.task('serve', ['css', 'js', 'browserSync'], function () {
-    gulp.watch('js/scripts.js', ['js']);
-    gulp.watch('css/styles.less', ['css']);
+    gulp.watch('js/*.js', ['js']);
+    gulp.watch('css/*.less', ['css']);
     gulp.watch('index.html', ['bs-reload']);
 });
 gulp.task('build', ['css', 'js'], function () {
