@@ -37,8 +37,6 @@ $(document).ready(function() {
         $('#form-result').hide();
         $('#form').show();
     });
-
-
 });
 
 /* Form management */
@@ -85,10 +83,8 @@ $('#submit').click(function() {
                 });
             })
             .fail(function(data) {
-                // Make sure that the formMessages div has the 'error' class.
                     $(retryButton).show().css('display', 'block');
                     $(returnMessage).show();
-
 
                 // Set the message text.
                     $(returnMessage).find('span').text("There was a network outage. Please try again!");

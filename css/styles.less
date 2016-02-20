@@ -264,7 +264,7 @@ header {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: stretch;
     align-content: center;
     vertical-align: top;
@@ -273,7 +273,9 @@ header {
   }
   .shortlinks {
     text-align: right;
-    margin: 10px 10px 0 0;
+    position: absolute;
+    right: 10px;
+    top: 10px;
     i {
       padding: 0 10px;
       line-height: 200%;
@@ -299,7 +301,6 @@ header {
   }
   .cover {
     display: block;
-    vertical-align: middle;
     .cover-content {
       max-width: 90%;
       margin: 0 auto;
@@ -320,7 +321,6 @@ header {
     }
   }
   .forward {
-    vertical-align: bottom;
     i {
       .grow;
     }
