@@ -1,0 +1,75 @@
+#form-result {
+  text-align: center;
+  span {
+    line-height: 300px;
+    color: @highlight;
+  }
+  button {
+    display: none;
+    margin: 0 auto;
+  }
+}
+
+
+form {
+  .formfield {
+    margin: @size auto;
+    width: 182px;
+  }
+  .checkfield {
+    display: block;
+    width: 65%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .submitfield {
+    vertical-align: bottom;
+    margin-top: @size;
+    text-align: center;
+  }
+  .form-input-error {
+    color: @highlight;
+  }
+  .submit {
+    cursor: pointer;
+    &:hover {
+      @media (min-width: @tablet) {
+        transition-duration: .5s;
+        color: @highlight;
+      }
+    }
+  }
+  label {
+
+    &:not(.label-inline) {
+      display: block;
+      margin-bottom: 4px;
+    }
+    &.label-inline {
+      line-height: 150%;
+    }
+  }
+  input{
+    border: 1px solid transparent;
+    &:focus {
+      outline: none !important;
+      border:1px solid @highlight;
+      box-shadow: 0 0 10px @highlight;
+    }
+    &[type="checkbox"] {
+      vertical-align: middle;
+    }
+    &:not([type="checkbox"]) {
+      width: 180px;
+    }
+  }
+}
+
+#community-apply-info {
+  width: 270px;
+  margin: 0 auto;
+  h2 {
+    font-style: italic;
+    line-height: 200%;
+  }
+}

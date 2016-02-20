@@ -1,0 +1,83 @@
+main {
+  display: none;
+  section {
+    text-align: center;
+    margin:0 auto;
+    //min-height: 50vh;
+    &.flexbox {
+      //max-width: 1280px;
+      margin: 0 auto;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      align-content: center;
+      @media(min-width: @tablet) {
+        flex-direction: row;
+        align-items: stretch;
+        align-content: stretch;
+      }
+      article {
+        padding: 2 * @size 0;
+        width: 100%;
+        @media (min-width: @tablet) {
+          width: 50%;
+          margin: @size;
+          padding: 9vh 0 10vh;
+        }
+        .headline {
+          text-align: center;
+          border: 2px solid transparent;
+          //box-shadow: @shadow;
+          text-transform: uppercase;
+          .text-shadow;
+          color: @highlight;
+          span {
+            font-size: 2 * @size;
+          }
+        }
+        .content {
+          padding: 4px 4px 0;
+          ul {
+            width: 290px;
+            margin: 0 auto;
+            li {
+              &.bullet {
+                font-size: 1.25 * @size;
+                margin: .5 * @size 0;
+                &:before {
+                  margin-right: 4px;
+                }
+              }
+            }
+          }
+        }
+        &:nth-child(odd) {
+          @media (max-width: @tablet) {
+            background-color: @bg;
+          }
+        }
+      }
+    }
+    &:nth-child(odd) {
+      @media (min-width: @tablet) {
+        background-color: @bg;
+      }
+    }
+    &:nth-child(even) {
+      article {
+        &:nth-child(odd) {
+          @media (max-width: @tablet) {
+            background-color: @body;
+          }
+        }
+        &:nth-child(even) {
+          @media (max-width: @tablet) {
+            background-color: @bg;
+          }
+        }
+      }
+    }
+  }
+}
