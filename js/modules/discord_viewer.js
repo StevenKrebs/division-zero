@@ -8,7 +8,6 @@ function setupDiscord() {
         $('#discord-userlist h3').after('<ul></ul>');
     }
     $.getJSON("https://discordapp.com/api/servers/" + serverID + "/widget.json", function(data) {
-        console.log(data.members);
         var membersOnline = data.members.length;
         if (membersOnline > 0) {
             if (membersOnline == 1) {
