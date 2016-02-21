@@ -1,7 +1,6 @@
 /* Adding event listeners */
 $(document).ready(function() {
     var tablet  = window.tablet_resolution;
-    var skrollr = window.skrollr;
     $('.imgChecker1').attr('src','img/backdrop2.jpg').load(function() {
         $('.imgChecker2').attr('src','img/backdrop1.jpg').load(function() {
             setTimeout(function() {
