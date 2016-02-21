@@ -8,6 +8,7 @@ function setupDiscord() {
         $('#discord-userlist h3').after('<ul></ul>');
     }
     $.getJSON("https://discordapp.com/api/servers/" + serverID + "/widget.json", function(data) {
+        console.log(data.members);
         var membersOnline = data.members.length;
         if (membersOnline > 0) {
             if (membersOnline == 1) {
@@ -16,7 +17,11 @@ function setupDiscord() {
                 $('#discord-userlist h3').text(membersOnline + ' agents online:');
             }
             $.each(data.members, function() {
-                $('#discord-userlist ul').append('<li><img src="' + this.avatar_url + '" class="user_avatar" /><span class="user_name role-' + this.discriminator + '">' + this.username + "</span></li>");
+                var game = '';
+                if (this.game) {
+                    game = '<span class="user_game">('+ this.game.name +')</span>';
+                }
+                $('#discord-userlist ul').append('<li><img src="' + this.avatar_url + '" class="user_avatar"/><span class="user_status" data-status="'+ this.status +'"></span><span class="user_name" data-role="' + this.discriminator + '">' + this.username + "</span>" + game + "</li>");
             });
         } else {
             $('#discord-userlist h3').text('No agent online!').addClass('center');
