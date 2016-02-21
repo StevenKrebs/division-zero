@@ -1,5 +1,8 @@
 main {
   display: none;
+  @media (min-width: @tablet) {
+    min-height: 100vh;
+  }
   section {
     text-align: center;
     margin:0 auto;
@@ -24,7 +27,7 @@ main {
         @media (min-width: @tablet) {
           width: 50%;
           margin: @size;
-          padding: 9vh 0 10vh;
+          padding: 10vh 0;
         }
         .headline {
           text-align: center;

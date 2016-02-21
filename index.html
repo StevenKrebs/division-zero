@@ -90,24 +90,14 @@
                         </div>
                         <form id="application" method="post" action="application.php">
                                 <div class="formfield">
-                                    <label for="Agent-handle">Your callsign: </label>
                                     <input type="text" id="Agent-handle" name="Agent-handle" required placeholder="Your nickname..." data-error="We need your callsign, agent!">
                                 </div>
                                 <div class="formfield">
-                                    <label for="Agent-email">Your e-mail: </label>
                                     <input type="email" id="Agent-email" name="Agent-email" required placeholder="Your e-mail address..." data-error="We need your contact address, agent!">
                                 </div>
                                 <div class="formfield">
-                                    <label for="Agent-account">You Uplay-account: </label>
-                                    <input type="text" id="Agent-account" name="Agent-account" required placeholder="Your accountname" data-error="We need your network ID, agent!">
+                                    <input type="text" id="Agent-account" name="Agent-account" required placeholder="Your UPlay-account name..." data-error="We need your network ID, agent!">
                                 </div>
-                            <div class="checkfields">
-                                <div class="checkfield">
-                                    <input type="checkbox" id="Agent-verification" name="Agent-verification" required data-error="You must have read the information<br />and be at least age 18, agent!">
-                                    <label for="Agent-verification" class="label-inline">I have read the information<br />
-                                        and I am at least age 18!</label>
-                                    </div>
-                            </div>
                             <div class="submitfield">
                                 <span class="submit" id="submit"><i class="icon ion-android-send"></i>Submit</span>
                             </div>
