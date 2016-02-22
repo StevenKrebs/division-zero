@@ -1,19 +1,15 @@
 main {
   display: none;
-  @media (min-width: @tablet) {
-    min-height: 100vh;
-  }
   section {
     text-align: center;
     margin:0 auto;
-    //min-height: 50vh;
     &.flexbox {
       //max-width: 1280px;
       margin: 0 auto;
       text-align: left;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: space-around;
       align-items: center;
       align-content: center;
       @media(min-width: @tablet) {
@@ -25,9 +21,25 @@ main {
         padding: 2 * @size 0;
         width: 100%;
         @media (min-width: @tablet) {
-          width: 50%;
-          margin: @size;
-          padding: 10vh 0;
+          width: inherit;
+          margin: 0.75 * @size 0;
+          padding: 5vh 0;
+        }
+        &#shd-placeholder {
+          display: none;
+          @media (min-width: @tablet) {
+            display: block;
+          }
+          img {
+            width: 300px;
+            height: auto;
+            .filter;
+          }
+        }
+        &#info-rules, &#community-apply {
+          @media (max-width: @tablet) {
+            background-color: @bg;
+          }
         }
         .headline {
           text-align: center;
@@ -46,6 +58,7 @@ main {
             width: 290px;
             margin: 0 auto;
             li {
+              .li-box;
               &.bullet {
                 font-size: 1.25 * @size;
                 margin: .5 * @size 0;
@@ -56,30 +69,11 @@ main {
             }
           }
         }
-        &:nth-child(odd) {
-          @media (max-width: @tablet) {
-            background-color: @bg;
-          }
-        }
       }
     }
-    &:nth-child(odd) {
+    &:nth-of-type(even) {
       @media (min-width: @tablet) {
         background-color: @bg;
-      }
-    }
-    &:nth-child(even) {
-      article {
-        &:nth-child(odd) {
-          @media (max-width: @tablet) {
-            background-color: @body;
-          }
-        }
-        &:nth-child(even) {
-          @media (max-width: @tablet) {
-            background-color: @bg;
-          }
-        }
       }
     }
   }

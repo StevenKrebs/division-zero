@@ -1,17 +1,13 @@
 #discord-userlist {
-  width: 350px;
-  margin: 0 auto;
   position: relative;
   @media (min-width: @tablet) {
-    min-height: 250px;
+    min-height: 288px;
   }
   h3 {
     line-height: 200%;
     text-align: center;
   }
   ul {
-    margin:0 0 2*@size 2*@size + 6;
-    width: 100%;
     li {
       text-align: left;
       margin: 5px;
@@ -19,8 +15,8 @@
       img {
         width: 1.5 * @size;
         height: auto;
-        border-radius: 50%;
-        border: 2px solid @body;
+        border-radius: 100%;
+        border: 2px solid transparent;
         vertical-align: middle;
         margin-right: 4px;
       }
@@ -30,12 +26,12 @@
         //  color: @highlight;
         //}
         &.user_status {
-          width: 6px;
-          height: 6px;
-          border-radius: 3px;
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
           position: absolute;
-          top: 18px;
-          left: 20px;
+          top: 27px;
+          left: 34px;
           border: 1px solid black;
           &[data-status] {
             background-color: @idle;

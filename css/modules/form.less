@@ -15,6 +15,9 @@ form {
   .formfield {
     margin: @size auto;
     width: 200px;
+    ul {
+      margin: 0;
+    }
   }
   .submitfield {
     vertical-align: bottom;
@@ -42,12 +45,7 @@ form {
     background-color: transparent;
     color: white;
     border-radius: 0px;
-    &[type="checkbox"] {
-      vertical-align: middle;
-    }
-    &:not([type="checkbox"]) {
-      width: 180px;
-    }
+    width: 238px;
     &:focus {
       outline: none !important;
       border-bottom: solid 2px @highlight;
@@ -57,7 +55,7 @@ form {
 
 #community-apply-info {
   width: 270px;
-  margin: 0 auto;
+  margin: 5px auto;
   h2 {
     font-style: italic;
     line-height: 200%;
