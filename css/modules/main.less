@@ -5,14 +5,15 @@ main {
     margin:0 auto;
     &.flexbox {
       //max-width: 1280px;
-      margin: 0 auto;
+      //margin: 0 auto;
       text-align: left;
       display: flex;
       flex-direction: column;
-      justify-content: space-around;
+      justify-content: space-between;
       align-items: center;
       align-content: center;
       @media(min-width: @tablet) {
+        padding: 0 250px;
         flex-direction: row;
         align-items: stretch;
         align-content: stretch;
@@ -24,15 +25,16 @@ main {
           width: inherit;
           //margin: 0.75 * @size 0;
           padding: 5vh 0;
+          //margin: 0 145px;
         }
         &#shd-placeholder {
           display: none;
+          width: 300px;
+          min-width: 300px;
           @media (min-width: @tablet) {
             display: block;
           }
           img {
-            width: 300px;
-            height: auto;
             .filter;
           }
         }
