@@ -14,7 +14,7 @@
   background: rgba(255,255,255,.1);
   margin-bottom: 5px;
   padding: 10px 15px;
-  box-shadow: 1px 1px 1px #000;
+  box-shadow: @shadow;
 }
 
 .font {
@@ -23,6 +23,23 @@
 }
 
 .filter {
-  filter: drop-shadow(1px 1px 1px black);
-  -webkit-filter: drop-shadow(1px 1px 1px black);
+  filter: drop-shadow(@shadow);
+  -webkit-filter: drop-shadow(@shadow);
+}
+
+
+.text-shadow {
+  text-shadow: @shadow;
+}
+
+.x1 {
+  font-size: @size;
+}
+
+.x2 {
+  font-size: 1.5 * @size + 1;
+}
+
+.x3 {
+  font-size: 3 * @size;
 }
