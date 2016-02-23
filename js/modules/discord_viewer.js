@@ -4,9 +4,9 @@ function setupDiscord() {
     $('#discord-userlist').fadeOut('slow');
     if($('#discord-userlist ul').length > 0) {
         $('#discord-userlist ul').remove();
-    } else {
-        $('#discord-userlist h3').after('<ul></ul>');
     }
+    $('#discord-userlist h3').after('<ul></ul>');
+
     $.getJSON("https://discordapp.com/api/servers/" + serverID + "/widget.json", function(data) {
         var membersOnline = data.members.length;
         if (membersOnline > 0) {
