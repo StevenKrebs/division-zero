@@ -18,7 +18,7 @@ function setupDiscord() {
             $.each(data.members, function() {
                 var game = '';
                 if (this.game) {
-                    game = '<span class="user_game">('+ this.game.name +')</span>';
+                    game = '<span class="user_game">...playing <span class="bold">'+ this.game.name +'</span></span>';
                 }
                 $('#discord-userlist ul').append('<li><img src="' + this.avatar_url + '" class="user_avatar"/><span class="user_status" data-status="'+ this.status +'"></span><span class="user_name" data-role="' + this.discriminator + '">' + this.username + "</span>" + game + "</li>");
             });
