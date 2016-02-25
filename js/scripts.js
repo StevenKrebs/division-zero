@@ -2,7 +2,7 @@ window.$ = require('jquery');
 window.skrollr = require('skrollr');
 
 /* Global variables */
-window.tablet_resolution = 1025;
+window.tablet_resolution = 1400;
 
 /* JS-Modules */
 require('./modules/listeners.js');
