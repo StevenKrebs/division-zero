@@ -17,6 +17,9 @@ main {
         flex-direction: row;
         align-items: stretch;
         align-content: stretch;
+        &:nth-of-type(even) {
+          justify-content: space-around;
+        }
       }
       article {
         padding: 2 * @size 0;
@@ -27,19 +30,8 @@ main {
           padding: 5vh 0;
           //margin: 0 145px;
         }
-        &#shd-placeholder {
-          display: none;
-          width: 300px;
-          min-width: 300px;
-          @media (min-width: @tablet) {
-            display: block;
-          }
-          img {
-            .filter;
-          }
-        }
         &#info-rules, &#community-apply {
-          @media (max-width: @tablet - 1px) {
+          @media (max-width: (@tablet - 1px)) {
             background-color: @bg;
           }
         }
