@@ -1,21 +1,21 @@
 module.exports = {
     paths: {
-        base: '../',
+        base: './',
         styles: {
-            src: '../src/css/styles.less',
-            all: '../src/css/modules/*.less',
-            dest: '../dist/css'
+            src: './src/css/styles.less',
+            modules: './src/css/modules/*.less',
+            dest: './dist/css'
         },
         scripts: {
-            src: '../src/js/scripts.js',
-            all: '../src/js/modules/*.js',
-            dest: '../dist/js'
+            src: './src/js/scripts.js',
+            modules: './src/js/modules/*.js',
+            dest: './dist/js'
         },
         maps: {
             styles: '../../src/maps',
             scripts: '../../src/maps'
         },
-        template: '../dist/index.html',
+        template: './dist/index.html',
         dist: './dist'
     },
     names: {

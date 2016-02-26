@@ -14,7 +14,7 @@ var gulp        = require('gulp'),
 //Source mapping Dependencies
     sourcemaps = require('gulp-sourcemaps');
 
-gulp.task('styles', function() {
+gulp.task('_styles', function() {
     return gulp.src(config.paths.styles.src, {
             base : config.paths.base
         })

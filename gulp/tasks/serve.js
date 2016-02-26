@@ -7,13 +7,13 @@ var gulp        = require('gulp'),
     reload      = browserSync.reload;
 
 //Watch and Serve files in dev
-gulp.task('serve', ['styles', 'scripts'], function () {
+gulp.task('serve', ['_styles', '_scripts'], function () {
     browserSync.init({
         server: {
             baseDir: config.paths.dist
         }
     });
-    gulp.watch(config.paths.scripts.all, ['scripts']);
-    gulp.watch(config.paths.styles.all, ['styles']);
+    gulp.watch(config.paths.scripts.modules, ['_scripts']);
+    gulp.watch(config.paths.styles.modules, ['_styles']);
     gulp.watch(config.paths.template, reload);
 });

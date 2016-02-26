@@ -2,5 +2,5 @@
 var gulp        = require('gulp');
 
 //Prepare files for deploy
-gulp.task('build', ['styles', 'scripts'], function () {
+gulp.task('build', ['_styles', '_scripts'], function () {
 });
