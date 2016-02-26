@@ -1,5 +1,5 @@
 scripts.min.js
 styles.min.css
-src/maps
 /google*.html
+/dist/maps
 node_modules/

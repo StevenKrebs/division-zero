@@ -12,8 +12,7 @@ module.exports = {
             dest: './dist/js'
         },
         maps: {
-            styles: '../../src/maps',
-            scripts: '../../src/maps'
+            dest: '../maps'
         },
         template: './dist/index.html',
         dist: './dist'

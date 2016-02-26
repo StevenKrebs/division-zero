@@ -15,16 +15,14 @@ var gulp        = require('gulp'),
     sourcemaps = require('gulp-sourcemaps');
 
 gulp.task('_styles', function() {
-    return gulp.src(config.paths.styles.src, {
-            base : config.paths.base
-        })
+    return gulp.src(config.paths.styles.src)
         .pipe(sourcemaps.init())
         .pipe(less())
         .pipe(minifyCSS({
             processImportFrom: ['local']
         }))
         .pipe(rename(config.names.styles))
-        .pipe(sourcemaps.write(config.paths.maps.styles))
+        .pipe(sourcemaps.write(config.paths.maps.dest))
         .pipe(gulp.dest(config.paths.styles.dest))
         .pipe(reload({stream:true}));
 });
