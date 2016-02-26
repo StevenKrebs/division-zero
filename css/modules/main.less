@@ -12,6 +12,11 @@ main {
       justify-content: space-between;
       align-items: center;
       align-content: center;
+      @media(min-width: @mobile) {
+        flex-direction: row;
+        align-items: stretch;
+        align-content: stretch;
+      }
       @media(min-width: @tablet) {
         padding: 0 250px;
         flex-direction: row;
@@ -31,7 +36,7 @@ main {
           //margin: 0 145px;
         }
         &#info-rules, &#community-apply {
-          @media (max-width: (@tablet - 1px)) {
+          @media (max-width: @mobile) {
             background-color: @bg;
           }
         }
@@ -67,7 +72,7 @@ main {
       }
     }
     &:nth-of-type(even) {
-      @media (min-width: @tablet) {
+      @media (min-width: @mobile) {
         background-color: @bg;
       }
     }
