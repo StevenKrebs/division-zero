@@ -18,13 +18,13 @@ $(document).ready(function() {
         });
     });
 
-    $('.forward i').click(function () {
+    $('.forward').click(function () {
         $('html, body').animate({
             scrollTop: $('main').offset().top
         }, 1000);
     });
 
-    $('.backward i').click(function () {
+    $('.backward').click(function () {
         $('html, body').animate({
             scrollTop: 0
         }, 1000);
