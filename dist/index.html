@@ -41,81 +41,81 @@
             </header>
             <main>
                 <section class="flexbox">
-                        <article id="info-about"  data-bottom-top="opacity:0;" data-center-top="opacity:1;">
-                            <div class="headline"><i class="icon ion-eye x2"></i><span>Who we are</span></div>
-                            <div class="content">
-                                <ul>
-                                    <li>Game: <a href="//tomclancy-thedivision.ubi.com/game/de-de/home/" target="_blank" class="">Tom Clancy's The Division</a></li>
-                                    <li>Platform: PC</li>
-                                    <li>Tag: /0/</li>
-                                    <li>Languages: English, German</li>
-                                    <li>Time Zone: CET</li>
-                                    <li>Audience: casual/mid-core</li>
-                                </ul>
-                            </div>
-                        </article>
-                        <article id="info-rules"  data-bottom-top="opacity:0;" data-center-top="opacity:1;">
-                            <div class="headline"><i class="icon ion-flash x2"></i><span>What we expect</span></div>
-                            <div class="content">
-                                <ul>
-                                    <li>Minimum age: 18</li>
-                                    <li>Headset for team coms</li>
-                                    <li>Regular activity</li>
-                                    <li>No exploiting</li>
-                                    <li>No hacking</li>
-                                    <li>No griefplay!</li>
-                                </ul>
-                            </div>
-                        </article>
-                        <article id="info-goals"  data-bottom-top="opacity:0;" data-center-top="opacity:1;">
-                            <div class="headline"><i class="icon ion-android-locate x2"></i><span>What we offer</span></div>
-                            <div class="content">
-                                <ul>
-                                    <li>Enjoying the game together</li>
-                                    <li>Relaxed community</li>
-                                    <li>Reliable peers</li>
-                                </ul>
-                            </div>
-                        </article>
+                    <article id="info-about"  data-bottom-top="opacity:0;" data-center-top="opacity:1;">
+                        <div class="headline"><i class="icon ion-eye x2"></i><span>Who we are</span></div>
+                        <div class="content">
+                            <ul>
+                                <li>Game: <a href="//tomclancy-thedivision.ubi.com/game/de-de/home/" target="_blank" class="">Tom Clancy's The Division</a></li>
+                                <li>Platform: PC</li>
+                                <li>Tag: /0/</li>
+                                <li>Languages: English, German</li>
+                                <li>Time Zone: CET</li>
+                                <li>Audience: casual/mid-core</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article id="info-rules"  data-bottom-top="opacity:0;" data-center-top="opacity:1;">
+                        <div class="headline"><i class="icon ion-flash x2"></i><span>What we expect</span></div>
+                        <div class="content">
+                            <ul>
+                                <li>Minimum age: 18</li>
+                                <li>Headset for team coms</li>
+                                <li>Regular activity</li>
+                                <li>No exploiting</li>
+                                <li>No hacking</li>
+                                <li>No griefplay!</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article id="info-goals"  data-bottom-top="opacity:0;" data-center-top="opacity:1;">
+                        <div class="headline"><i class="icon ion-android-locate x2"></i><span>What we offer</span></div>
+                        <div class="content">
+                            <ul>
+                                <li>Enjoying the game together</li>
+                                <li>Relaxed community</li>
+                                <li>Reliable peers</li>
+                            </ul>
+                        </div>
+                    </article>
                 </section>
                 <section class="flexbox">
-                        <article id="community-apply"  data-bottom-top="opacity:0;" data-center-top="opacity:1;">
-                            <div class="headline"><i class="icon ion-person-add x2"></i><span>Join up!</span></div>
-                            <div class="content">
-                                <div id="form-result"><span id="form-result-text"></span><span id="retry"><i class="icon ion-android-refresh"></i>Retry</span></div>
-                                <div id="form">
-                                    <div id="community-apply-info">
-                                        <h3>You want to join the team?</h3>
+                    <article id="community-apply"  data-bottom-top="opacity:0;" data-center-top="opacity:1;">
+                        <div class="headline"><i class="icon ion-person-add x2"></i><span>Join up!</span></div>
+                        <div class="content">
+                            <div id="form-result"><span id="form-result-text"></span><span id="retry"><i class="icon ion-android-refresh"></i>Retry</span></div>
+                            <div id="form">
+                                <div id="community-apply-info">
+                                    <h3>You want to join the team?</h3>
+                                </div>
+                                <form id="application" method="post" action="application.php">
+                                    <ul class="formfield">
+                                        <li>
+                                            <input type="text" id="Agent-handle" name="Agent-handle" required placeholder="Your nickname..." data-error="We need your callsign, agent!" autocomplete="off">
+                                        </li>
+                                        <li>
+                                            <input type="email" id="Agent-email" name="Agent-email" required placeholder="Your e-mail address..." data-error="We need your contact address, agent!" autocomplete="off">
+                                        </li>
+                                        <li>
+                                            <input type="text" id="Agent-account" name="Agent-account" required placeholder="Your UPlay-account name..." data-error="We need your network ID, agent!" autocomplete="off">
+                                        </li>
+                                    </ul>
+                                    <div class="submitfield">
+                                        <span class="form-info">Just send us your contact details.<br />We will reach out to you!</span>
+                                        <span class="submit" id="submit"><i class="icon ion-android-send"></i>Submit</span>
                                     </div>
-                                    <form id="application" method="post" action="application.php">
-                                        <ul class="formfield">
-                                            <li>
-                                                <input type="text" id="Agent-handle" name="Agent-handle" required placeholder="Your nickname..." data-error="We need your callsign, agent!" autocomplete="off">
-                                            </li>
-                                            <li>
-                                                <input type="email" id="Agent-email" name="Agent-email" required placeholder="Your e-mail address..." data-error="We need your contact address, agent!" autocomplete="off">
-                                            </li>
-                                            <li>
-                                                <input type="text" id="Agent-account" name="Agent-account" required placeholder="Your UPlay-account name..." data-error="We need your network ID, agent!" autocomplete="off">
-                                            </li>
-                                        </ul>
-                                        <div class="submitfield">
-                                            <span class="form-info">Just send us your contact details.<br />We will reach out to you!</span>
-                                            <span class="submit" id="submit"><i class="icon ion-android-send"></i>Submit</span>
-                                        </div>
-                                    </form>
-                                </div>
+                                </form>
                             </div>
-                        </article>
-                        <article id="community-discord" data-bottom-top="opacity:0;" data-center-top="opacity:1;">
-                            <div class="headline"><i class="icon ion-android-wifi x2"></i><span>Team Network</span></div>
-                            <div class="content">
-                                <div id="discord-userlist">
-                                    <h3></h3>
-                                    <div class="join"><a href="//voice.division-zero.org" target="_blank"><i class="icon ion-log-in"></i>Login</a></div>
-                                </div>
+                        </div>
+                    </article>
+                    <article id="community-discord" data-bottom-top="opacity:0;" data-center-top="opacity:1;">
+                        <div class="headline"><i class="icon ion-android-wifi x2"></i><span>Team Network</span></div>
+                        <div class="content">
+                            <div id="discord-userlist">
+                                <h3></h3>
+                                <div class="join"><a href="//voice.division-zero.org" target="_blank"><i class="icon ion-log-in"></i>Login</a></div>
                             </div>
-                        </article>
+                        </div>
+                    </article>
                 </section>
             </main>
         </div>
