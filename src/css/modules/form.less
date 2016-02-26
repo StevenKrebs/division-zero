@@ -23,6 +23,10 @@ form {
     vertical-align: bottom;
     margin-top: @size;
     text-align: center;
+    .form-info {
+      display: block;
+      margin-bottom: @size;
+    }
   }
   .form-input-error {
     color: @highlight;
@@ -41,15 +45,15 @@ form {
   input{
     padding: 10px;
     border: none;
-    border-bottom: solid 2px @bg;
     transition: border 0.3s;
     background-color: transparent;
     color: white;
     border-radius: 0px;
     width: 238px;
+    .bottom-border;
     &:focus {
       outline: none !important;
-      border-bottom: solid 2px @highlight;
+      .bottom-border(@highlight);
     }
   }
 }
@@ -57,7 +61,7 @@ form {
 #community-apply-info {
   width: 270px;
   margin: 5px auto;
-  h2 {
+  h3 {
     font-style: italic;
     line-height: 200%;
     text-align: center;
