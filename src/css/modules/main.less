@@ -4,8 +4,6 @@ main {
     text-align: center;
     margin:0 auto;
     &.flexbox {
-      //max-width: 1280px;
-      //margin: 0 auto;
       text-align: left;
       display: flex;
       flex-direction: column;
@@ -29,9 +27,7 @@ main {
         @media (min-width: @mobile) {
           width: 398px;
           height: 352px;
-          //margin: 0.75 * @size 0;
           padding: 5vh 0;
-          //margin: 0 145px;
         }
         &#info-rules, &#community-apply {
           @media (max-width: (@mobile - 1px)) {
@@ -42,7 +38,6 @@ main {
         .headline {
           text-align: center;
           border: 2px solid transparent;
-          //box-shadow: @shadow;
           text-transform: uppercase;
           .text-shadow;
           color: @highlight;
