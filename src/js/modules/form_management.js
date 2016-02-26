@@ -15,7 +15,7 @@ $('#submit').click(function() {
         $('#form').hide();
         var form = $('#application');
         var returnMessage = $('#form-result');
-        var retryButton = $('#form-result button');
+        var retryButton = $('#form-result #retry');
         var formData = $(form).serialize();
         $.ajax({
                 type: 'POST',
@@ -25,10 +25,10 @@ $('#submit').click(function() {
         .done(function(response) {
             // Set the message text.
             $(returnMessage).show();
-            $(returnMessage).find('span').text(response);
+            $(returnMessage).find('#form-result-text').text(response);
 
             // Clear the form.
-            $('#application input:not([type="checkbox"])').each(function(){
+            $('#application input').each(function(){
                 $(this).val('');
             });
         })
@@ -37,7 +37,7 @@ $('#submit').click(function() {
             $(returnMessage).show();
 
             // Set the message text.
-            $(returnMessage).find('span').text("There was a network outage. Please try again!");
+            $(returnMessage).find('#form-result-text').text("Error, please try again!");
         });
     }
 });

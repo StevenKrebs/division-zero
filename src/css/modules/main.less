@@ -16,27 +16,26 @@ main {
         flex-direction: row;
         align-items: stretch;
         align-content: stretch;
-      }
-      @media(min-width: @tablet) {
-        padding: 0 250px;
-        flex-direction: row;
-        align-items: stretch;
-        align-content: stretch;
         &:nth-of-type(even) {
           justify-content: space-around;
         }
       }
+      @media(min-width: @tablet) {
+        padding: 0 250px;
+      }
       article {
         padding: 2 * @size 0;
         width: 100%;
-        @media (min-width: @tablet) {
-          width: inherit;
+        @media (min-width: @mobile) {
+          width: 398px;
+          height: 352px;
           //margin: 0.75 * @size 0;
           padding: 5vh 0;
           //margin: 0 145px;
         }
         &#info-rules, &#community-apply {
-          @media (max-width: @mobile) {
+          @media (max-width: (@mobile - 1px)) {
+
             background-color: @bg;
           }
         }

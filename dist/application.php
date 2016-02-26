@@ -39,13 +39,13 @@
         } else {
             // Set a 500 (internal server error) response code.
             http_response_code(500);
-            echo "There was a network outage. Please try again!";
+            echo "Error, please try again!";
         }
 
     } else {
         // Not a POST request, set a 403 (forbidden) response code.
         http_response_code(403);
-        echo "Ah ah ah, you didn't say the magic word!";
+        echo "Nice try, rogue.";
     }
 
 ?>

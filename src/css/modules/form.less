@@ -1,12 +1,19 @@
 #form-result {
   text-align: center;
-  span {
+  #form-result-text {
     line-height: 240px;
     color: @highlight;
   }
-  button {
+  #retry {
     display: none;
     margin: 0 auto;
+    cursor: pointer;
+    &:hover {
+      @media (min-width: @tablet) {
+        transition-duration: .5s;
+        color: @highlight;
+      }
+    }
   }
 }
 
