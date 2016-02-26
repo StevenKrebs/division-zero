@@ -1,5 +1,5 @@
-/maps
+/gaming/dist/js/scripts.min.js
+/gaming/dist/css/styles.min.css
+/src/maps
 /google*.html
 node_modules/
-js/*.min.js
-css/*.css

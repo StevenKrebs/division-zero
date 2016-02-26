@@ -13,21 +13,23 @@
     "node": ">=0.12.0"
   },
   "devDependencies": {
+    "browser-sync": "",
     "gulp": "",
-    "gulp-rename": "",
     "gulp-browserify": "",
-    "gulp-uglify": "",
     "gulp-less": "",
     "gulp-minify-css": "",
+    "gulp-rename": "",
     "gulp-sourcemaps": "",
-    "browser-sync": "",
-    "skrollr": "",
-    "jquery": ""
+    "gulp-task-listing": "",
+    "gulp-uglify": "",
+    "jquery": "",
+    "require-dir": "^0.3.0",
+    "skrollr": ""
   },
   "scripts": {
-    "build":"gulp build",
-    "serve":"gulp serve",
-    "css":"gulp css",
-    "js":"gulp js"
+    "build": "gulp build",
+    "serve": "gulp serve",
+    "css": "gulp css",
+    "js": "gulp js"
   }
 }
