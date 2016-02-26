@@ -8,11 +8,11 @@ var gulp        = require('gulp'),
     reload      = browserSync.reload,
 
 // Style Dependencies
-    less = require('gulp-less'),
-    minifyCSS = require('gulp-minify-css'),
+    less        = require('gulp-less'),
+    minifyCSS   = require('gulp-minify-css'),
 
 //Source mapping Dependencies
-    sourcemaps = require('gulp-sourcemaps');
+    sourcemaps  = require('gulp-sourcemaps');
 
 gulp.task('_styles', function() {
     return gulp.src(config.paths.styles.src)

@@ -8,11 +8,11 @@ var gulp        = require('gulp'),
     reload      = browserSync.reload,
 
 // Script Dependencies
-    browserify = require('gulp-browserify'),
-    uglify = require('gulp-uglify'),
+    browserify  = require('gulp-browserify'),
+    uglify      = require('gulp-uglify'),
 
 //Source mapping Dependencies
-    sourcemaps = require('gulp-sourcemaps');
+    sourcemaps  = require('gulp-sourcemaps');
 
 gulp.task('_scripts', function() {
     return gulp.src(config.paths.scripts.src)
