@@ -1,8 +1,16 @@
-var imagesLoaded = require('imagesloaded');
+//Jquery Plugins
+var imagesLoaded = require('imagesloaded'),
+    skrollr      = require('skrollr');
+
 imagesLoaded.makeJQueryPlugin( $ );
+
+/* Global variables */
+window.tablet_resolution = 1024;
+window.mobile_resolution = 768;
 
 /* Adding event listeners */
 $('body').imagesLoaded({background:true}).always(function() {
+        var loaded = false;
         setTimeout(function() {
             $('.loader').fadeOut('slow');
             $('main').fadeIn('slow');
@@ -13,7 +21,9 @@ $('body').imagesLoaded({background:true}).always(function() {
                     smoothScrolling: true
                 });
             } else if ($(window).width() <= window.mobile_resolution) {
+                $('.mobile-nav a').removeClass('highlight');
                 $('.mobile-nav').fadeIn('slow');
+                loaded = true;
             }
             $(window).scrollTop();
         },2000);
@@ -38,7 +48,7 @@ $('body').imagesLoaded({background:true}).always(function() {
 
     $(window).on({
         orientationchange: function() {
-            if ($(window).width() < window.mobile_resolution) {
+            if ($(window).width() < window.mobile_resolution && loaded == true) {
                 $('.mobile-nav').fadeIn('slow');
             } else {
                 $('.mobile-nav').fadeOut('slow');
@@ -46,7 +56,7 @@ $('body').imagesLoaded({background:true}).always(function() {
         },
 
         resize: function() {
-            if ($(window).width() < window.mobile_resolution) {
+            if ($(window).width() < window.mobile_resolution && loaded == true) {
                 $('.mobile-nav').fadeIn('slow');
             } else {
                 $('.mobile-nav').fadeOut('slow');
