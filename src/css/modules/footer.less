@@ -2,10 +2,14 @@ footer {
   display: none;
   text-align: center;
   vertical-align: middle;
-  background: url("@{imgpath}/backdrop2.jpg") top center no-repeat @overlay;
+  background: url("@{imgpath}/footer.jpg") top center no-repeat @overlay;
   background-blend-mode: overlay;
   background-size: cover;
   box-shadow: inset 0 0 3px 1px black;
+  @media (min-width: @tablet) {
+    background: @bg;
+    box-shadow: none;
+  }
   padding: 3 * @size - 10 0;
     span {
     line-height: 120%;

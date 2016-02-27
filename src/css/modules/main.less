@@ -11,6 +11,7 @@ main {
       align-items: center;
       align-content: center;
       @media(min-width: @tablet) {
+        min-height: 100vh;
         flex-direction: row;
         align-items: stretch;
         align-content: stretch;
@@ -30,12 +31,6 @@ main {
         align-items: center;
         align-content: center;
         justify-content: center;
-        @media (min-width: @tablet) {
-          width: 398px;
-          display: block;
-          min-height: 352px;
-          padding: 5vh 0;
-        }
         &#info-about, &#info-goals, &#community-discord {
           @media (max-width: (@tablet - 1px)) {
             background-color: @bg;
@@ -43,13 +38,13 @@ main {
         }
         @media (max-width: (@tablet - 1px)) {
           &#info-rules {
-            background: url("@{imgpath}/backdrop3.jpg") no-repeat center;
+            background: url("@{imgpath}/order.jpg") no-repeat center;
             background-size: cover;
             background-color: @overlay;
             background-blend-mode: overlay;
           }
           &#community-apply {
-            background: url("@{imgpath}/backdrop4.jpg") no-repeat center;
+            background: url("@{imgpath}/recruit.jpg") no-repeat center;
             background-size: cover;
             background-color: @overlay;
             background-blend-mode: overlay;
@@ -84,7 +79,13 @@ main {
     }
     &:nth-of-type(even) {
       @media (min-width: @tablet) {
-        background-color: @bg;
+        //background-color: @bg;
+        background: url("@{imgpath}/recruit.jpg") no-repeat center @overlay;
+        background-blend-mode: overlay;
+        box-shadow: inset 0 0 3px 1px black;
+      }
+      @media (min-width: (@tablet + 1px)) {
+        background-attachment: fixed;
       }
     }
   }
