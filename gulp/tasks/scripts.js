@@ -9,6 +9,7 @@ var gulp        = require('gulp'),
 
 // Script Dependencies
     browserify  = require('gulp-browserify'),
+    bulkify     = require('bulkify'),
     uglify      = require('gulp-uglify'),
 
 //Source mapping Dependencies
@@ -18,7 +19,8 @@ gulp.task('_scripts', function() {
     return gulp.src(config.paths.scripts.src)
         .pipe(sourcemaps.init())
         .pipe(browserify({
-            insertGlobals: true
+            insertGlobals: true,
+            transform: ['bulkify']
         }))
         .pipe(uglify())
         .pipe(rename(config.names.scripts))

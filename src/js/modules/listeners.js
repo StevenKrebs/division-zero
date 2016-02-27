@@ -1,22 +1,23 @@
+var imagesLoaded = require('imagesloaded');
+imagesLoaded.makeJQueryPlugin( $ );
+
 /* Adding event listeners */
-$(document).ready(function() {
-    var tablet  = window.tablet_resolution;
-    $('.imgChecker1').attr('src','img/backdrop2.jpg').load(function() {
-        $('.imgChecker2').attr('src','img/backdrop1.jpg').load(function() {
-            setTimeout(function() {
-                $('.loader').fadeOut('slow');
-                $('main').fadeIn('slow');
-                $('footer').fadeIn('slow');
-                if($(window).height() >= tablet || $(window).width() >= tablet) {
-                    skrollr.init({
-                        forceHeight: false,
-                        smoothScrolling: true
-                    });
-                }
-                $(window).scrollTop();
-            },2000);
-        });
-    });
+$('body').imagesLoaded({background:true}).always(function() {
+        setTimeout(function() {
+            $('.loader').fadeOut('slow');
+            $('main').fadeIn('slow');
+            $('footer').fadeIn('slow');
+            if($(window).height() > window.tablet_resolution || $(window).width() > window.tablet_resolution) {
+                skrollr.init({
+                    forceHeight: false,
+                    smoothScrolling: true
+                });
+            } else if ($(window).width() <= window.mobile_resolution) {
+                $('.mobile-nav').fadeIn('slow');
+            }
+            $(window).scrollTop();
+        },2000);
+
 
     $('.forward').click(function () {
         $('html, body').animate({
@@ -34,4 +35,23 @@ $(document).ready(function() {
         $('#form-result').hide();
         $('#form').show();
     });
+
+    $(window).on({
+        orientationchange: function() {
+            if ($(window).width() < window.mobile_resolution) {
+                $('.mobile-nav').fadeIn('slow');
+            } else {
+                $('.mobile-nav').fadeOut('slow');
+            }
+        },
+
+        resize: function() {
+            if ($(window).width() < window.mobile_resolution) {
+                $('.mobile-nav').fadeIn('slow');
+            } else {
+                $('.mobile-nav').fadeOut('slow');
+            }
+        }
+    });
 });
+

@@ -17,7 +17,9 @@ var gulp        = require('gulp'),
 gulp.task('_styles', function() {
     return gulp.src(config.paths.styles.src)
         .pipe(sourcemaps.init())
-        .pipe(less())
+        .pipe(less({
+            plugins: [require('less-plugin-glob')]
+        }))
         .pipe(minifyCSS({
             processImportFrom: ['local']
         }))

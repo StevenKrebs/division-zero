@@ -10,7 +10,7 @@ main {
       justify-content: space-between;
       align-items: center;
       align-content: center;
-      @media(min-width: @mobile) {
+      @media(min-width: @tablet) {
         flex-direction: row;
         align-items: stretch;
         align-content: stretch;
@@ -18,20 +18,41 @@ main {
           justify-content: space-around;
         }
       }
-      @media(min-width: @tablet) {
+      @media(min-width: (@tablet + 1px)) {
         padding: 0 250px;
       }
       article {
-        padding: 2 * @size 0;
         width: 100%;
-        @media (min-width: @mobile) {
+        min-height: 95vh;
+        padding: 0 0 5vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        @media (min-width: @tablet) {
           width: 398px;
-          height: 352px;
+          display: block;
+          min-height: 352px;
           padding: 5vh 0;
         }
-        &#info-rules, &#community-apply {
-          @media (max-width: (@mobile - 1px)) {
+        &#info-about, &#info-goals, &#community-discord {
+          @media (max-width: (@tablet - 1px)) {
             background-color: @bg;
+          }
+        }
+        @media (max-width: (@tablet - 1px)) {
+          &#info-rules {
+            background: url("@{imgpath}/backdrop3.jpg") no-repeat center;
+            background-size: cover;
+            background-color: @overlay;
+            background-blend-mode: overlay;
+          }
+          &#community-apply {
+            background: url("@{imgpath}/backdrop4.jpg") no-repeat center;
+            background-size: cover;
+            background-color: @overlay;
+            background-blend-mode: overlay;
           }
         }
         .headline {
@@ -62,7 +83,7 @@ main {
       }
     }
     &:nth-of-type(even) {
-      @media (min-width: @mobile) {
+      @media (min-width: @tablet) {
         background-color: @bg;
       }
     }

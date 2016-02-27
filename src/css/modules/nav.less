@@ -1,0 +1,18 @@
+.mobile-nav {
+  display: none;
+  .x2;
+  position: fixed;
+  z-index: 2;
+  top: 27vh;
+  padding: 0 0.5 * @size;
+  background-color: fade(@body, 50%);
+  border-top-right-radius: 0.25 * @size;
+  border-bottom-right-radius: 0.25 * @size;
+  border: 1px solid darken(@color, 80%);
+  border-left-width: 0;
+  ul {
+    li{
+      margin: .5 * @size 0;
+    }
+  }
+}
