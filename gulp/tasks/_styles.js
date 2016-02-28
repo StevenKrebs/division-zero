@@ -9,6 +9,7 @@ var gulp        = require('gulp'),
 
 // Style Dependencies
     less        = require('gulp-less'),
+    glob        = require('less-plugin-glob'),
     minifyCSS   = require('gulp-minify-css'),
 
 //Source mapping Dependencies
@@ -18,7 +19,7 @@ gulp.task('_styles', function() {
     return gulp.src(config.paths.styles.src)
         .pipe(sourcemaps.init())
         .pipe(less({
-            plugins: [require('less-plugin-glob')]
+            plugins: [glob]
         }))
         .pipe(minifyCSS({
             processImportFrom: ['local']

@@ -1,13 +1,3 @@
-//Jquery Plugins
-var imagesLoaded = require('imagesloaded'),
-    skrollr      = require('skrollr');
-
-imagesLoaded.makeJQueryPlugin( $ );
-
-/* Global variables */
-window.tablet_resolution = 1024;
-window.mobile_resolution = 768;
-
 /* Adding event listeners */
 $('body').imagesLoaded({background:true}).always(function() {
         var loaded = false;

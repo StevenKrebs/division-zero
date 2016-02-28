@@ -19,7 +19,6 @@ gulp.task('_scripts', function() {
     return gulp.src(config.paths.scripts.src)
         .pipe(sourcemaps.init())
         .pipe(browserify({
-            insertGlobals: true,
             transform: ['bulkify']
         }))
         .pipe(uglify())
