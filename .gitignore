@@ -1,5 +1,2 @@
-scripts.min.js
-styles.min.css
-/dist/google*.html
 /dist/maps
 node_modules/
