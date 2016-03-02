@@ -3,6 +3,7 @@ window.$                = require('jquery'),
 window.imagesLoaded     = require('imagesloaded'),
 window.scrollmagic      = require('scrollmagic');
 require('scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js');
+require('scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js');
 window.gsap             = require('gsap');
 require('gsap/src/uncompressed/plugins/CSSPlugin.js');
 

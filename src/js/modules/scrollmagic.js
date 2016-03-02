@@ -1,4 +1,4 @@
-//Setting up basic controller
+//initializing global container
 var controller =  new window.scrollmagic.Controller(
     {
         globalSceneOptions: {
@@ -7,44 +7,123 @@ var controller =  new window.scrollmagic.Controller(
         }
     });
 
-
+    if ($(window).width() > window.tablet_resolution) {
 //Setting up parallax scroll effect
-var parallaxEffect = new TweenMax.fromTo("#parallax", 1,
-    {
-        css: {
+    var parallaxEffect = new TweenMax.fromTo("#info", 1,
+        {
+            css: {
                 'background-position': "50% 200px"
-            }, ease: Linear.easeOut
-    },{
-        css: {
+            }, ease: Linear.easeInOut
+        },{
+            css: {
                 'background-position': "50% -200px"
-            }, ease: Linear.easeOut
-    }
-);
-var parallax = new window.scrollmagic.Scene({
-    triggerElement: "main"
-}).setTween(parallaxEffect).addTo(controller);
+            }, ease: Linear.easeInOut
+        }
+    );
+    var parallax = new window.scrollmagic.Scene({
+        triggerElement: "main"
+    }).setTween(parallaxEffect).addTo(controller);
+
 
 //Setting up first three article animations
-var infoAboutAnim = new TweenMax.fromTo('#info-about', 1,
-    {
-        css: {
-            'opacity' : 0,
-            '-webkit-transform': 'translateY(25%)',
-            'transform': 'translateY(25%)'
-        }, ease: Linear.easeOut
-    },
-    {
-        css: {
-            'opacity' : 1,
-            '-webkit-transform': 'translateY(0)',
-            'transform': 'translateY(0)'
-        }, ease: Linear.easeOut
-    }
-);
+    var infoAnim = new TimelineMax();
+        infoAnim.add(
+            [
+                TweenMax.fromTo('#info-about', 1,
+                    {
+                        css: {
+                            'opacity' : 0,
+                            '-webkit-transform': 'translateY(500px)',
+                            'transform': 'translateY(500px)'
+                        }, ease: Linear.easeInOut
+                    },
+                    {
+                        css: {
+                            'opacity' : 1,
+                            '-webkit-transform': 'translateY(0px)',
+                            'transform': 'translateY(0px)'
+                        }, ease: Linear.easeInOut
+                    }
+                ),
+                TweenMax.fromTo('#info-rules', 1,
+                    {
+                        css: {
+                            'opacity' : 0,
+                            '-webkit-transform': 'translateY(1000px)',
+                            'transform': 'translateY(1000px)'
+                        }, ease: Linear.easeInOut
+                    },
+                    {
+                        css: {
+                            'opacity' : 1,
+                            '-webkit-transform': 'translateY(0px)',
+                            'transform': 'translateY(0px)'
+                        }, ease: Linear.easeInOut
+                    }
+                ),
+                TweenMax.fromTo('#info-goals', 1,
+                    {
+                        css: {
+                            'opacity' : 0,
+                            '-webkit-transform': 'translateY(1500px)',
+                            'transform': 'translateY(1500px)'
+                        }, ease: Linear.easeInOut
+                    },
+                    {
+                        css: {
+                            'opacity' : 1,
+                            '-webkit-transform': 'translateY(0px)',
+                            'transform': 'translateY(0px)'
+                        }, ease: Linear.easeInOut
+                    }
+                )
+            ]
+        );
 
-var infoAboutScene = new window.scrollmagic.Scene({
-    triggerHook: "onEnter",
-    duration: 500
-}).setTween(infoAboutAnim).addTo(controller);
+    var infoScene = new window.scrollmagic.Scene({
+        triggerElement: 'header'
+    }).setTween(infoAnim).addTo(controller);
 
-window.animator = controller;
+// Second section animations
+    var communityAnim = new TimelineMax();
+        communityAnim.add(
+            [
+                TweenMax.fromTo('#community-apply',1,
+                    {
+                        css: {
+                            'opacity': 0,
+                            '-webkit-transform': 'translateX(-1500px)',
+                            'transform': 'translateX(-1500px)'
+                        },ease: Linear.easeInOut
+                    },
+                    {
+                        css: {
+                            'opacity': 1,
+                            '-webkit-transform': 'translateX(0px)',
+                            'transform': 'translatex(0px)'
+                        },ease: Linear.easeInOut
+                    }
+                ),
+                TweenMax.fromTo('#community-discord',1,
+                    {
+                        css: {
+                            'opacity': 0,
+                            '-webkit-transform': 'translateX(1500px)',
+                            'transform': 'translateX(1500px)'
+                        },ease: Linear.easeInOut
+                    },
+                    {
+                        css: {
+                            'opacity': 1,
+                            '-webkit-transform': 'translateX(0px)',
+                            'transform': 'translatex(0px)'
+                        },ease: Linear.easeInOut
+                    }
+                )
+            ]
+        );
+
+    var communityScene = new window.scrollmagic.Scene({
+        triggerElement: '#info'
+    }).setTween(communityAnim).addTo(controller);
+}

@@ -42,12 +42,14 @@ main {
             background-size: cover;
             background-color: @overlay;
             background-blend-mode: overlay;
+            box-shadow: @inset;
           }
           &#community-apply {
             background: url("@{imgpath}/recruit.jpg") no-repeat center;
             background-size: cover;
             background-color: @overlay;
             background-blend-mode: overlay;
+            box-shadow: @inset;
           }
         }
         .headline {
@@ -77,15 +79,18 @@ main {
         }
       }
     }
-    &#parallax {
+    &#info {
       background-color: @bg;
       @media (min-width: (@tablet + 1px)) {
         background: url("@{imgpath}/recruit.jpg") no-repeat center@overlay;
         background-blend-mode: overlay;
-        //box-shadow: inset 0 0 3px 1px black;
-      }
-      @media (min-width: (@tablet + 1px)) {
+        box-shadow: @inset;
         background-attachment: fixed;
+      }
+    }
+    &#community {
+      @media (min-width: (@tablet + 1px)) {
+        box-shadow: @shadow;
       }
     }
   }

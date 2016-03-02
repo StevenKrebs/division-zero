@@ -27,7 +27,8 @@
     "require-dir": "",
     "jquery": "",
     "imagesloaded": "",
-    "skrollr": ""
+    "scrollmagic": "",
+    "gsap": ""
   },
   "scripts": {
     "build": "gulp build",

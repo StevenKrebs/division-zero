@@ -1,12 +1,12 @@
 /* Adding event listeners */
 $('body').imagesLoaded({background:true}).always(function() {
         var loaded = false;
+        window.animator = true;
         setTimeout(function() {
             $('.loader').fadeOut('slow');
             $('main').fadeIn('slow');
             $('footer').fadeIn('slow');
             if ($(window).width() <= window.mobile_resolution) {
-                window.animator.enabled(false);
                 $('.mobile-nav a').removeClass('highlight');
                 $('.mobile-nav').fadeIn('slow');
                 loaded = true;
