@@ -1,8 +1,10 @@
 /* Global Plugins */
 window.$                = require('jquery'),
 window.imagesLoaded     = require('imagesloaded'),
-window.gsap             = require('gsap'),
 window.scrollmagic      = require('scrollmagic');
+require('scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js');
+window.gsap             = require('gsap');
+require('gsap/src/uncompressed/plugins/CSSPlugin.js');
 
 imagesLoaded.makeJQueryPlugin( $ );
 

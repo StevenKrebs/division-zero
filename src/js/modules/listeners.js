@@ -5,9 +5,8 @@ $('body').imagesLoaded({background:true}).always(function() {
             $('.loader').fadeOut('slow');
             $('main').fadeIn('slow');
             $('footer').fadeIn('slow');
-            if($(window).height() > window.tablet_resolution || $(window).width() > window.tablet_resolution) {
-
-            } else if ($(window).width() <= window.mobile_resolution) {
+            if ($(window).width() <= window.mobile_resolution) {
+                window.animator.enabled(false);
                 $('.mobile-nav a').removeClass('highlight');
                 $('.mobile-nav').fadeIn('slow');
                 loaded = true;

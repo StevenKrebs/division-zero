@@ -77,10 +77,10 @@ main {
         }
       }
     }
-    &:nth-of-type(odd) {
+    &#parallax {
       background-color: @bg;
       @media (min-width: (@tablet + 1px)) {
-        background: url("@{imgpath}/recruit.jpg") no-repeat center @overlay;
+        background: url("@{imgpath}/recruit.jpg") no-repeat center@overlay;
         background-blend-mode: overlay;
         //box-shadow: inset 0 0 3px 1px black;
       }
