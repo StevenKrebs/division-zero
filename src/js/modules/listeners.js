@@ -6,10 +6,7 @@ $('body').imagesLoaded({background:true}).always(function() {
             $('main').fadeIn('slow');
             $('footer').fadeIn('slow');
             if($(window).height() > window.tablet_resolution || $(window).width() > window.tablet_resolution) {
-                skrollr.init({
-                    forceHeight: false,
-                    smoothScrolling: true
-                });
+
             } else if ($(window).width() <= window.mobile_resolution) {
                 $('.mobile-nav a').removeClass('highlight');
                 $('.mobile-nav').fadeIn('slow');

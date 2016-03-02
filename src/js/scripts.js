@@ -1,7 +1,8 @@
 /* Global Plugins */
 window.$                = require('jquery'),
 window.imagesLoaded     = require('imagesloaded'),
-window.skrollr          = require('skrollr');
+window.gsap             = require('gsap'),
+window.scrollmagic      = require('scrollmagic');
 
 imagesLoaded.makeJQueryPlugin( $ );
 
