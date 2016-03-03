@@ -12,9 +12,11 @@ var animator        = require('./scrollmagic.js'),
 var imagesLoaded     = require('imagesloaded');
 imagesLoaded.makeJQueryPlugin( $ );
 
+
 //Actual Listeners
 $('body').imagesLoaded({background:true}).always(function() {
         var loaded = false;
+        $('.mobile-nav a').removeClass('highlight');
             $('.loader').velocity("fadeOut", {delay: 2000, duration: "slow"});
             $('main').velocity("fadeIn", {delay: 2500, duration: "slow"});
             $('footer').velocity("fadeIn", {delay: 2500, duration: "slow"});
@@ -23,7 +25,6 @@ $('body').imagesLoaded({background:true}).always(function() {
                 desktopInfo         = desktop.createInfo(controller),
                 desktopCommunity    = desktop.createCommunity(controller);
             } else if ($(window).width() <= window.mobile_resolution) {
-                $('.mobile-nav a').removeClass('highlight');
                 $('.mobile-nav').velocity("fadeIn", {delay: 2000, duration: "slow"});
                 loaded = true;
             }
@@ -32,13 +33,13 @@ $('body').imagesLoaded({background:true}).always(function() {
 
     $('.forward').click(function () {
         $('main').velocity('scroll',{
-            duration: "slow"
+            duration: 1000
         });
     });
 
     $('.backward').click(function () {
         $('body').velocity('scroll',{
-            duration: "slow"
+            duration: 1000
         });
     });
 
@@ -50,17 +51,9 @@ $('body').imagesLoaded({background:true}).always(function() {
     $(window).on({
         orientationchange: function() {
             if ($(window).width() < window.mobile_resolution && loaded == true) {
-                $('.mobile-nav').velocity("fadeIn", {duration: "slow"});
+                $('.mobile-nav').velocity("fadeIn", {duration: 1000});
             } else {
-                $('.mobile-nav').velocity("fadeOut", {duration: "slow"});
-            }
-        },
-
-        resize: function() {
-            if ($(window).width() < window.mobile_resolution && loaded == true) {
-                $('.mobile-nav').velocity("fadeIn", {duration: "slow"});
-            } else {
-                $('.mobile-nav').velocity("fadeOut", {duration: "slow"});
+                $('.mobile-nav').velocity("fadeOut", {duration: 1000});
             }
         }
     });
