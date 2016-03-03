@@ -1,9 +1,5 @@
 /* Global Plugins */
-window.$                = require('jquery'),
-window.imagesLoaded     = require('imagesloaded'),
-window.skrollr          = require('skrollr');
-
-imagesLoaded.makeJQueryPlugin( $ );
+window.$ = window.jQuery = require('jquery');
 
 /* Global variables */
 window.tablet_resolution = 1024;

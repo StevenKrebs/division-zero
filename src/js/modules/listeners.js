@@ -1,34 +1,46 @@
 /* Adding event listeners */
+
+//ScrollMagic
+var animator        = require('./scrollmagic.js'),
+    controller      = animator.createController(),
+    desktop         = animator.desktop,
+    mobile          = animator.mobile,
+    desktopParallax, desktopInfo, desktopCommunity,
+    velocity        = require('velocity-animate');
+
+//ImagesLoaded
+var imagesLoaded     = require('imagesloaded');
+imagesLoaded.makeJQueryPlugin( $ );
+
+
+//Actual Listeners
 $('body').imagesLoaded({background:true}).always(function() {
         var loaded = false;
-        setTimeout(function() {
-            $('.loader').fadeOut('slow');
-            $('main').fadeIn('slow');
-            $('footer').fadeIn('slow');
+        $('.mobile-nav a').removeClass('highlight');
+            $('.loader').velocity("fadeOut", {delay: 2000, duration: "slow"});
+            $('main').velocity("fadeIn", {delay: 2500, duration: "slow"});
+            $('footer').velocity("fadeIn", {delay: 2500, duration: "slow"});
             if($(window).height() > window.tablet_resolution || $(window).width() > window.tablet_resolution) {
-                skrollr.init({
-                    forceHeight: false,
-                    smoothScrolling: true
-                });
+                desktopParallax     = desktop.createParallax(controller),
+                desktopInfo         = desktop.createInfo(controller),
+                desktopCommunity    = desktop.createCommunity(controller);
             } else if ($(window).width() <= window.mobile_resolution) {
-                $('.mobile-nav a').removeClass('highlight');
-                $('.mobile-nav').fadeIn('slow');
+                $('.mobile-nav').velocity("fadeIn", {delay: 2000, duration: "slow"});
                 loaded = true;
             }
-            $(window).scrollTop();
-        },2000);
+            $(window).velocity('scroll');
 
 
     $('.forward').click(function () {
-        $('html, body').animate({
-            scrollTop: $('main').offset().top
-        }, 1000);
+        $('main').velocity('scroll',{
+            duration: 1000
+        });
     });
 
     $('.backward').click(function () {
-        $('html, body').animate({
-            scrollTop: 0
-        }, 1000);
+        $('body').velocity('scroll',{
+            duration: 1000
+        });
     });
 
     $('#retry').click(function() {
@@ -39,17 +51,9 @@ $('body').imagesLoaded({background:true}).always(function() {
     $(window).on({
         orientationchange: function() {
             if ($(window).width() < window.mobile_resolution && loaded == true) {
-                $('.mobile-nav').fadeIn('slow');
+                $('.mobile-nav').velocity("fadeIn", {duration: 1000});
             } else {
-                $('.mobile-nav').fadeOut('slow');
-            }
-        },
-
-        resize: function() {
-            if ($(window).width() < window.mobile_resolution && loaded == true) {
-                $('.mobile-nav').fadeIn('slow');
-            } else {
-                $('.mobile-nav').fadeOut('slow');
+                $('.mobile-nav').velocity("fadeOut", {duration: 1000});
             }
         }
     });
