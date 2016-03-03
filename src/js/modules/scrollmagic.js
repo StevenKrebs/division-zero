@@ -26,7 +26,7 @@ animator.destroyController = function(controller) {
 
 var desktop = animator.desktop = {};
 
-desktop.createParallax = function(controller) {
+desktop.createParallax = function(controller, debug) {
     var parallaxEffect = new TweenMax.fromTo("#info", 1,
         {
             css: {
@@ -41,11 +41,14 @@ desktop.createParallax = function(controller) {
     var parallax = new scrollmagic.Scene({
         triggerElement: "main"
     }).setTween(parallaxEffect).addTo(controller);
+    if (debug == true) {
+        parallax.addIndicators();
+    }
 
     return parallax;
 };
 
-desktop.createInfo = function(controller) {
+desktop.createInfo = function(controller, debug) {
     var infoAnim = new TimelineMax();
     infoAnim.add(
         [
@@ -104,10 +107,14 @@ desktop.createInfo = function(controller) {
         triggerElement: 'header'
     }).setTween(infoAnim).addTo(controller);
 
+    if (debug == true) {
+        infoScene.addIndicators();
+    }
+
     return infoScene;
 };
 
-desktop.createCommunity = function(controller) {
+desktop.createCommunity = function(controller, debug) {
     var communityAnim = new TimelineMax();
     communityAnim.add(
         [
@@ -149,6 +156,10 @@ desktop.createCommunity = function(controller) {
     var communityScene = new scrollmagic.Scene({
         triggerElement: '#info'
     }).setTween(communityAnim).addTo(controller);
+
+    if (debug == true) {
+        communityScene.addIndicators();
+    }
 
     return communityScene;
 };
