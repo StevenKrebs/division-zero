@@ -155,7 +155,8 @@ desktop.createCommunity = function(controller, debug) {
     );
 
     var communityScene = new scrollmagic.Scene({
-        triggerElement: '#info'
+        triggerElement: '#info',
+        offset: -100
     }).setTween(communityAnim).addTo(controller);
 
     if (debug == true) {

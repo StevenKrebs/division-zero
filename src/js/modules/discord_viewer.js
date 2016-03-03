@@ -1,7 +1,9 @@
 /* Get Discord Data */
+
+var velocity = require('velocity-animate');
+var serverID = $('#discord-serverlink').data('server-id');
 function setupDiscord() {
-    var serverID = $('#discord-serverlink').data('server-id');
-    $('#discord-userlist').fadeOut('slow');
+    $('#discord-userlist').velocity("fadeOut",{duration: 1000});
     if($('#discord-userlist ul').length > 0) {
         $('#discord-userlist ul').remove();
     } else {
@@ -25,6 +27,6 @@ function setupDiscord() {
         } else {
             $('#discord-userlist h3').text('No agent online!').addClass('center');
         }
-    },$('#discord-userlist').fadeIn('slow'));
+    },$('#discord-userlist').velocity("fadeIn",{duration: 1000}));
 };
 setInterval(setupDiscord(), 60000);
