@@ -1,7 +1,12 @@
-var animator = module.exports = {};
+var animator        = module.exports = {},
+    scrollmagic     = require('scrollmagic'),
+    animation       = require('scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js'),
+    debug           = require('scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js'),
+    gsap            = require('gsap'),
+    css             = require('gsap/src/uncompressed/plugins/CSSPlugin.js');
 
 animator.createController = function() {
-    var controller = new window.scrollmagic.Controller(
+    var controller = new scrollmagic.Controller(
         {
             globalSceneOptions: {
                 triggerHook: "onEnter",
@@ -33,7 +38,7 @@ desktop.createParallax = function(controller) {
             }, ease: Linear.easeInOut
         }
     );
-    var parallax = new window.scrollmagic.Scene({
+    var parallax = new scrollmagic.Scene({
         triggerElement: "main"
     }).setTween(parallaxEffect).addTo(controller);
 
@@ -95,7 +100,7 @@ desktop.createInfo = function(controller) {
         ]
     );
 
-    var infoScene = new window.scrollmagic.Scene({
+    var infoScene = new scrollmagic.Scene({
         triggerElement: 'header'
     }).setTween(infoAnim).addTo(controller);
 
@@ -141,7 +146,7 @@ desktop.createCommunity = function(controller) {
         ]
     );
 
-    var communityScene = new window.scrollmagic.Scene({
+    var communityScene = new scrollmagic.Scene({
         triggerElement: '#info'
     }).setTween(communityAnim).addTo(controller);
 

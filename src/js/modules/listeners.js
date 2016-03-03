@@ -1,9 +1,17 @@
 /* Adding event listeners */
+
+//ScrollMagic
 var animator        = require('./scrollmagic.js'),
     controller      = animator.createController(),
     desktop         = animator.desktop,
     mobile          = animator.mobile,
     desktopParallax, desktopInfo, desktopCommunity;
+
+//ImagesLoaded
+var imagesLoaded     = require('imagesloaded');
+imagesLoaded.makeJQueryPlugin( $ );
+
+//Actual Listeners
 $('body').imagesLoaded({background:true}).always(function() {
         var loaded = false;
         setTimeout(function() {
