@@ -1,12 +1,20 @@
 /* Adding event listeners */
+var animator        = require('./scrollmagic.js'),
+    controller      = animator.createController(),
+    desktop         = animator.desktop,
+    mobile          = animator.mobile,
+    desktopParallax, desktopInfo, desktopCommunity;
 $('body').imagesLoaded({background:true}).always(function() {
         var loaded = false;
-        window.animator = true;
         setTimeout(function() {
             $('.loader').fadeOut('slow');
             $('main').fadeIn('slow');
             $('footer').fadeIn('slow');
-            if ($(window).width() <= window.mobile_resolution) {
+            if($(window).height() > window.tablet_resolution || $(window).width() > window.tablet_resolution) {
+                desktopParallax     = desktop.createParallax(controller),
+                desktopInfo         = desktop.createInfo(controller),
+                desktopCommunity    = desktop.createCommunity(controller);
+            } else if ($(window).width() <= window.mobile_resolution) {
                 $('.mobile-nav a').removeClass('highlight');
                 $('.mobile-nav').fadeIn('slow');
                 loaded = true;
