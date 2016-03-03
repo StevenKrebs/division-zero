@@ -1,5 +1,5 @@
 /* Global Plugins */
-window.$                = require('jquery');
+window.$ = window.jQuery = require('jquery');
 
 /* Global variables */
 window.tablet_resolution = 1024;

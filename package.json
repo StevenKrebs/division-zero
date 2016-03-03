@@ -28,7 +28,8 @@
     "jquery": "",
     "imagesloaded": "",
     "scrollmagic": "",
-    "gsap": ""
+    "gsap": "",
+    "velocity-animate": ""
   },
   "scripts": {
     "build": "gulp build",

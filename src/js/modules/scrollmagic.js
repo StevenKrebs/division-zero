@@ -3,7 +3,8 @@ var animator        = module.exports = {},
     animation       = require('scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js'),
     debug           = require('scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js'),
     gsap            = require('gsap'),
-    css             = require('gsap/src/uncompressed/plugins/CSSPlugin.js');
+    css             = require('gsap/src/uncompressed/plugins/CSSPlugin.js'),
+    velocity        = require('velocity-animate');
 
 animator.createController = function() {
     var controller = new scrollmagic.Controller(
