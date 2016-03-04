@@ -1,5 +1,5 @@
 /* Global Plugins */
-window.$ = window.jQuery = require('jquery');
+var $ = jQuery = require('jquery-browserify');
 
 /* Global variables */
 window.tablet_resolution = 1024;

@@ -1,4 +1,4 @@
-/* Adding event listeners */
+// Adding event listeners
 
 //ScrollMagic
 var animator        = require('./scrollmagic.js'),
@@ -6,12 +6,13 @@ var animator        = require('./scrollmagic.js'),
     desktop         = animator.desktop,
     mobile          = animator.mobile,
     desktopParallax, desktopInfo, desktopCommunity,
-    velocity        = require('velocity-animate');
+    velocity        = require('velocity-animate'),
+    lucid           = require('./lucid.js');
 
-//ImagesLoaded
+//Plugins
 var imagesLoaded     = require('imagesloaded');
 imagesLoaded.makeJQueryPlugin( $ );
-
+require('jquery-mousewheel')($)
 
 //Actual Listeners
 $('body').imagesLoaded({background:true}).always(function() {
@@ -25,13 +26,13 @@ $('body').imagesLoaded({background:true}).always(function() {
 
     $('.forward').click(function () {
         $('main').velocity('scroll',{
-            duration: 1000
+            duration: 1500
         });
     });
 
     $('.backward').click(function () {
         $('body').velocity('scroll',{
-            duration: 1000
+            duration: 1500
         });
     });
 
@@ -49,11 +50,14 @@ $('body').imagesLoaded({background:true}).always(function() {
             }
         }
     });
-}, 500, function() {
+}, function() {
     if($(window).height() > window.tablet_resolution || $(window).width() > window.tablet_resolution) {
+        //Adding scenes to animate
         desktopParallax     = desktop.createParallax(controller),
         desktopInfo         = desktop.createInfo(controller),
         desktopCommunity    = desktop.createCommunity(controller);
+        //Smooth scrolling
+        $(window).impulse();
     } else if ($(window).width() <= window.mobile_resolution) {
         $('.mobile-nav').velocity("fadeIn", {delay: 2000, duration: "slow"});
         loaded = true;

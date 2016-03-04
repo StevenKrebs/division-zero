@@ -6,7 +6,6 @@ var animator        = module.exports = {},
 
 //Plugins
     require('scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js'),
-    require('scrollmagic/scrollmagic/uncompressed/plugins/animation.velocity.js'),
     require('scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js'),
     require('gsap/src/uncompressed/plugins/CSSPlugin.js');
 
