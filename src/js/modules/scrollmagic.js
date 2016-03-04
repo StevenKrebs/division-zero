@@ -55,7 +55,7 @@ desktop.createInfoAnim = function(controller, debug) {
     var infoAnim = new TimelineMax();
     infoAnim.add(
         [
-            TweenMax.fromTo('#info-about', 1,
+            TweenMax.fromTo('#info-about', 2,
                 {
                     css: {
                         'opacity': 0,
@@ -71,7 +71,7 @@ desktop.createInfoAnim = function(controller, debug) {
                     }, ease: Linear.easeNone
                 }
             ),
-            TweenMax.fromTo('#info-rules', 1,
+            TweenMax.fromTo('#info-rules', 2,
                 {
                     css: {
                         'opacity': 0,
@@ -87,7 +87,7 @@ desktop.createInfoAnim = function(controller, debug) {
                     }, ease: Linear.easeNone
                 }
             ),
-            TweenMax.fromTo('#info-goals', 1,
+            TweenMax.fromTo('#info-goals', 2,
                 {
                     css: {
                         'opacity': 0,
@@ -109,7 +109,7 @@ desktop.createInfoAnim = function(controller, debug) {
     var infoScene = new scrollmagic.Scene({
         triggerElement: '#info',
         triggerHook: 'onEnter',
-        duration: "80%"
+        duration: "90%"
     });
     infoScene.setTween(infoAnim);
     if (debug == true) {
@@ -128,7 +128,7 @@ desktop.createCommunityAnim = function(controller, debug) {
     var communityAnim = new TimelineMax();
         communityAnim.add(
             [
-                TweenMax.fromTo('#community-apply', 1,
+                TweenMax.fromTo('#community-apply', 2,
                     {
                         css: {
                             'opacity': 0,
@@ -144,7 +144,7 @@ desktop.createCommunityAnim = function(controller, debug) {
                         }, ease: Linear.easeNone
                     }
                 ),
-                TweenMax.fromTo('#community-discord', 1,
+                TweenMax.fromTo('#community-discord', 2,
                     {
                         css: {
                             'opacity': 0,
@@ -165,7 +165,7 @@ desktop.createCommunityAnim = function(controller, debug) {
     var communityScene = new scrollmagic.Scene({
         triggerElement: '#community',
         triggerHook: 'onEnter',
-        duration: "80%"
+        duration: "90%"
     });
     communityScene.setTween(communityAnim);
     if (debug == true) {
