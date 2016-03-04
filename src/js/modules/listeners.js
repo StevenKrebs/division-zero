@@ -15,20 +15,20 @@ imagesLoaded.makeJQueryPlugin( $ );
 
 //Actual Listeners
 $('body').imagesLoaded({background:true}).always(function() {
-        var loaded = false;
-        $('.mobile-nav a').removeClass('highlight');
-            $('.loader').velocity("fadeOut", {delay: 2000, duration: "slow"});
-            $('main').velocity("fadeIn", {delay: 2500, duration: "slow"});
-            $('footer').velocity("fadeIn", {delay: 2500, duration: "slow"});
-            if($(window).height() > window.tablet_resolution || $(window).width() > window.tablet_resolution) {
-                desktopParallax     = desktop.createParallax(controller),
-                desktopInfo         = desktop.createInfo(controller),
-                desktopCommunity    = desktop.createCommunity(controller);
-            } else if ($(window).width() <= window.mobile_resolution) {
-                $('.mobile-nav').velocity("fadeIn", {delay: 2000, duration: "slow"});
-                loaded = true;
-            }
-            $(window).velocity('scroll');
+    var loaded = false;
+    $('.loader').velocity("fadeOut", {delay: 2000, duration: "slow"});
+    $('main').velocity("fadeIn", {delay: 2500, duration: "slow"});
+    $('.mobile-nav a').removeClass('highlight');
+    $('footer').velocity("fadeIn", {delay: 2500, duration: "slow"});
+    if($(window).height() > window.tablet_resolution || $(window).width() > window.tablet_resolution) {
+        desktopParallax     = desktop.createParallax(controller),
+        desktopInfo         = desktop.createInfo(controller),
+        desktopCommunity    = desktop.createCommunity(controller);
+    } else if ($(window).width() <= window.mobile_resolution) {
+        $('.mobile-nav').velocity("fadeIn", {delay: 2000, duration: "slow"});
+        loaded = true;
+    }
+    $(window).velocity('scroll');
 
 
     $('.forward').click(function () {
