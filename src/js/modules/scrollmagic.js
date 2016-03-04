@@ -1,19 +1,19 @@
+//Modules
 var animator        = module.exports = {},
     scrollmagic     = require('scrollmagic'),
-    animation       = require('scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js'),
-    debug           = require('scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js'),
     gsap            = require('gsap'),
-    css             = require('gsap/src/uncompressed/plugins/CSSPlugin.js'),
     velocity        = require('velocity-animate');
 
+//Plugins
+    require('scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js'),
+    require('scrollmagic/scrollmagic/uncompressed/plugins/animation.velocity.js'),
+    require('scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js'),
+    require('gsap/src/uncompressed/plugins/CSSPlugin.js');
+
+
+//Controller Management
 animator.createController = function() {
-    var controller = new scrollmagic.Controller(
-        {
-            globalSceneOptions: {
-                triggerHook: "onEnter",
-                duration: "200%"
-            }
-        });
+    var controller = new scrollmagic.Controller();
     return controller
 };
 
@@ -25,6 +25,8 @@ animator.destroyController = function(controller) {
     return controller.destroy(true);
 };
 
+
+//Desktop Animations
 var desktop = animator.desktop = {};
 
 desktop.createParallax = function(controller, debug) {
@@ -40,7 +42,9 @@ desktop.createParallax = function(controller, debug) {
         }
     );
     var parallax = new scrollmagic.Scene({
-        triggerElement: "main"
+        triggerElement: "main",
+        triggerHook: "onEnter",
+        duration: "200%"
     }).setTween(parallaxEffect).addTo(controller);
     if (debug == true) {
         parallax.addIndicators();
@@ -50,63 +54,57 @@ desktop.createParallax = function(controller, debug) {
 };
 
 desktop.createInfo = function(controller, debug) {
-    var infoAnim = new TimelineMax();
-    infoAnim.add(
-        [
-            TweenMax.fromTo('#info-about', 1,
-                {
-                    css: {
-                        'opacity' : 0,
-                        '-webkit-transform': 'translateY(500px)',
-                        'transform': 'translateY(500px)'
-                    }, ease: Linear.easeInOut
-                },
-                {
-                    css: {
-                        'opacity' : 1,
-                        '-webkit-transform': 'translateY(0px)',
-                        'transform': 'translateY(0px)'
-                    }, ease: Linear.easeInOut
-                }
-            ),
-            TweenMax.fromTo('#info-rules', 1,
-                {
-                    css: {
-                        'opacity' : 0,
-                        '-webkit-transform': 'translateY(1000px)',
-                        'transform': 'translateY(1000px)'
-                    }, ease: Linear.easeInOut
-                },
-                {
-                    css: {
-                        'opacity' : 1,
-                        '-webkit-transform': 'translateY(0px)',
-                        'transform': 'translateY(0px)'
-                    }, ease: Linear.easeInOut
-                }
-            ),
-            TweenMax.fromTo('#info-goals', 1,
-                {
-                    css: {
-                        'opacity' : 0,
-                        '-webkit-transform': 'translateY(1500px)',
-                        'transform': 'translateY(1500px)'
-                    }, ease: Linear.easeInOut
-                },
-                {
-                    css: {
-                        'opacity' : 1,
-                        '-webkit-transform': 'translateY(0px)',
-                        'transform': 'translateY(0px)'
-                    }, ease: Linear.easeInOut
-                }
-            )
-        ]
-    );
 
     var infoScene = new scrollmagic.Scene({
-        triggerElement: 'header'
-    }).setTween(infoAnim).addTo(controller);
+        triggerElement: '#info',
+        triggerHook: "onEnter",
+        duration: "100%",
+        offset: 200
+    });
+
+        infoScene.on("shift", function(event){
+            $('#info-about').velocity({
+                translateY: 500,
+                opacity: 0
+            },{
+                duration: 0
+            });
+            $('#info-rules').velocity({
+                translateY: 500,
+                opacity: 0
+            },{
+                duration: 0
+            });
+            $('#info-goals').velocity({
+                translateY: 500,
+                opacity: 0
+            },{
+                duration: 0
+            });
+        });
+
+        infoScene.on("enter", function(event) {
+            $('#info-about').velocity({
+                translateY: 0,
+                opacity: 1
+            },{
+                duration: 500
+            });
+            $('#info-rules').velocity({
+                translateY: 0,
+                opacity: 1
+            },{
+                duration: 1000
+            });
+            $('#info-goals').velocity({
+                translateY: 0,
+                opacity: 1
+            },{
+                duration: 1500
+            });
+        });
+
+        infoScene.addTo(controller);
 
     if (debug == true) {
         infoScene.addIndicators();
@@ -116,48 +114,45 @@ desktop.createInfo = function(controller, debug) {
 };
 
 desktop.createCommunity = function(controller, debug) {
-    var communityAnim = new TimelineMax();
-    communityAnim.add(
-        [
-            TweenMax.fromTo('#community-apply',1,
-                {
-                    css: {
-                        'opacity': 0,
-                        '-webkit-transform': 'translateX(-1500px)',
-                        'transform': 'translateX(-1500px)'
-                    },ease: Linear.easeInOut
-                },
-                {
-                    css: {
-                        'opacity': 1,
-                        '-webkit-transform': 'translateX(0px)',
-                        'transform': 'translatex(0px)'
-                    },ease: Linear.easeInOut
-                }
-            ),
-            TweenMax.fromTo('#community-discord',1,
-                {
-                    css: {
-                        'opacity': 0,
-                        '-webkit-transform': 'translateX(1500px)',
-                        'transform': 'translateX(1500px)'
-                    },ease: Linear.easeInOut
-                },
-                {
-                    css: {
-                        'opacity': 1,
-                        '-webkit-transform': 'translateX(0px)',
-                        'transform': 'translatex(0px)'
-                    },ease: Linear.easeInOut
-                }
-            )
-        ]
-    );
 
     var communityScene = new scrollmagic.Scene({
-        triggerElement: '#info',
-        offset: -100
-    }).setTween(communityAnim).addTo(controller);
+        triggerElement: '#community',
+        triggerHook: "onEnter",
+        duration: "100%",
+        offset: 200
+    });
+
+        communityScene.on("shift", function(event) {
+            $('#community-apply').velocity({
+                translateX: -1500,
+                opacity: 0
+            },{
+                duration: 0
+            });
+            $('#community-discord').velocity({
+                translateX: 1500,
+                opacity: 0
+            },{
+                duration: 0
+            });
+        });
+
+        communityScene.on('enter',function(event) {
+            $('#community-apply').velocity({
+                translateX: 0,
+                opacity: 1
+            },{
+                duration: 1000
+            });
+            $('#community-discord').velocity({
+                translateX: 0,
+                opacity: 1
+            },{
+                duration: 1000
+            });
+        });
+
+        communityScene.addTo(controller);
 
     if (debug == true) {
         communityScene.addIndicators();
@@ -167,4 +162,5 @@ desktop.createCommunity = function(controller, debug) {
 };
 
 
+//Mobile Animations
 var mobile = animator.mobile = {};

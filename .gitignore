@@ -1,2 +1,4 @@
 /dist/maps
-node_modules/
+/dist/css
+/dist/js
+/node_modules/
