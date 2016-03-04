@@ -1,8 +1,7 @@
 //Modules
 var animator        = module.exports = {},
     scrollmagic     = require('scrollmagic'),
-    gsap            = require('gsap'),
-    velocity        = require('velocity-animate');
+    gsap            = require('gsap');
 
 //Plugins
     require('scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js'),
@@ -33,11 +32,11 @@ desktop.createParallax = function(controller, debug) {
         {
             css: {
                 'background-position': "50% 200px"
-            }, ease: Linear.easeInOut
+            }, ease: Linear.easeNone
         },{
             css: {
                 'background-position': "50% -200px"
-            }, ease: Linear.easeInOut
+            }, ease: Linear.easeNone
         }
     );
     var parallax = new scrollmagic.Scene({
@@ -52,112 +51,134 @@ desktop.createParallax = function(controller, debug) {
     return parallax;
 };
 
-desktop.createInfo = function(controller, debug) {
+desktop.createInfoAnim = function(controller, debug) {
+    var infoAnim = new TimelineMax();
+    infoAnim.add(
+        [
+            TweenMax.fromTo('#info-about', 1,
+                {
+                    css: {
+                        'opacity': 0,
+                        '-webkit-transform': 'translateY(500px)',
+                        'transform': 'translateY(500px)'
+                    }, ease: Linear.easeNone
+                },
+                {
+                    css: {
+                        'opacity': 1,
+                        '-webkit-transform': 'translateY(0)',
+                        'transform': 'translateY(0px)'
+                    }, ease: Linear.easeNone
+                }
+            ),
+            TweenMax.fromTo('#info-rules', 1,
+                {
+                    css: {
+                        'opacity': 0,
+                        '-webkit-transform': 'translateY(1000px)',
+                        'transform': 'translateY(1000px)'
+                    }, ease: Linear.easeNone
+                },
+                {
+                    css: {
+                        'opacity': 1,
+                        '-webkit-transform': 'translateY(0)',
+                        'transform': 'translateY(0)'
+                    }, ease: Linear.easeNone
+                }
+            ),
+            TweenMax.fromTo('#info-goals', 1,
+                {
+                    css: {
+                        'opacity': 0,
+                        '-webkit-transform': 'translateY(1500px)',
+                        'transform': 'translateY(1500px)'
+                    }, ease: Linear.easeNone
+                },
+                {
+                    css: {
+                        'opacity': 1,
+                        '-webkit-transform': 'translateY(0)',
+                        'transform': 'translateY(0)'
+                    }, ease: Linear.easeNone
+                }
+            )
+        ]
+    );
 
     var infoScene = new scrollmagic.Scene({
         triggerElement: '#info',
-        triggerHook: "onEnter",
-        duration: "100%",
-        offset: 200
+        triggerHook: 'onEnter',
+        duration: "80%"
     });
-
-        infoScene.on("shift", function(event){
-            $('#info-about').velocity({
-                translateY: 500,
-                opacity: 0
-            },{
-                duration: 0
-            });
-            $('#info-rules').velocity({
-                translateY: 500,
-                opacity: 0
-            },{
-                duration: 0
-            });
-            $('#info-goals').velocity({
-                translateY: 500,
-                opacity: 0
-            },{
-                duration: 0
-            });
-        });
-
-        infoScene.on("enter", function(event) {
-            $('#info-about').velocity({
-                translateY: 0,
-                opacity: 1
-            },{
-                duration: 500
-            });
-            $('#info-rules').velocity({
-                translateY: 0,
-                opacity: 1
-            },{
-                duration: 1000
-            });
-            $('#info-goals').velocity({
-                translateY: 0,
-                opacity: 1
-            },{
-                duration: 1500
-            });
-        });
-
-        infoScene.addTo(controller);
-
+    infoScene.setTween(infoAnim);
     if (debug == true) {
         infoScene.addIndicators();
     }
-
-    return infoScene;
+    infoScene.addTo(controller);
+    infoScene.on("end", function (e) {
+        if (e.scrollDirection === "REVERSE") {
+            infoScene.reverse(false)
+        }
+    });
+    return infoScene
 };
 
-desktop.createCommunity = function(controller, debug) {
-
+desktop.createCommunityAnim = function(controller, debug) {
+    var communityAnim = new TimelineMax();
+        communityAnim.add(
+            [
+                TweenMax.fromTo('#community-apply', 1,
+                    {
+                        css: {
+                            'opacity': 0,
+                            '-webkit-transform': 'translateY(500px)',
+                            'transform': 'translateY(500px)'
+                        }, ease: Linear.easeNone
+                    },
+                    {
+                        css: {
+                            'opacity': 1,
+                            '-webkit-transform': 'translateY(0)',
+                            'transform': 'translateY(0px)'
+                        }, ease: Linear.easeNone
+                    }
+                ),
+                TweenMax.fromTo('#community-discord', 1,
+                    {
+                        css: {
+                            'opacity': 0,
+                            '-webkit-transform': 'translateY(1000px)',
+                            'transform': 'translateY(1000px)'
+                        }, ease: Linear.easeNone
+                    },
+                    {
+                        css: {
+                            'opacity': 1,
+                            '-webkit-transform': 'translateY(0)',
+                            'transform': 'translateY(0)'
+                        }, ease: Linear.easeNone
+                    }
+                )
+            ]
+        );
     var communityScene = new scrollmagic.Scene({
         triggerElement: '#community',
-        triggerHook: "onEnter",
-        duration: "100%",
-        offset: 200
+        triggerHook: 'onEnter',
+        duration: "80%"
     });
-
-        communityScene.on("shift", function(event) {
-            $('#community-apply').velocity({
-                translateX: -1500,
-                opacity: 0
-            },{
-                duration: 0
-            });
-            $('#community-discord').velocity({
-                translateX: 1500,
-                opacity: 0
-            },{
-                duration: 0
-            });
-        });
-
-        communityScene.on('enter',function(event) {
-            $('#community-apply').velocity({
-                translateX: 0,
-                opacity: 1
-            },{
-                duration: 1000
-            });
-            $('#community-discord').velocity({
-                translateX: 0,
-                opacity: 1
-            },{
-                duration: 1000
-            });
-        });
-
-        communityScene.addTo(controller);
-
+    communityScene.setTween(communityAnim);
     if (debug == true) {
         communityScene.addIndicators();
     }
+    communityScene.addTo(controller);
+    communityScene.on("end", function (e) {
+        if (e.scrollDirection === "REVERSE") {
+            communityScene.reverse(false)
+        }
+    });
 
-    return communityScene;
+    return communityScene
 };
 
 

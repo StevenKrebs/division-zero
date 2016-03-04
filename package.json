@@ -27,6 +27,7 @@
     "require-dir": "",
     "jquery-browserify": "",
     "jquery-mousewheel": "",
+    "jquery-scroll-lock": "",
     "imagesloaded": "",
     "scrollmagic": "",
     "gsap": "",
