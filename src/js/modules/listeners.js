@@ -16,7 +16,7 @@ require('jquery-mousewheel')($),
 require('jquery-scroll-lock');
 
 //Actual Listeners
-$('.loader').scrollLock('enable');
+$('body').scrollLock('enable');
 $('body').imagesLoaded({background:true}).done(function() {
     var loaded = false;
     $('.loader').velocity("fadeOut", {delay: 2000, duration: "slow", complete: function() {
@@ -26,6 +26,7 @@ $('body').imagesLoaded({background:true}).done(function() {
                 desktopCommunity    = desktop.createCommunityAnim(controller);
             //Smooth scrolling
             $(window).impulse();
+            $('body').scrollLock('disable');
         } else if ($(window).width() <= window.mobile_resolution) {
             $('.mobile-nav').velocity("fadeIn", {delay: 2000, duration: "slow"});
             loaded = true;
