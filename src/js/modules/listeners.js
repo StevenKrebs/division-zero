@@ -16,6 +16,7 @@ require('jquery-mousewheel')($),
 require('jquery-scroll-lock');
 
 //Actual Listeners
+$('body').velocity('scroll');
 $('body').scrollLock('enable').addClass('locked');
 $('body').imagesLoaded({background:true}).done(function() {
     var loaded = false;
@@ -28,12 +29,12 @@ $('body').imagesLoaded({background:true}).done(function() {
             $(window).impulse();
             $('body').scrollLock('disable').removeClass('locked');
         } else if ($(window).width() <= window.mobile_resolution) {
-            $('.mobile-nav').velocity("fadeIn", {delay: 2000, duration: "slow"});
+            $('.mobile-nav').velocity("fadeIn", {duration: "slow"});
+            $('body').scrollLock('disable').removeClass('locked');
             loaded = true;
         }
     }});
     $('.mobile-nav a').removeClass('highlight');
-    $('body').velocity('scroll');
 
     $('.forward').click(function () {
         $('main').velocity('scroll',{
