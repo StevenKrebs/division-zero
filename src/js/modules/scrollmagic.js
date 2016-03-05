@@ -55,52 +55,52 @@ desktop.createInfoAnim = function(controller, debug) {
     var infoAnim = new TimelineMax();
     infoAnim.add(
         [
-            TweenMax.fromTo('#info-about',.5,
+            TweenMax.fromTo('#info-about',1,
                 {
                     css: {
                         'opacity': 0,
                         '-webkit-transform': 'translateY(250px)',
                         'transform': 'translateY(250px)'
-                    }, ease: Linear.easeNone
+                    }, ease: Expo.easeOut
                 },
                 {
                     css: {
                         'opacity': 1,
                         '-webkit-transform': 'translateY(0)',
                         'transform': 'translateY(0px)'
-                    }, ease: Linear.easeNone
+                    }, ease: Expo.easeOut
                 }
             ),
-            TweenMax.fromTo('#info-rules',.75,
+            TweenMax.fromTo('#info-rules',1.25,
                 {
                     css: {
                         'opacity': 0,
                         '-webkit-transform': 'translateY(250px)',
                         'transform': 'translateY(250px)'
-                    }, ease: Linear.easeNone
+                    }, ease: Expo.easeOut
                 },
                 {
                     css: {
                         'opacity': 1,
                         '-webkit-transform': 'translateY(0)',
                         'transform': 'translateY(0)'
-                    }, ease: Linear.easeNone
+                    }, ease: Expo.easeOut
                 }
             ),
-            TweenMax.fromTo('#info-goals', 1,
+            TweenMax.fromTo('#info-goals', 1.5,
                 {
                     css: {
                         'opacity': 0,
                         '-webkit-transform': 'translateY(250px)',
                         'transform': 'translateY(250px)'
-                    }, ease: Linear.easeNone
+                    }, ease: Expo.easeOut
                 },
                 {
                     css: {
                         'opacity': 1,
                         '-webkit-transform': 'translateY(0)',
                         'transform': 'translateY(0)'
-                    }, ease: Linear.easeNone
+                    }, ease: Expo.easeOut
                 }
             )
         ]
@@ -132,36 +132,36 @@ desktop.createCommunityAnim = function(controller, debug) {
     var communityAnim = new TimelineMax();
         communityAnim.add(
             [
-                TweenMax.fromTo('#community-apply',.5,
+                TweenMax.fromTo('#community-apply',1,
                     {
                         css: {
                             'opacity': 0,
                             '-webkit-transform': 'translateY(250px)',
                             'transform': 'translateY(250px)'
-                        }, ease: Linear.easeNone
+                        }, ease: Expo.easeOut
                     },
                     {
                         css: {
                             'opacity': 1,
                             '-webkit-transform': 'translateY(0)',
                             'transform': 'translateY(0px)'
-                        }, ease: Linear.easeNone
+                        }, ease: Expo.easeOut
                     }
                 ),
-                TweenMax.fromTo('#community-discord',.8,
+                TweenMax.fromTo('#community-discord',1.25,
                     {
                         css: {
                             'opacity': 0,
                             '-webkit-transform': 'translateY(250px)',
                             'transform': 'translateY(250px)'
-                        }, ease: Linear.easeNone
+                        }, ease: Expo.easeOut
                     },
                     {
                         css: {
                             'opacity': 1,
                             '-webkit-transform': 'translateY(0)',
                             'transform': 'translateY(0)'
-                        }, ease: Linear.easeNone
+                        }, ease: Expo.easeOut
                     }
                 )
             ]

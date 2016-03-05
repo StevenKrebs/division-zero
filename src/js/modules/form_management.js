@@ -11,12 +11,14 @@ $('#submit').click(function() {
             return;
         }
     });
-    if (err == false) {
+
+    var form = $('#application');
+    var returnMessage = $('#form-result');
+    var retryButton = $('#form-result #retry');
+    var formData = $(form).serialize();
+
+    if (err == false && localStorage.applied != "true") {
         $('#form').hide();
-        var form = $('#application');
-        var returnMessage = $('#form-result');
-        var retryButton = $('#form-result #retry');
-        var formData = $(form).serialize();
         $.ajax({
                 type: 'POST',
                 url: $(form).attr('action'),
@@ -31,6 +33,9 @@ $('#submit').click(function() {
             $('#application input').each(function(){
                 $(this).val('');
             });
+
+            //Attempt to limit spam
+            localStorage.applied = true;
         })
         .fail(function(data) {
             $(retryButton).show().css('display', 'block');
@@ -39,5 +44,14 @@ $('#submit').click(function() {
             // Set the message text.
             $(returnMessage).find('#form-result-text').text("Error, please try again!");
         });
+        return false
+    } else if(localStorage.applied == "true") {
+        $('#form').hide();
+
+        $(retryButton).show().css('display', 'block');
+        $(returnMessage).show();
+
+        // Set the message text.
+        $(returnMessage).find('#form-result-text').text("Application already received!");
     }
 });

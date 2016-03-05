@@ -2,7 +2,9 @@ $('.mobile-nav a').each(function() {
     $(this).click(function(event) {
         var thiz = $(this).attr('href');
         event.preventDefault();
-        $(thiz).velocity('scroll',{duration: 1000});
+        $('html, body').animate({
+            scrollTop: $(thiz).offset().top
+        }, 1000);
     })
 });
 

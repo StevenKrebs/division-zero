@@ -27,11 +27,9 @@
     "require-dir": "",
     "jquery-browserify": "",
     "jquery-mousewheel": "",
-    "jquery-scroll-lock": "",
     "imagesloaded": "",
     "scrollmagic": "",
-    "gsap": "",
-    "velocity-animate": ""
+    "gsap": ""
   },
   "scripts": {
     "build": "gulp build",
