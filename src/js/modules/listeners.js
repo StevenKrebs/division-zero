@@ -23,8 +23,8 @@ $('body').imagesLoaded({background:true}).always(function() {
     $('.loader').velocity("fadeOut", {delay: 2000, duration: "slow", complete: function() {
         if($(window).height() > window.tablet_resolution || $(window).width() > window.tablet_resolution) {
             desktopParallax     = desktop.createParallax(controller),
-                desktopInfo         = desktop.createInfoAnim(controller),
-                desktopCommunity    = desktop.createCommunityAnim(controller);
+            desktopInfo         = desktop.createInfoAnim(controller),
+            desktopCommunity    = desktop.createCommunityAnim(controller);
             //Smooth scrolling
             $(window).impulse();
             $('body').scrollLock('disable').removeClass('locked');

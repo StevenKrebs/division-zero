@@ -55,12 +55,12 @@ desktop.createInfoAnim = function(controller, debug) {
     var infoAnim = new TimelineMax();
     infoAnim.add(
         [
-            TweenMax.fromTo('#info-about', 2,
+            TweenMax.fromTo('#info-about',.5,
                 {
                     css: {
                         'opacity': 0,
-                        '-webkit-transform': 'translateY(500px)',
-                        'transform': 'translateY(500px)'
+                        '-webkit-transform': 'translateY(250px)',
+                        'transform': 'translateY(250px)'
                     }, ease: Linear.easeNone
                 },
                 {
@@ -71,12 +71,12 @@ desktop.createInfoAnim = function(controller, debug) {
                     }, ease: Linear.easeNone
                 }
             ),
-            TweenMax.fromTo('#info-rules', 2,
+            TweenMax.fromTo('#info-rules',.75,
                 {
                     css: {
                         'opacity': 0,
-                        '-webkit-transform': 'translateY(1000px)',
-                        'transform': 'translateY(1000px)'
+                        '-webkit-transform': 'translateY(250px)',
+                        'transform': 'translateY(250px)'
                     }, ease: Linear.easeNone
                 },
                 {
@@ -87,12 +87,12 @@ desktop.createInfoAnim = function(controller, debug) {
                     }, ease: Linear.easeNone
                 }
             ),
-            TweenMax.fromTo('#info-goals', 2,
+            TweenMax.fromTo('#info-goals', 1,
                 {
                     css: {
                         'opacity': 0,
-                        '-webkit-transform': 'translateY(1500px)',
-                        'transform': 'translateY(1500px)'
+                        '-webkit-transform': 'translateY(250px)',
+                        'transform': 'translateY(250px)'
                     }, ease: Linear.easeNone
                 },
                 {
@@ -108,10 +108,14 @@ desktop.createInfoAnim = function(controller, debug) {
 
     var infoScene = new scrollmagic.Scene({
         triggerElement: '#info',
-        triggerHook: 'onEnter',
-        duration: "90%"
+        triggerHook: 'onCenter',
+        duration: "80%"
     });
-    infoScene.setTween(infoAnim);
+    //infoScene.setTween(infoAnim);
+    infoAnim.pause();
+    infoScene.on("enter", function() {
+        infoAnim.play();
+    });
     if (debug == true) {
         infoScene.addIndicators();
     }
@@ -128,12 +132,12 @@ desktop.createCommunityAnim = function(controller, debug) {
     var communityAnim = new TimelineMax();
         communityAnim.add(
             [
-                TweenMax.fromTo('#community-apply', 2,
+                TweenMax.fromTo('#community-apply',.5,
                     {
                         css: {
                             'opacity': 0,
-                            '-webkit-transform': 'translateY(500px)',
-                            'transform': 'translateY(500px)'
+                            '-webkit-transform': 'translateY(250px)',
+                            'transform': 'translateY(250px)'
                         }, ease: Linear.easeNone
                     },
                     {
@@ -144,12 +148,12 @@ desktop.createCommunityAnim = function(controller, debug) {
                         }, ease: Linear.easeNone
                     }
                 ),
-                TweenMax.fromTo('#community-discord', 2,
+                TweenMax.fromTo('#community-discord',.8,
                     {
                         css: {
                             'opacity': 0,
-                            '-webkit-transform': 'translateY(1000px)',
-                            'transform': 'translateY(1000px)'
+                            '-webkit-transform': 'translateY(250px)',
+                            'transform': 'translateY(250px)'
                         }, ease: Linear.easeNone
                     },
                     {
@@ -164,10 +168,14 @@ desktop.createCommunityAnim = function(controller, debug) {
         );
     var communityScene = new scrollmagic.Scene({
         triggerElement: '#community',
-        triggerHook: 'onEnter',
-        duration: "90%"
+        triggerHook: 'onCenter',
+        duration: "80%"
     });
-    communityScene.setTween(communityAnim);
+    //communityScene.setTween(communityAnim);
+    communityAnim.pause()
+    communityScene.on("enter",function() {
+        communityAnim.play();
+    });
     if (debug == true) {
         communityScene.addIndicators();
     }
