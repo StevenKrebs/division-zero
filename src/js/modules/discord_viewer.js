@@ -1,5 +1,7 @@
 /* Get Discord Data */
-var serverID = require('./config.js').discord();
+var velocity = require('velocity-animate'),
+    serverID = require('./config.js').discord();
+
 (function setupDiscord() {
     $('#discord-userlist').hide();
     if($('#discord-userlist ul').length > 0) {
@@ -27,6 +29,6 @@ var serverID = require('./config.js').discord();
         }
     })
         .done(function() {
-            $('#discord-userlist').fadeIn("slow");
+            $('#discord-userlist').velocity("fadeIn",{duration:"slow"});
         });
 })();

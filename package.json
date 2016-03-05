@@ -29,7 +29,8 @@
     "jquery-mousewheel": "",
     "imagesloaded": "",
     "scrollmagic": "",
-    "gsap": ""
+    "gsap": "",
+    "velocity-anim": ""
   },
   "scripts": {
     "build": "gulp build",
