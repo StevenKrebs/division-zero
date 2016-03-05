@@ -18,7 +18,7 @@ require('jquery-scroll-lock');
 //Actual Listeners
 $('body').velocity('scroll');
 $('body').scrollLock('enable').addClass('locked');
-$('body').imagesLoaded({background:true}).done(function() {
+$('body').imagesLoaded({background:true}).always(function() {
     var loaded = false;
     $('.loader').velocity("fadeOut", {delay: 2000, duration: "slow", complete: function() {
         if($(window).height() > window.tablet_resolution || $(window).width() > window.tablet_resolution) {
