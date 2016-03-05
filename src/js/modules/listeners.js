@@ -2,10 +2,9 @@
 
 //ScrollMagic
 var animator        = require('./scrollmagic.js'),
-    controller      = animator.createController(),
     desktop         = animator.desktop,
     mobile          = animator.mobile,
-    desktopParallax,desktopInfo,desktopCommunity,
+    controller,desktopParallax,desktopInfo,desktopCommunity,
     lucid           = require('./lucid.js');
 
 //Plugins
@@ -25,18 +24,24 @@ $(window).on("beforeunload",function() {
 
 $('body').imagesLoaded({background:true}).always(function() {
     var loaded = false;
+    var scrollspeed,scrolltype;
     $('.loader').delay(1800).fadeOut(1000, function() {
         $('main').fadeIn(0,function() {
             $('footer').fadeIn(0,function() {
                 if($(window).height() > window.tablet_resolution || $(window).width() > window.tablet_resolution) {
+                        controller          = animator.createController(),
                         desktopParallax     = desktop.createParallax(controller),
                         desktopInfo         = desktop.createInfoAnim(controller),
                         desktopCommunity    = desktop.createCommunityAnim(controller);
                     //Smooth scrolling
                     $(window).impulse();
+                    scrollspeed = 1500;
+                    scrolltype = "swing";
                 } else if ($(window).width() <= window.mobile_resolution) {
                     $('.mobile-nav').fadeIn(1800);
                     loaded = true;
+                    scrollspeed = 1000;
+                    scrolltype = "swing"
                 }
             });
         });
@@ -45,14 +50,14 @@ $('body').imagesLoaded({background:true}).always(function() {
 
     $('.forward').click(function () {
         $('html, body').animate({
-            scrollTop: $('main').offset().top
-        }, 1800);
+            scrollTop: [$('main').offset().top, scrolltype]
+        }, scrollspeed);
     });
 
     $('.backward').click(function () {
         $('html, body').animate({
-            scrollTop: 0
-        }, 1800);
+            scrollTop: [0, scrolltype]
+        }, scrollspeed);
     });
 
     $('#retry').click(function() {
