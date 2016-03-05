@@ -19,13 +19,22 @@ header {
     position: absolute;
     right: 10px;
     top: 10px;
-    i {
-      padding: 0 10px;
-      line-height: 200%;
-      cursor: pointer;
-      .grow
-      &:first-child{
-        padding: 0 15px;
+    ul {
+      li {
+        display: inline-block;
+        a {
+          i {
+            vertical-align: middle;
+            padding: 0 10px;
+            line-height: 200%;
+            cursor: pointer;
+            .grow;
+            .text-shadow;
+            &:first-child{
+              padding: 0 15px;
+            }
+          }
+        }
       }
     }
     img {
