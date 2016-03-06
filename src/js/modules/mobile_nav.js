@@ -1,10 +1,11 @@
-var velocity = require('velocity-animate');
+var velocity    = require('velocity-animate'),
+    config      = require('./config.js');
 
 $('.mobile-nav a').each(function() {
     $(this).click(function(event) {
         var thiz = $(this).attr('href');
         event.preventDefault();
-        $(thiz).velocity('scroll',{duration: 1000});
+        $(thiz).velocity('scroll',{duration: config.scrollSettings.scrollSpeed()});
     })
 });
 
