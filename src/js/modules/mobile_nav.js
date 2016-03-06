@@ -9,12 +9,12 @@ $('.mobile-nav a').each(function() {
 });
 
 module.exports.getScrollPos = function() {
-    var scrollPos = $(document).scrollTop();
+    var scrollPos = $(document).scrollTop() + $(window).height() / 2;
     $('.mobile-nav a').each(function () {
         var link = $(this),
             href = $(link.attr('href')),
-            topPos = $(href).position().top - 1,
-            bottomPos = $(href).position().top + $(href).outerHeight() - 1;
+            topPos = $(href).position().top,
+            bottomPos = $(href).position().top + $(href).outerHeight();
         if (scrollPos >= topPos && scrollPos < bottomPos) {
             link.addClass('highlight');
         } else {
