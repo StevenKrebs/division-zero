@@ -1,6 +1,6 @@
 // Gulp Dependencies
 var gulp        = require('gulp'),
-    config      = require('../config');
+    config      = require('../config'),
 
 // Browser sync
     browserSync = require('browser-sync'),
