@@ -7,6 +7,7 @@ var animator        = require('./scrollmagic.js'),
     mobile          = animator.mobile,
     controller,desktopParallax,desktopInfo,desktopCommunity,
     lucid           = require('./lucid.js'),
+    svginject       = require('./jquery.svginject.js'),
     velocity        = require('velocity-animate'),
     config          = require('./config.js');
 
@@ -36,6 +37,7 @@ $(window).on({
 
 $(document).ready(function(){
     $('body').addClass('locked');
+    $('.svg').svgInject();
     $('body').imagesLoaded({background:true}).always(function() {
         var scrollspeed,scrolltype;
         $('.loader').velocity("fadeOut",{delay: config.timing.slower()}).promise().done(function() {

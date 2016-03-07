@@ -1,18 +1,21 @@
 header {
-  background: url("@{imgpath}/header.jpg") @overlay no-repeat center;
-  background-size: cover;
-  position: relative;
-  height: 100vh;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: stretch;
-  align-content: center;
-  vertical-align: top;
-  width: 100%;
-  @media (max-width: @tablet) {
-    box-shadow: @inset;
+  background: url("@{imgpath}/shd.svg") no-repeat center;
+  background-size: contain;
+  .overlay {
+    background-color: fade(@body,96%);
+    position: relative;
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    align-content: center;
+    vertical-align: top;
+    width: 100%;
+    @media (max-width: @tablet) {
+      box-shadow: @inset;
+    }
   }
   .shortlinks {
     text-align: right;
@@ -37,7 +40,7 @@ header {
         }
       }
     }
-    img {
+    img, svg {
       margin: 0 5px;
       width: 90px;
       height: auto;
@@ -48,6 +51,9 @@ header {
         transform: scale(1.2);
         transition: all 0.2s ease;
         -webkit-transition: all 0.2s ease;
+        path {
+          fill: @highlight;
+        }
       }
     }
   }
