@@ -54,56 +54,22 @@ desktop.createParallax = function(controller, debug) {
 desktop.createInfoAnim = function(controller, debug) {
     var infoAnim = new TimelineMax();
     infoAnim.add(
-        [
-            TweenMax.fromTo('#info-about',1,
-                {
-                    css: {
-                        'opacity': 0,
-                        '-webkit-transform': 'translateY(250px)',
-                        'transform': 'translateY(250px)'
-                    }, ease: Expo.easeOut
-                },
-                {
-                    css: {
-                        'opacity': 1,
-                        '-webkit-transform': 'translateY(0)',
-                        'transform': 'translateY(0px)'
-                    }, ease: Expo.easeOut
-                }
-            ),
-            TweenMax.fromTo('#info-rules',1.25,
-                {
-                    css: {
-                        'opacity': 0,
-                        '-webkit-transform': 'translateY(250px)',
-                        'transform': 'translateY(250px)'
-                    }, ease: Expo.easeOut
-                },
-                {
-                    css: {
-                        'opacity': 1,
-                        '-webkit-transform': 'translateY(0)',
-                        'transform': 'translateY(0)'
-                    }, ease: Expo.easeOut
-                }
-            ),
-            TweenMax.fromTo('#info-goals', 1.5,
-                {
-                    css: {
-                        'opacity': 0,
-                        '-webkit-transform': 'translateY(250px)',
-                        'transform': 'translateY(250px)'
-                    }, ease: Expo.easeOut
-                },
-                {
-                    css: {
-                        'opacity': 1,
-                        '-webkit-transform': 'translateY(0)',
-                        'transform': 'translateY(0)'
-                    }, ease: Expo.easeOut
-                }
-            )
-        ]
+        TweenMax.fromTo(['#info-about','#info-rules','#info-goals'],2,
+            {
+                css: {
+                    'opacity': 0,
+                    '-webkit-transform': 'translateY(250px)',
+                    'transform': 'translateY(250px)'
+                }, ease: Expo.easeOut
+            },
+            {
+                css: {
+                    'opacity': 1,
+                    '-webkit-transform': 'translateY(0)',
+                    'transform': 'translateY(0px)'
+                }, ease: Expo.easeOut
+            }
+        )
     );
 
     var infoScene = new scrollmagic.Scene({
@@ -131,40 +97,22 @@ desktop.createInfoAnim = function(controller, debug) {
 desktop.createCommunityAnim = function(controller, debug) {
     var communityAnim = new TimelineMax();
         communityAnim.add(
-            [
-                TweenMax.fromTo('#community-apply',1,
-                    {
-                        css: {
-                            'opacity': 0,
-                            '-webkit-transform': 'translateY(250px)',
-                            'transform': 'translateY(250px)'
-                        }, ease: Expo.easeOut
-                    },
-                    {
-                        css: {
-                            'opacity': 1,
-                            '-webkit-transform': 'translateY(0)',
-                            'transform': 'translateY(0px)'
-                        }, ease: Expo.easeOut
-                    }
-                ),
-                TweenMax.fromTo('#community-discord',1.25,
-                    {
-                        css: {
-                            'opacity': 0,
-                            '-webkit-transform': 'translateY(250px)',
-                            'transform': 'translateY(250px)'
-                        }, ease: Expo.easeOut
-                    },
-                    {
-                        css: {
-                            'opacity': 1,
-                            '-webkit-transform': 'translateY(0)',
-                            'transform': 'translateY(0)'
-                        }, ease: Expo.easeOut
-                    }
-                )
-            ]
+            TweenMax.fromTo(['#community-apply','#community-discord'],2,
+                {
+                    css: {
+                        'opacity': 0,
+                        '-webkit-transform': 'translateY(250px)',
+                        'transform': 'translateY(250px)'
+                    }, ease: Expo.easeOut
+                },
+                {
+                    css: {
+                        'opacity': 1,
+                        '-webkit-transform': 'translateY(0)',
+                        'transform': 'translateY(0px)'
+                    }, ease: Expo.easeOut
+                }
+            )
         );
     var communityScene = new scrollmagic.Scene({
         triggerElement: '#community',
