@@ -95,3 +95,16 @@
 .grow {
   @include grow;
 }
+
+//Media Queries
+@mixin mobile($content) {
+  @media (max-width: $mobile) {
+    $content
+  }
+}
+
+@mixin desktop($content) {
+  @media (min-width: ($tablet + 1px)) {
+    $content
+  }
+}

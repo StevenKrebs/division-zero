@@ -4,9 +4,7 @@ nav {
   position: fixed;
   z-index: 2;
   top: 17vh;
-  @media (min-width: ($tablet + 1px)) {
-    top: 38vh;
-  }
+  @include mobile(top: 38vh);
   padding: 0 0.5 * $size;
   background-color: transparentize($body, .5);
   border-top-right-radius: 0.25 * $size;
