@@ -20,7 +20,7 @@
 
 .circle {
   background-color: rgba(0,0,0,0);
-  border: 5px solid transparentize($highlight,.1);
+  border: 5px solid transparentize(lighten($highlight,20%),.1);
   opacity: .9;
   border-right: 5px solid rgba(0,0,0,0);
   border-left: 5px solid rgba(0,0,0,0);
@@ -35,7 +35,7 @@
 
 .circle-inner {
   background-color: rgba(0,0,0,0);
-  border: 5px solid transparentize($highlight,.1);
+  border: 5px solid transparentize(lighten($highlight,20%),.1);
   opacity: .9;
   border-left: 5px solid rgba(0,0,0,0);
   border-right: 5px solid rgba(0,0,0,0);
