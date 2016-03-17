@@ -15,7 +15,7 @@ header {
     align-content: center;
     vertical-align: top;
     width: 100%;
-    @media (max-width: $mobile) {
+    @include media(mobile) {
       border-bottom: 1px solid black;
     }
   }
@@ -69,8 +69,8 @@ header {
         margin-top: -$size;
         height: auto;
         @include filter;
-        @media (max-width: ($mobile - 1px)) {
-          max-width: 350px;
+        @include media(mobile) {
+          max-width: 50%;
         }
       }
     }

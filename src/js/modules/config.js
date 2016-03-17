@@ -22,7 +22,7 @@ exports.windowSizes.mobile = function() {
 };
 
 exports.windowSizes.checkMobile = function() {
-  return $(window).width() <= exports.windowSizes.mobile()
+    return $(window).height() <= exports.windowSizes.tablet() || $(window).width() <= exports.windowSizes.tablet()
 };
 
 //Generic animation timings

@@ -14,16 +14,14 @@ main {
       justify-content: space-between;
       align-items: center;
       align-content: center;
-      @media(min-width: $tablet) {
+      @include media(desktop) {
         flex-direction: row;
         align-items: stretch;
         align-content: stretch;
+        padding: 0 250px;
         &:nth-of-type(even) {
           justify-content: space-around;
         }
-      }
-      @media(min-width: 1390px) {
-        padding: 0 250px;
       }
     }
     article {
@@ -36,11 +34,11 @@ main {
       align-content: center;
       justify-content: center;
       &#info-about, &#info-goals, &#community-discord {
-        @media (max-width: ($tablet - 1px)) {
+        @include media(mobile) {
           background-color: $bg;
         }
       }
-      @media (max-width: ($tablet - 1px)) {
+      @include media(mobile) {
         &#info-rules {
           background: url("#{$imgpath}/order.jpg") no-repeat center;
           background-size: cover;
@@ -82,17 +80,15 @@ main {
     }
     &#info {
       background-color: $bg;
-      @media (min-width: ($mobile + 1px)) {
+      @include media(desktop) {
         background: url("#{$imgpath}/recruit.jpg") no-repeat center $overlay;
         box-shadow: $inset;
         background-attachment: fixed;
       }
     }
     &#community {
-      @media (min-width: ($tablet + 1px)) {
+      @include media(desktop) {
         box-shadow: $shadow;
-      }
-      @media (min-width: ($mobile + 1px)) {
         background: url("#{$imgpath}/logo.svg") no-repeat center;
         background-size: contain;
       }

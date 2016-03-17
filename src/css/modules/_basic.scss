@@ -21,7 +21,7 @@ a {
   text-decoration: none;
   color: darken(white,10%);
   &:hover {
-    @media (min-width: $tablet) {
+    @include media(desktop) {
       transition-duration: .5s;
       color: $highlight;
     }

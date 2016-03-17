@@ -97,14 +97,16 @@
 }
 
 //Media Queries
-@mixin mobile($content) {
-  @media (max-width: $mobile) {
-    $content
-  }
-}
 
-@mixin desktop($content) {
-  @media (min-width: ($tablet + 1px)) {
-    $content
+@mixin media($bp) {
+  @if $bp == mobile {
+    @media (max-width: $tablet) {
+      @content;
+    }
+  }
+  @if $bp == desktop {
+    @media (min-width: ($tablet + 1px)) {
+      @content;
+    }
   }
 }

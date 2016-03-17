@@ -1,6 +1,6 @@
 #discord-userlist {
   position: relative;
-  @media (min-width: $tablet) {
+  @include media(desktop) {
     min-height: 288px;
   }
   h3 {
@@ -23,9 +23,7 @@
       }
       span {
         word-wrap: break-word;
-        //&.role-5381 {
-        //  color: @highlight;
-        //}
+
         &.user_status {
           width: 9px;
           height: 9px;
@@ -53,13 +51,12 @@
     width:100%;
     text-align: center;
     margin-top: $size;
-    //position: absolute;
-    @media (min-width: $tablet) {
+    @include media(desktop) {
       bottom: 0;
     }
     a {
       &:hover {
-        @media (min-width: $tablet) {
+        @include media(desktop) {
           transition-duration: .5s;
           color: $highlight;
         }

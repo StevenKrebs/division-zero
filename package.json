@@ -30,7 +30,7 @@
     "imagesloaded": "",
     "scrollmagic": "",
     "gsap": "",
-    "velocity-anim": ""
+    "velocity-animate": ""
   },
   "scripts": {
     "build": "gulp build",
