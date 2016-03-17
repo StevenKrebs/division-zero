@@ -2,10 +2,10 @@ footer {
   display: none;
   text-align: center;
   vertical-align: middle;
-  background: url("@{imgpath}/footer.jpg") top center no-repeat @overlay;
+  background: url("#{$imgpath}/footer.jpg") top center no-repeat $overlay;
   background-size: cover;
-  box-shadow: @inset;
-  padding: 3 * @size - 10 0;
+  box-shadow: $inset;
+  padding: 3 * $size - 10 0;
     span {
     line-height: 120%;
     i {
@@ -18,7 +18,7 @@ footer {
     }
   }
   .backward {
-    .grow;
-    margin: 0 auto @size;
+    @include grow;
+    margin: 0 auto $size;
   }
 }

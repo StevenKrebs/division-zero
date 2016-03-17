@@ -1,0 +1,114 @@
+/* Variables */
+$body: #23272A;
+$bg: #2C2F33;
+$color: #fff;
+$active: #555;
+$overlay: #111;
+$highlight: #e76113;
+$font: 'Titillium Web', sans-serif;
+$size: 16px;
+$tablet: 1024px;
+$mobile: 768px;
+$shadow: 1px 1px 1px black;
+$inset: inset 0 0 3px 1px black;
+$imgpath: "../img";
+$online: #43b581;
+$idle: #faa61a;
+
+/* Mixins */
+@mixin highlight {
+  color: $highlight;
+}
+
+.highlight {
+  @include highlight;
+}
+
+@mixin bottom-border($color) {
+  border-bottom: 2px solid $color;
+}
+
+@mixin float {
+  position: fixed;
+  top: 0px;
+}
+
+@mixin li-box {
+  border: solid thin transparentize(white,.8);
+  background: transparentize(darken(white,60%),.2);
+  margin-bottom: 5px;
+  padding: 10px 15px;
+  box-shadow: $shadow;
+}
+
+@mixin font {
+  font-size: $size;
+  font-family: $font;
+}
+
+@mixin filter {
+  filter: drop-shadow($shadow);
+  -webkit-filter: drop-shadow($shadow);
+}
+
+@mixin bold {
+  font-weight: bold;
+}
+
+@mixin text-shadow {
+  text-shadow: $shadow;
+}
+
+@mixin x1 {
+  font-size: $size;
+  width: $size;
+}
+
+.x1 {
+  @include x1;
+}
+
+@mixin x2 {
+  font-size: 1.5 * $size + 1;
+  width: 1.5 * $size + 1;
+}
+
+.x2 {
+  @include x2;
+}
+
+@mixin x3 {
+  font-size: 3 * $size;
+  width: 3 * $size;
+}
+
+.x3 {
+  @include x3
+}
+
+@mixin locked {
+  height: 100% !important;
+  overflow: hidden !important;
+}
+
+.locked {
+  @include locked;
+}
+
+@mixin grow {
+  cursor: pointer;
+  &:hover {
+    &:before {
+      @media (min-width: $tablet) {
+        transform: scale(1.2);
+        transition: all 0.2s ease;
+        -webkit-transition: all 0.2s ease;
+        color: $highlight;
+      }
+    }
+  }
+}
+
+.grow {
+  @include grow;
+}

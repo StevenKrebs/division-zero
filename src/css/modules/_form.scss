@@ -2,16 +2,16 @@
   text-align: center;
   #form-result-text {
     line-height: 240px;
-    color: @highlight;
+    color: $highlight;
   }
   #retry {
     display: none;
     margin: 0 auto;
     cursor: pointer;
     &:hover {
-      @media (min-width: @tablet) {
+      @media (min-width: $tablet) {
         transition-duration: .5s;
-        color: @highlight;
+        color: $highlight;
       }
     }
   }
@@ -19,7 +19,7 @@
 
 form {
   .formfield {
-    margin: @size auto;
+    margin: $size auto;
     width: 200px;
     ul {
       margin: 0;
@@ -27,27 +27,27 @@ form {
   }
   .submitfield {
     vertical-align: bottom;
-    margin-top: @size;
+    margin-top: $size;
     text-align: center;
     .form-info {
       display: block;
-      margin-bottom: @size;
+      margin-bottom: $size;
     }
   }
   .form-input-error {
-    color: @highlight;
+    color: $highlight;
     line-height: 150%;
-    font-size: @size - 2;
+    font-size: $size - 2;
   }
   .submit {
     cursor: pointer;
-    .text-shadow;
+    @include text-shadow;
     text-decoration: none;
     color: darken(white,10%);
     &:hover {
-      @media (min-width: @tablet) {
+      @media (min-width: $tablet) {
         transition-duration: .5s;
-        color: @highlight;
+        color: $highlight;
       }
     }
   }
@@ -59,10 +59,10 @@ form {
     color: white;
     border-radius: 0px;
     width: 238px;
-    .bottom-border;
+    @include bottom-border($body);
     &:focus {
       outline: none !important;
-      .bottom-border(@highlight);
+      @include bottom-border($highlight);
     }
   }
 }

@@ -2,8 +2,8 @@ module.exports = {
     paths: {
         base: './',
         styles: {
-            src: './src/css/styles.less',
-            modules: './src/css/modules/*.less',
+            src: './src/css/styles.scss',
+            modules: './src/css/modules/*.scss',
             dest: './dist/css'
         },
         scripts: {

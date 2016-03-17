@@ -1,15 +1,15 @@
 // Gulp Dependencies
 var gulp        = require('gulp'),
     rename      = require('gulp-rename'),
-    config      = require('../config'),
+    config      = require('../config.js'),
 
 // Browser sync
     browserSync = require('browser-sync'),
     reload      = browserSync.reload,
 
 // Style Dependencies
-    less        = require('gulp-less'),
-    glob        = require('less-plugin-glob'),
+    sass        = require('gulp-sass'),
+    glob        = require('gulp-sass-glob'),
     minifyCSS   = require('gulp-minify-css'),
 
 //Source mapping Dependencies
@@ -18,9 +18,8 @@ var gulp        = require('gulp'),
 gulp.task('_styles', function() {
     return gulp.src(config.paths.styles.src)
         .pipe(sourcemaps.init())
-        .pipe(less({
-            plugins: [glob]
-        }))
+        .pipe(glob())
+        .pipe(sass())
         .pipe(minifyCSS({
             processImportFrom: ['local']
         }))

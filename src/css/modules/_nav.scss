@@ -1,0 +1,27 @@
+nav {
+  display: none;
+  @include x2;
+  position: fixed;
+  z-index: 2;
+  top: 17vh;
+  @media (min-width: ($tablet + 1px)) {
+    top: 38vh;
+  }
+  padding: 0 0.5 * $size;
+  background-color: transparentize($body, .5);
+  border-top-right-radius: 0.25 * $size;
+  border-bottom-right-radius: 0.25 * $size;
+  border: 1px solid darken($color, 80%);
+  border-left-width: 0;
+  ul {
+    li{
+      margin: .5 * $size 0;
+    }
+  }
+  .mobile-nav {
+    display: none;
+  }
+  .desktop-nav {
+    display: none;
+  }
+}

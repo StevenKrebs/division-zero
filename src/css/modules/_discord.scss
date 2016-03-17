@@ -1,6 +1,6 @@
 #discord-userlist {
   position: relative;
-  @media (min-width: @tablet) {
+  @media (min-width: $tablet) {
     min-height: 288px;
   }
   h3 {
@@ -14,7 +14,7 @@
       margin: 5px;
       position: relative;
       img {
-        width: 1.75 * @size;
+        width: 1.75 * $size;
         height: auto;
         border-radius: 100%;
         border: 2px solid transparent;
@@ -35,16 +35,16 @@
           left: 36px;
           border: 1px solid black;
           &[data-status] {
-            background-color: @idle;
+            background-color: $idle;
           }
           &[data-status="online"] {
-            background-color: @online;
+            background-color: $online;
           }
         }
         &.user_game {
-          color: darken(@color, 25%);
+          color: darken($color, 25%);
           margin-left: 4px;
-          font-size: 0.7 * @size;
+          font-size: 0.7 * $size;
         }
       }
     }
@@ -52,16 +52,16 @@
   .join {
     width:100%;
     text-align: center;
-    margin-top: @size;
+    margin-top: $size;
     //position: absolute;
-    @media (min-width: @tablet) {
+    @media (min-width: $tablet) {
       bottom: 0;
     }
     a {
       &:hover {
-        @media (min-width: @tablet) {
+        @media (min-width: $tablet) {
           transition-duration: .5s;
-          color: @highlight;
+          color: $highlight;
         }
       }
     }

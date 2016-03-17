@@ -1,23 +1,6 @@
-/* Variables */
-@body : #23272A;
-@bg : #2C2F33;
-@color : #fff;
-@active : #555;
-@overlay : #111;
-@highlight : #e76113;
-@font : 'Titillium Web', sans-serif;
-@size : 16px;
-@tablet : 1024px;
-@mobile : 768px;
-@shadow: 1px 1px 1px black;
-@inset: inset 0 0 3px 1px black;
-@imgpath: "../img";
-@online: #43b581;
-@idle: #faa61a;
-
 /* Basic setup */
 html {
-  .font;
+  @inlcude font;
   -webkit-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -25,22 +8,22 @@ html {
 }
 
 body {
-  .font;
-  color: @color;
-  background-color: @body;
+  @include font;
+  color: $color;
+  background-color: $body;
   -webkit-font-smoothing: antialiased;
   width: 100%;
   overflow: hidden;
 }
 
 a {
-  .text-shadow;
+  @include text-shadow;
   text-decoration: none;
   color: darken(white,10%);
   &:hover {
-    @media (min-width: @tablet) {
+    @media (min-width: $tablet) {
       transition-duration: .5s;
-      color: @highlight;
+      color: $highlight;
     }
   }
 }
@@ -65,5 +48,5 @@ header, main, footer {
 }
 
 header, footer {
-  .text-shadow;
+  @include text-shadow;
 }

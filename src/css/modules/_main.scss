@@ -6,7 +6,7 @@ main {
     text-align: left;
     min-height: 100vh;
     .overlay {
-      background-color: fade(@body,96%);
+      background-color: transparentize($body,.1);
     }
     &.flexbox, .flexbox {
       display: flex;
@@ -14,7 +14,7 @@ main {
       justify-content: space-between;
       align-items: center;
       align-content: center;
-      @media(min-width: @tablet) {
+      @media(min-width: $tablet) {
         flex-direction: row;
         align-items: stretch;
         align-content: stretch;
@@ -36,33 +36,33 @@ main {
       align-content: center;
       justify-content: center;
       &#info-about, &#info-goals, &#community-discord {
-        @media (max-width: (@tablet - 1px)) {
-          background-color: @bg;
+        @media (max-width: ($tablet - 1px)) {
+          background-color: $bg;
         }
       }
-      @media (max-width: (@tablet - 1px)) {
+      @media (max-width: ($tablet - 1px)) {
         &#info-rules {
-          background: url("@{imgpath}/order.jpg") no-repeat center;
+          background: url("#{$imgpath}/order.jpg") no-repeat center;
           background-size: cover;
-          background-color: @overlay;
-          box-shadow: @inset;
+          background-color: $overlay;
+          box-shadow: $inset;
         }
         &#community-apply {
-          background: url("@{imgpath}/recruit.jpg") no-repeat center;
+          background: url("#{$imgpath}/recruit.jpg") no-repeat center;
           background-size: cover;
-          background-color: @overlay;
-          box-shadow: @inset;
+          background-color: $overlay;
+          box-shadow: $inset;
         }
       }
       .headline {
         text-align: center;
         border: 2px solid transparent;
         text-transform: uppercase;
-        .text-shadow;
-        color: @highlight;
-        margin: 0 0 0.5 * @size;
+        @include text-shadow;
+        color: $highlight;
+        margin: 0 0 0.5 * $size;
         span {
-          .x2;
+          @include x2;
         }
       }
       .content {
@@ -71,9 +71,9 @@ main {
           width: 290px;
           margin: 0 auto;
           li {
-            .li-box;
+            @include li-box;
             .label {
-              .bold;
+              @include bold;
               margin-right: 4px;
             }
           }
@@ -81,19 +81,19 @@ main {
       }
     }
     &#info {
-      background-color: @bg;
-      @media (min-width: (@mobile + 1px)) {
-        background: url("@{imgpath}/recruit.jpg") no-repeat center @overlay;
-        box-shadow: @inset;
+      background-color: $bg;
+      @media (min-width: ($mobile + 1px)) {
+        background: url("#{$imgpath}/recruit.jpg") no-repeat center $overlay;
+        box-shadow: $inset;
         background-attachment: fixed;
       }
     }
     &#community {
-      @media (min-width: (@tablet + 1px)) {
-        box-shadow: @shadow;
+      @media (min-width: ($tablet + 1px)) {
+        box-shadow: $shadow;
       }
-      @media (min-width: (@mobile + 1px)) {
-        background: url("@{imgpath}/logo.svg") no-repeat center;
+      @media (min-width: ($mobile + 1px)) {
+        background: url("#{$imgpath}/logo.svg") no-repeat center;
         background-size: contain;
       }
     }

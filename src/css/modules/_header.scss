@@ -1,10 +1,10 @@
 header {
-  background: url("@{imgpath}/shd.svg") no-repeat center;
+  background: url("#{$imgpath}/shd.svg") no-repeat center;
   background-size: contain;
   position: relative;
   height: 100vh;
   .overlay {
-    background-color: fade(@body,96%);
+    background-color: transparentize($body,.1);
     position: relative;
     height: 100vh;
     text-align: center;
@@ -15,7 +15,7 @@ header {
     align-content: center;
     vertical-align: top;
     width: 100%;
-    @media (max-width: @mobile) {
+    @media (max-width: $mobile) {
       border-bottom: 1px solid black;
     }
   }
@@ -33,8 +33,8 @@ header {
             padding: 0 10px;
             line-height: 200%;
             cursor: pointer;
-            .grow;
-            .text-shadow;
+            @include grow;
+            @include text-shadow;
             &:first-child{
               padding: 0 15px;
             }
@@ -54,7 +54,7 @@ header {
         transition: all 0.2s ease;
         -webkit-transition: all 0.2s ease;
         path {
-          fill: @highlight;
+          fill: $highlight;
         }
       }
     }
@@ -66,21 +66,21 @@ header {
       margin: 0 auto;
       img {
         max-width: 900px;
-        margin-top: -@size;
+        margin-top: -$size;
         height: auto;
-        .filter;
-        @media (max-width: (@mobile - 1px)) {
+        @include filter;
+        @media (max-width: ($mobile - 1px)) {
           max-width: 350px;
         }
       }
     }
     sub {
-      font-size: @size;
+      font-size: $size;
       display: block;
     }
   }
   .forward {
-    margin: @size auto 0;
-    .grow;
+    margin: $size auto 0;
+    @include grow;
   }
 }
