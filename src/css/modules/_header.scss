@@ -70,7 +70,7 @@ header {
         height: auto;
         @include filter;
         @include media(mobile) {
-          max-width: 50%;
+          max-width: 90%;
         }
       }
     }

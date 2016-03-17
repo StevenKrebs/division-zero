@@ -10,7 +10,7 @@ $('nav a').each(function() {
 });
 
 module.exports.getScrollPosMobile = function() {
-    if ($(document).scrollTop() + $(window).height() >= $('footer').position().top + $('footer').outerHeight()) {
+    if ($(document).scrollTop() + $(window).height() >= $('footer').position().top) {
         $('nav a').removeClass('highlight');
         $('nav a[href="#footer"]').addClass('highlight');
     } else {

@@ -1,4 +1,19 @@
 /* Mixins */
+
+//Media Queries
+@mixin media($bp) {
+  @if $bp == mobile {
+    @media (max-width: $tablet) {
+      @content;
+    }
+  }
+  @if $bp == desktop {
+    @media (min-width: ($tablet + 1px)) {
+      @content;
+    }
+  }
+}
+
 @mixin highlight {
   color: $highlight;
 }
@@ -82,7 +97,7 @@
   cursor: pointer;
   &:hover {
     &:before {
-      @media (min-width: $tablet) {
+      @include media(desktop) {
         transform: scale(1.2);
         transition: all 0.2s ease;
         -webkit-transition: all 0.2s ease;
@@ -94,19 +109,4 @@
 
 .grow {
   @include grow;
-}
-
-//Media Queries
-
-@mixin media($bp) {
-  @if $bp == mobile {
-    @media (max-width: $tablet) {
-      @content;
-    }
-  }
-  @if $bp == desktop {
-    @media (min-width: ($tablet + 1px)) {
-      @content;
-    }
-  }
 }

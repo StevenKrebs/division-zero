@@ -5,7 +5,9 @@
   animation-direction: alternate;
   animation-timing-function: ease-in-out;
   &:hover {
-    animation-name: none;
+    @include media(desktop) {
+      animation-name: none;
+    }
   }
 }
 

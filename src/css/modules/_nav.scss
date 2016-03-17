@@ -1,6 +1,7 @@
 nav {
   display: none;
   @include x2;
+  width: 22px;
   position: fixed;
   z-index: 2;
   top: 5vh;
