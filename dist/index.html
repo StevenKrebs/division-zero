@@ -144,11 +144,14 @@
                             </div>
                         </div>
                     </article>
-                    <article id="community-discord">
+                    <article id="community-discord" ng-controller="discordCtrl">
                         <div class="headline"><i class="icon ion-android-wifi x2"></i><span>{{'Team Network' | translate}}</span></div>
                         <div class="content">
                             <div id="discord-userlist">
-                                <h3>{{memberCount}}</h3>
+                                <h3>{{membersOnline}}</h3>
+                                <ul>
+                                    <li ng-repeat=""
+                                </ul>
                                 <div class="join"><a href="//voice.division-zero.org" target="_blank"><i class="icon ion-log-in"></i>{{'Login' | translate}}</a></div>
                             </div>
                         </div>
