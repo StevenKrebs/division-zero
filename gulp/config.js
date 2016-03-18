@@ -9,7 +9,8 @@ module.exports = {
         scripts: {
             src: './src/js/scripts.js',
             modules: './src/js/modules/*.js',
-            dest: './dist/js'
+            dest: './dist/js',
+            langs: "./src/js/lang/*.json"
         },
         maps: {
             dest: '../maps'

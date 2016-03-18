@@ -96,7 +96,7 @@
                                 <li><span class="label">{{'Activity_label' | translate}}</span>{{'Activity_value' | translate}}</li>
                                 <li><span class="label">{{'Exploiting_label' | translate}}</span>{{'Exploiting_value' | translate}}</li>
                                 <li><span class="label">{{'Hacking_label' | translate}}</span>{{'Hacking_value' | translate}}</li>
-                                <li><span class="label">{{'Griefing_label' | translate}}</span>{{'Griefing_value' | translate}}!</li>
+                                <li><span class="label">{{'Griefing_label' | translate}}</span>{{'Griefing_value' | translate}}</li>
                             </ul>
                         </div>
                     </article>
@@ -104,12 +104,12 @@
                         <div class="headline"><i class="icon ion-android-locate x2"></i><span>{{'info-goals' | translate}}</span></div>
                         <div class="content">
                             <ul>
-                                <li><span class="label">{{'Enjoying_label' | translate}}</span>{{'Activity_label' | translate}}</li>
-                                <li><span class="label">{{'Approach_label' | translate}}</span>{{'Relaxed_value' | translate}}</li>
+                                <li><span class="label">{{'Enjoying_label' | translate}}</span>{{'Enjoying_value' | translate}}</li>
+                                <li><span class="label">{{'Approach_label' | translate}}</span>{{'Approach_value' | translate}}</li>
                                 <li><span class="label">{{'Peers_label' | translate}}</span>{{'Peers_value' | translate}}</li>
-                                <li><span class="label">{{'Interests_label' | translate}}</span>{{'Peers_value' | translate}}</li>
+                                <li><span class="label">{{'Interests_label' | translate}}</span>{{'Interests_value' | translate}}</li>
                                 <li><span class="label">{{'Content-Range_label' | translate}}</span>{{'Content-Range_value' | translate}}</li>
-                                <li><span class="label">{{'Rooted_label' | translate}}</span>{{'Rooted_filler' | translate}}<a href="//thedivisiondiscord.com" target="_blank">{{'Rooted_value' | translate}}</a></li>
+                                <li><span class="label">{{'Rooted_label' | translate}}</span>{{'Rooted_filler' | translate}} <a href="//thedivisiondiscord.com" target="_blank">{{'Rooted_value' | translate}}</a></li>
                             </ul>
                         </div>
                     </article>
@@ -117,39 +117,39 @@
                 <section id="community" class="scene">
                     <div class="flexbox overlay">
                     <article id="community-apply">
-                        <div class="headline"><i class="icon ion-person-add x2"></i><span>Join up!</span></div>
+                        <div class="headline"><i class="icon ion-person-add x2"></i><span>{{'Join' | translate}}</span></div>
                         <div class="content">
-                            <div id="form-result"><span id="form-result-text"></span><span id="retry"><i class="icon ion-android-refresh"></i>Retry</span></div>
+                            <div id="form-result"><span id="form-result-text"></span><span id="retry"><i class="icon ion-android-refresh"></i>{{'Retry' | translate}}</span></div>
                             <div id="form">
                                 <div id="community-apply-info">
-                                    <h3>You want to join the team?</h3>
+                                    <h3>{{'Join_the_team' | translate}}</h3>
                                 </div>
                                 <form id="application" method="post" action="application.php">
                                     <ul class="formfield">
                                         <li>
-                                            <input type="text" id="Agent-handle" name="Agent-handle" required placeholder="Your nickname..." data-error="We need your callsign, agent!" autocomplete="off">
+                                            <input type="text" id="Agent-handle" name="Agent-handle" required placeholder="{{'Nickname' | translate}}" data-error="We need your callsign, agent!" autocomplete="off">
                                         </li>
                                         <li>
-                                            <input type="email" id="Agent-email" name="Agent-email" required placeholder="Your e-mail address..." data-error="We need your contact address, agent!" autocomplete="off">
+                                            <input type="email" id="Agent-email" name="Agent-email" required placeholder="{{'E-Mail' | translate}}" data-error="We need your contact address, agent!" autocomplete="off">
                                         </li>
                                         <li>
-                                            <input type="text" id="Agent-account" name="Agent-account" required placeholder="Your UPlay-account name..." data-error="We need your network ID, agent!" autocomplete="off">
+                                            <input type="text" id="Agent-account" name="Agent-account" required placeholder="{{'Uplay' | translate}}" data-error="We need your network ID, agent!" autocomplete="off">
                                         </li>
                                     </ul>
                                     <div class="submitfield">
-                                        <span class="form-info">Just send us your contact details.<br />We will reach out to you!</span>
-                                        <span class="submit" id="submit"><i class="icon ion-android-send"></i>Submit</span>
+                                        <span class="form-info">{{'Reach_out_1' | translate}}<br />{{'Reach_out_2' | translate}}</span>
+                                        <span class="submit" id="submit"><i class="icon ion-android-send"></i>{{'Submit' | translate}}</span>
                                     </div>
                                 </form>
                             </div>
                         </div>
                     </article>
                     <article id="community-discord">
-                        <div class="headline"><i class="icon ion-android-wifi x2"></i><span>Team Network</span></div>
+                        <div class="headline"><i class="icon ion-android-wifi x2"></i><span>{{'Team Network' | translate}}</span></div>
                         <div class="content">
                             <div id="discord-userlist">
-                                <h3>No agent online!</h3>
-                                <div class="join"><a href="//voice.division-zero.org" target="_blank"><i class="icon ion-log-in"></i>Login</a></div>
+                                <h3>{{memberCount}}</h3>
+                                <div class="join"><a href="//voice.division-zero.org" target="_blank"><i class="icon ion-log-in"></i>{{'Login' | translate}}</a></div>
                             </div>
                         </div>
                     </article>

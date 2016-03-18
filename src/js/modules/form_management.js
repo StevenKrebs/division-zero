@@ -1,4 +1,4 @@
-/* Form management */
+// Form management
 $('#submit').click(function() {
     $('.form-input-error').each(function() {
         $(this).remove();

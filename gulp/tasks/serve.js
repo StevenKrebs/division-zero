@@ -14,6 +14,7 @@ gulp.task('serve', ['_styles', '_scripts'], function () {
         }
     });
     gulp.watch(config.paths.scripts.modules, ['_scripts']);
+    gulp.watch(config.paths.scripts.langs, ['_scripts']);
     gulp.watch(config.paths.styles.modules, ['_styles']);
     gulp.watch(config.paths.template, reload);
 });

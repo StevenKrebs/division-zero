@@ -13,7 +13,7 @@ var translator = exports.translator = angular.module("translator", ['pascalprech
             .translations('en', require('../lang/en_GB.json'))
             .determinePreferredLanguage()
             .fallbackLanguage('en')
-            .useSanitizeValueStrategy('escape');
+            .useSanitizeValueStrategy(null);
     }]);
 
     
