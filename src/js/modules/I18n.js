@@ -8,10 +8,12 @@ require('angular-translate');
 
 var translator = exports.translator = angular.module("translator", ['pascalprecht.translate']);
     translator.config(['$translateProvider', function ($translateProvider) {
-       $translateProvider.translations('de', {
-            'info-about': 'Über uns'
-        });
-        $translateProvider.determinePreferredLanguage();
+        $translateProvider
+            .translations('de', require('../lang/de_DE.json'))
+            .translations('en', require('../lang/en_GB.json'))
+            .determinePreferredLanguage()
+            .fallbackLanguage('en')
+            .useSanitizeValueStrategy('escape');
     }]);
 
     

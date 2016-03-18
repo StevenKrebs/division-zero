@@ -1,0 +1,15 @@
+{
+  'info-about'        : 'About us',
+  'Game_label'        : 'Game:',
+  'Game_value'        : "Tom Clancy's The Devision",
+  "Platform_label"    : "Platform:",
+  "Platform_value"    : "PC",
+  "Clan-Tag_label"    : "Tag:",
+  "Clan-Tag_value"    : "/0/",
+  "Languages_label"   : "Languages:",
+  "Languages_value"   : "English, German",
+  "Time-Zone_label"   : "Time zone:",
+  "Time-Zone_value"   : "CET",
+  "Audience_label"    : "Audience:",
+  "Audience_value"    : "Casual"
+}
