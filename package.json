@@ -29,7 +29,10 @@
     "imagesloaded": "^4.1.0",
     "scrollmagic": "^2.0.5",
     "gsap": "^1.18.2",
-    "velocity-animate": "^1.2.3"
+    "velocity-animate": "^1.2.3",
+    "angular": "^1.5.1",
+    "angular-route": "^1.5.1",
+    "angular-translate": "^2.10.0."
   },
   "scripts": {
     "build": "gulp build",
