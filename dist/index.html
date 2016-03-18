@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
     <head>
         <meta charset="UTF-8" />
         <title>Team /0/</title>
@@ -31,7 +31,7 @@
 <!--                TTTTTTTTTTT      eeeeeeeeeeeeee  aaaaaaaaaa  aaaammmmmm   mmmmmm   mmmmmm     ///////                 000000000  ///////                        -->
 
     </head>
-    <body>
+    <body ng-app="translator">
         <div class="loader">
             <div class="loaderContainer">
                 <div class="circle"></div>
@@ -75,36 +75,36 @@
             <main>
                 <section class="flexbox scene" id="info">
                     <article id="info-about">
-                        <div class="headline"><i class="icon ion-eye x2"></i><span>Who we are</span></div>
+                        <div class="headline"><i class="icon ion-eye x2"></i><span>{{'info-about' | translate}}</span></div>
                         <div class="content">
                             <ul>
-                                <li><span class="label">Game:</span><a href="//tomclancy-thedivision.ubi.com/game/de-de/home/" target="_blank" class="">Tom Clancy's The Division</a></li>
-                                <li><span class="label">Platform:</span>PC</li>
-                                <li><span class="label">Tag:</span>/0/</li>
-                                <li><span class="label">Languages:</span>English, German</li>
-                                <li><span class="label">Time Zone:</span>CET</li>
-                                <li><span class="label">Audience:</span>casual/mid-core</li>
+                                <li><span class="label">{{'Game_label' | translate}}</span><a href="//tomclancy-thedivision.ubi.com/game/de-de/home/" target="_blank" class="">{{'Game_value' | translate}}</a></li>
+                                <li><span class="label">{{'Platform_label' | translate}}</span>{{'Plattform_value' | translate}}</li>
+                                <li><span class="label">{{'Clan-Tag_value' | translate}}</span>{{'Clan-tag_value' | translate}}</li>
+                                <li><span class="label">{{'Languages_label' | translate}}</span>{{'Languages_value' | translate}}</li>
+                                <li><span class="label">{{'Time-Zone_label' | translate}}</span>{{'Time-Zone_value' | translate}}</li>
+                                <li><span class="label">{{'Audience_label' | translate}}</span>{{'Audience_value' | translate}}</li>
                             </ul>
                         </div>
                     </article>
                     <article id="info-rules">
-                        <div class="headline"><i class="icon ion-flash x2"></i><span>What we expect</span></div>
+                        <div class="headline"><i class="icon ion-flash x2"></i><span>{{'info-rules' | translate}}</span></div>
                         <div class="content">
                             <ul>
-                                <li><span class="label">Minimum age:</span>18</li>
-                                <li><span class="label">Headset</span>for team coms</li>
-                                <li><span class="label">Regular</span>activity</li>
-                                <li><span class="label">No</span>exploiting</li>
-                                <li><span class="label">No</span>hacking</li>
-                                <li><span class="label">No</span>griefplay!</li>
+                                <li><span class="label">{{'Min-age_label' | translate}}</span>{{'Min-age_value' | translate}}</li>
+                                <li><span class="label">{{'Headset_label' | translate}}</span>{{'Headset_value' | translate}}</li>
+                                <li><span class="label">{{'Activity_label' | translate}}</span>{{'Activity_value' | translate}}</li>
+                                <li><span class="label">{{'Exploiting_label' | translate}}</span>{{'Exploiting_value' | translate}}</li>
+                                <li><span class="label">{{'Hacking_label' | translate}}</span>{{'Hacking_value' | translate}}</li>
+                                <li><span class="label">{{'Griefing_label' | translate}}</span>{{'Griefing_value' | translate}}!</li>
                             </ul>
                         </div>
                     </article>
                     <article id="info-goals">
-                        <div class="headline"><i class="icon ion-android-locate x2"></i><span>What we offer</span></div>
+                        <div class="headline"><i class="icon ion-android-locate x2"></i><span>{{'info_goals' | translate}}</span></div>
                         <div class="content">
                             <ul>
-                                <li><span class="label">Enjoying</span>the game together</li>
+                                <li><span class="label">{{'Enjoying_label' | translate}}</span>{{'Activity_label' | translate}}</li>
                                 <li><span class="label">Relaxed</span>approach</li>
                                 <li><span class="label">Reliable</span>peers</li>
                                 <li><span class="label">Diverse</span>interests</li>
