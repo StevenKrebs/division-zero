@@ -31,7 +31,8 @@
     "scrollmagic": "",
     "gsap": "",
     "velocity-animate": "",
-    "angular-translate":""
+    "angular-translate":"",
+    "angular":""
   },
   "scripts": {
     "build": "gulp build",
