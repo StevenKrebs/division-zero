@@ -10,7 +10,7 @@ var gulp        = require('gulp'),
 // Style Dependencies
     sass        = require('gulp-sass'),
     glob        = require('gulp-sass-glob'),
-    minifyCSS   = require('gulp-minify-css'),
+    cleanCSS    = require('gulp-clean-css'),
 
 //Source mapping Dependencies
     sourcemaps  = require('gulp-sourcemaps');
@@ -20,7 +20,7 @@ gulp.task('_styles', function() {
         .pipe(sourcemaps.init())
         .pipe(glob())
         .pipe(sass())
-        .pipe(minifyCSS({
+        .pipe(cleanCSS({
             processImportFrom: ['local']
         }))
         .pipe(rename(config.names.styles))
