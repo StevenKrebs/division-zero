@@ -1,13 +1,17 @@
 var angular     = require('angular'),
     config      = require('./config.js'),
-    exports     = module.exports        = {},
-    translator  = exports.translator    = angular.module('translator', ['pascalprecht.translate']);
+    exports     = module.exports        = {};
 
+//Plugins
+require('angular-route');
 require('angular-translate');
 
-translator.config(function ($translateProvider) {
-   $translateProvider.translations('de', {
-       'info-about':  'Über uns'
-   }) ;
-    $translateProvider.preferredLanguage('de');
-});
+var translator = exports.translator = angular.module("translator", ['pascalprecht.translate']);
+    translator.config(['$translateProvider', function ($translateProvider) {
+       $translateProvider.translations('de', {
+            'info-about': 'Über uns'
+        });
+        $translateProvider.determinePreferredLanguage();
+    }]);
+
+    
