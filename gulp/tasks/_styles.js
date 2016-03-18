@@ -10,7 +10,7 @@ var gulp        = require('gulp'),
 // Style Dependencies
     sass        = require('gulp-sass'),
     glob        = require('gulp-sass-glob'),
-    cleanCSS   = require('gulp-clean-css'),
+    cleanCSS    = require('gulp-clean-css'),
 
 //Source mapping Dependencies
     sourcemaps  = require('gulp-sourcemaps');
