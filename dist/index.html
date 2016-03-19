@@ -121,10 +121,12 @@
                         <div class="content">
                             <div id="form" ng-controller="formCtrl">
                                 <div id="form-result" ng-if="success || error">
-                                    <span id="form-result-text">{{applicationResult}}</span>
-                                    <span id="retry" ng-if="error"><i class="icon ion-android-refresh"></i>{{'Retry' | translate}}</span>
+                                    <span id="form-result-text" ng-if="success">{{'applicationSuccess' | translate}}</span>
+                                    <span id="form-result-text" ng-if="error">{{'applicationError' | translate}}</span>
+                                    <br />
+                                    <span id="retry" ng-if="error" ng-click="retry()"><i class="icon ion-android-refresh"></i>{{'Retry' | translate}}</span>
                                 </div>
-                                <form name="application" novalidate>
+                                <form name="application" ng-submit="submitApplication()" novalidate ng-show="!error && !success">
                                     <h3 id="community-apply-info">{{'Join_the_team' | translate}}</h3>
                                     <ul class="formfield">
                                         <li>
@@ -143,7 +145,9 @@
                                     </ul>
                                     <div class="submitfield">
                                         <span class="form-info">{{'Reach_out_1' | translate}}<br />{{'Reach_out_2' | translate}}</span>
-                                        <span class="submit" id="submit" ng-click="submitApplication(application)"><i class="icon ion-android-send"></i>{{'Submit' | translate}}</span>
+                                        <span class="icon ion-android-send submit">
+                                            <input type="submit" id="submit" value="{{'Submit' | translate}}">
+                                        </span>
                                     </div>
                                 </form>
                             </div>
