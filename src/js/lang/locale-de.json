@@ -1,8 +1,9 @@
 {
   //About
-  'info-about'              : 'Wer wir sind',
-  'Game_label'              : 'Spiel:',
-  'Game_value'              : "Tom Clancy's The Devision",
+  "info-about"              : "Wer wir sind",
+  "Game_label"              : "Spiel:",
+  "Game_url"                : "//tomclancy-thedivision.ubi.com/game/de-de/home/",
+  "Game_value"              : "Tom Clancy's The Division",
   "Platform_label"          : "Plattform:",
   "Platform_value"          : "PC",
   "Clan-Tag_label"          : "Tag:",
@@ -11,8 +12,8 @@
   "Languages_value"         : "Deutsch, Englisch",
   "Time-Zone_label"         : "Zeitzone:",
   "Time-Zone_value"         : "CET",
-  "Audience_label"          : "Zielgruppe:",
   "Audience_value"          : "Casual",
+  "Audience_label"          : "Zielgruppe:",
   //Rules
   "info-rules"              : "Was wir wollen",
   "Min-age_label"           : "Mindestalter:",
@@ -45,9 +46,12 @@
   //Application
   "Join"                    : "Tritt uns bei!",
   "Join_the_team"           : "Du willst dem Team beitreten?",
-  "Nickname"                : "Dein Nickname...",
-  "E-Mail"                  : "Deine E-Mail-Adresse...",
-  "Uplay"                   : "Dein Uplay-Anzeigename...",
+  "form_Nickname_ph"        : "Dein Nickname...",
+  "form_Nickname_error"     : "We need your callsign, agent!",
+  "form_E-Mail_ph"          : "Deine E-Mail-Adresse...",
+  "form_E-Mail_error"       : "We need your contact address, agent!",
+  "form_Uplay_ph"           : "Dein Uplay-Anzeigename...",
+  "form_Uplay_error"        : "We need your network ID, agent!",
   "Reach_out_1"             : "Fülle einfach dieses Formular aus.",
   "Reach_out_2"             : "Wir melden uns bei dir!",
   "Submit"                  : "Abschicken",

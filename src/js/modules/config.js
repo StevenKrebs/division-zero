@@ -53,3 +53,5 @@ exports.scrollSettings.scrollSpeed = function() {
 exports.scrollSettings.scrollType = function() {
     return "swing"
 };
+
+//Language file settings

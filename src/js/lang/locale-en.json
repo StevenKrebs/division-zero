@@ -1,8 +1,9 @@
 {
   //About
-  'info-about'          : 'Who we are',
-  'Game_label'          : 'Game:',
-  'Game_value'          : "Tom Clancy's The Devision",
+  "info-about"          : "Who we are",
+  "Game_label"          : "Game:",
+  "Game_value"          : "Tom Clancy's The Division",
+  "Game_url"            : "//tomclancy-thedivision.ubi.com/game/en-us/home/",
   "Platform_label"      : "Platform:",
   "Platform_value"      : "PC",
   "Clan-Tag_label"      : "Tag:",
@@ -39,5 +40,23 @@
   "Content-Range_value" : "of content",
   "Rooted_label"        : "Rooted",
   "Rooted_filler"       : "in the",
-  "Rooted_value"        : "general"
+  "Rooted_value"        : "general",
+  //Application
+  "Join"                    : "Join us!",
+  "Join_the_team"           : "You want to join Team /0/?",
+  "form_Nickname_ph"        : "Your nickname...",
+  "form_Nickname_error"     : "We need your callsign, agent!",
+  "form_E-Mail_ph"          : "Your e-mail...",
+  "form_E-Mail_error"       : "We need your contact address, agent!",
+  "form_Uplay_ph"           : "Your Uplay-account...",
+  "form_Uplay_error"        : "We need your network ID, agent!",
+  "Reach_out_1"             : "Just fill out this small form",
+  "Reach_out_2"             : "We will reach out to you!",
+  "Submit"                  : "Submit",
+  //Discord
+  "Team Network"            : "Team Network",
+  "no_agent_online"         : "No agent online!",
+  "one_agent_online"        : "1 agent online:",
+  "multiple_agents_online"  : " agents online:",
+  "Login"                   : "Login"
 }

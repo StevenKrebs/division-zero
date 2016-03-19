@@ -1,4 +1,14 @@
+var angular = require('angular'),
+    config  = require('./config.js'),
+    app     = angular.module('division_zero');
+
 // Form management
+
+app.controller("formCtrl",["$scope", "$http", function($scope, $http) {
+
+}]);
+
+
 $('#submit').click(function() {
     $('.form-input-error').each(function() {
         $(this).remove();

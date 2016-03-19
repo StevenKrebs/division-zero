@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="division_zero">
     <head>
         <meta charset="UTF-8" />
         <title>Team /0/</title>
@@ -31,7 +31,7 @@
 <!--                TTTTTTTTTTT      eeeeeeeeeeeeee  aaaaaaaaaa  aaaammmmmm   mmmmmm   mmmmmm     ///////                 000000000  ///////                        -->
 
     </head>
-    <body ng-app="translator">
+    <body>
         <div class="loader">
             <div class="loaderContainer">
                 <div class="circle"></div>
@@ -78,9 +78,9 @@
                         <div class="headline"><i class="icon ion-eye x2"></i><span>{{'info-about' | translate}}</span></div>
                         <div class="content">
                             <ul>
-                                <li><span class="label">{{'Game_label' | translate}}</span><a href="//tomclancy-thedivision.ubi.com/game/de-de/home/" target="_blank" class="">{{'Game_value' | translate}}</a></li>
-                                <li><span class="label">{{'Platform_label' | translate}}</span>{{'Plattform_value' | translate}}</li>
-                                <li><span class="label">{{'Clan-Tag_label' | translate}}</span>{{'Clan-tag_value' | translate}}</li>
+                                <li><span class="label">{{'Game_label' | translate}}</span><a href="{{'Game_url' | translate}}" target="_blank" class="">{{'Game_value' | translate}}</a></li>
+                                <li><span class="label">{{'Platform_label' | translate}}</span>{{'Platform_value' | translate}}</li>
+                                <li><span class="label">{{'Clan-Tag_label' | translate}}</span>{{'Clan-Tag_value' | translate}}</li>
                                 <li><span class="label">{{'Languages_label' | translate}}</span>{{'Languages_value' | translate}}</li>
                                 <li><span class="label">{{'Time-Zone_label' | translate}}</span>{{'Time-Zone_value' | translate}}</li>
                                 <li><span class="label">{{'Audience_label' | translate}}</span>{{'Audience_value' | translate}}</li>
@@ -116,24 +116,22 @@
                 </section>
                 <section id="community" class="scene">
                     <div class="flexbox overlay">
-                    <article id="community-apply">
+                    <article id="community-apply" ng-controller="formCtrl">
                         <div class="headline"><i class="icon ion-person-add x2"></i><span>{{'Join' | translate}}</span></div>
                         <div class="content">
                             <div id="form-result"><span id="form-result-text"></span><span id="retry"><i class="icon ion-android-refresh"></i>{{'Retry' | translate}}</span></div>
                             <div id="form">
-                                <div id="community-apply-info">
-                                    <h3>{{'Join_the_team' | translate}}</h3>
-                                </div>
-                                <form id="application" method="post" action="application.php">
+                                <form name="application" novalidate>
+                                    <h3 id="community-apply-info">{{'Join_the_team' | translate}}</h3>
                                     <ul class="formfield">
                                         <li>
-                                            <input type="text" id="Agent-handle" name="Agent-handle" required placeholder="{{'Nickname' | translate}}" data-error="We need your callsign, agent!" autocomplete="off">
+                                            <input type="text" id="Agent-handle" name="Agent-handle" ng-model="agent.nickname" required placeholder="{{'form_Nickname_ph' | translate}}" data-error="{{'form_Nickname_error' | translate}}" autocomplete="off">
                                         </li>
                                         <li>
-                                            <input type="email" id="Agent-email" name="Agent-email" required placeholder="{{'E-Mail' | translate}}" data-error="We need your contact address, agent!" autocomplete="off">
+                                            <input type="email" id="Agent-email" name="Agent-email" ng-model="agent.email" required placeholder="{{'form_E-Mail_ph' | translate}}" data-error="{{'form_E-Mail_error' | translate}}" autocomplete="off">
                                         </li>
                                         <li>
-                                            <input type="text" id="Agent-account" name="Agent-account" required placeholder="{{'Uplay' | translate}}" data-error="We need your network ID, agent!" autocomplete="off">
+                                            <input type="text" id="Agent-account" name="Agent-account" ng-model="agent.uplay" required placeholder="{{'form_Uplay_ph' | translate}}" data-error="{{'form_Uplay_error' | translate}}" autocomplete="off">
                                         </li>
                                     </ul>
                                     <div class="submitfield">
@@ -148,9 +146,13 @@
                         <div class="headline"><i class="icon ion-android-wifi x2"></i><span>{{'Team Network' | translate}}</span></div>
                         <div class="content">
                             <div id="discord-userlist">
-                                <h3>{{membersOnline}}</h3>
-                                <ul>
-                                    <li ng-repeat=""
+                                <h3 ng-if="discordUserList.length < 1">{{'no_agent_online' | translate}}</h3>
+                                <h3 ng-if="discordUserList.length == 1">{{'one_agent_online' | translate}}</h3>
+                                <h3 ng-if="discordUserList.length > 1">{{discordUserList.length}}{{'multiple_agents_online' | translate}}</h3>
+                                <ul ng-show="discordUserList.length">
+                                    <li ng-repeat="user in discordUserList">
+                                        <img ng-src="{{user.avatar_url}}" class="user_avatar"/><span class="user_status" data-status="{{user.status}}"></span><span class="user_name" data-id="{{user.discriminator}}">{{user.username}}</span><span class="user_game" ng-if="user.game.name">({{user.game.name}})</span>
+                                    </li>
                                 </ul>
                                 <div class="join"><a href="//voice.division-zero.org" target="_blank"><i class="icon ion-log-in"></i>{{'Login' | translate}}</a></div>
                             </div>
