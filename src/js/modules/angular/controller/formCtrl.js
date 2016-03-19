@@ -3,9 +3,37 @@ var angular = require('angular'),
     app     = angular.module('division_zero');
 
 // Form management
+app.controller("formCtrl",["$scope", "$http", "$translate", function($scope, $http, $translate) {
+    $scope.applicationResult    = null,
+    $scope.success              = null,
+    $scope.error                = null,
+    $scope.submitApplication    = function(form) {
+        $scope.submitted        = true;
+        if(form.$valid) {
+            var data = {
+                "recipient" :   "application@division-zero.org",
+                "subject"   :   "Neue Bewerbung für Team /0/ von " + $scope.formInputNickname,
+                "Name"      :   $scope.formInputNickname,
+                "E-Mail"    :   $scope.formInputEmail,
+                "Uplay"     :   $scope.formInputUplay,
+                "lang"      :   $translate.proposedLanguage()
+            };
 
-app.controller("formCtrl",["$scope", "$http", function($scope, $http) {
-    $scope.response = 'hidden';
+            $http({
+                method      :   'POST',
+                url         :   'application.php',
+                data        :   data
+            })
+                .then(function(response) {
+                    $scope.success              = true;
+                    $scope.applicationResult    = response;
+                },
+                function(response) {
+                    $scope.error                = true;
+                    $scope.applicationResult    = response;
+                });
+        }
+    }
 }]);
 
 

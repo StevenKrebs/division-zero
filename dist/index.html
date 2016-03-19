@@ -116,29 +116,34 @@
                 </section>
                 <section id="community" class="scene">
                     <div class="flexbox overlay">
-                    <article id="community-apply" ng-controller="formCtrl">
+                    <article id="community-apply">
                         <div class="headline"><i class="icon ion-person-add x2"></i><span>{{'Join' | translate}}</span></div>
                         <div class="content">
-                            <div id="form">
-                                <form name="application" ng-submit="submitApplication()" novalidate>
+                            <div id="form" ng-controller="formCtrl">
+                                <div id="form-result" ng-if="success || error">
+                                    <span id="form-result-text">{{applicationResult}}</span>
+                                    <span id="retry" ng-if="error"><i class="icon ion-android-refresh"></i>{{'Retry' | translate}}</span>
+                                </div>
+                                <form name="application" novalidate>
                                     <h3 id="community-apply-info">{{'Join_the_team' | translate}}</h3>
                                     <ul class="formfield">
                                         <li>
-                                            <input type="text" ng-model="agent.nickname" required placeholder="{{'form_Nickname_ph' | translate}}" autocomplete="off">
-                                            <span class="form-input-error" ng-if="application_nickname_error">{{'form_Nickname_error' | translate}}</span>
+                                            <input type="text" name="Agent_nickname" ng-model="formInputNickname" required placeholder="{{'form_Nickname_ph' | translate}}" autocomplete="off">
+                                            <span class="form-input-error" ng-if="application.Agent_nickname.$error.required && submitted">{{'form_Nickname_empty' | translate}}</span>
                                         </li>
                                         <li>
-                                            <input type="email" ng-model="agent.email" required placeholder="{{'form_E-Mail_ph' | translate}}" autocomplete="off">
-                                            <span class="form-input-error" ng-if="application_email_error">{{'form_E-Mail_error' | translate}}</span>
+                                            <input type="email" name="Agent_email" ng-model="formInputEmail" required placeholder="{{'form_E-Mail_ph' | translate}}" autocomplete="off">
+                                            <span class="form-input-error" ng-if="application.Agent_email.$touched && application.Agent_email.$invalid && submitted">{{'form_E-Mail_error' | translate}}</span>
+                                            <span class="form-input-error" ng-if="application.Agent_email.$untouched && submitted">{{'form_E-Mail_empty' | translate}}</span>
                                         </li>
                                         <li>
-                                            <input type="text" ng-model="agent.uplay" required placeholder="{{'form_Uplay_ph' | translate}}" autocomplete="off">
-                                            <span class="form-input-error" ng-if="application_uplay_error">{{'form_Uplay_error' | translate}}</span>
+                                            <input type="text" name="Agent_uplay" ng-model="formInputUplay" required placeholder="{{'form_Uplay_ph' | translate}}" autocomplete="off">
+                                            <span class="form-input-error" ng-if="application.Agent_uplay.$error.required && submitted">{{'form_Uplay_empty' | translate}}</span>
                                         </li>
                                     </ul>
                                     <div class="submitfield">
                                         <span class="form-info">{{'Reach_out_1' | translate}}<br />{{'Reach_out_2' | translate}}</span>
-                                        <span class="submit" id="submit"><i class="icon ion-android-send"></i>{{'Submit' | translate}}</span>
+                                        <span class="submit" id="submit" ng-click="submitApplication(application)"><i class="icon ion-android-send"></i>{{'Submit' | translate}}</span>
                                     </div>
                                 </form>
                             </div>
