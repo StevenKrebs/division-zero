@@ -38,8 +38,7 @@ form {
     line-height: 150%;
     font-size: $size - 2;
   }
-  .submit,#submit {
-    input {
+  #submit {
       cursor: pointer;
       @include text-shadow;
       @include font;
@@ -47,15 +46,11 @@ form {
       color: darken(white,10%);
       border: none;
       background-color: transparent;
-    }
     &:hover {
       @include media(desktop) {
         transition-duration: .5s;
         color: $highlight;
       }
-    }
-    &:focus {
-      outline: none !important;
     }
   }
   input:not(#submit){

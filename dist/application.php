@@ -12,7 +12,7 @@
     // Build the email content.
     $email_content = "Name: $name\n";
     $email_content .= "Email: $email\n";
-    $email_content .= "Uplay-Account: $uplay";
+    $email_content .= "Uplay-Account: $uplay\n";
     $email_content .= "Sprache: $lang";
 
     // Build the email headers.
