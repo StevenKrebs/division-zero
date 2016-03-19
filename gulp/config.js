@@ -8,14 +8,14 @@ module.exports = {
         },
         scripts: {
             src: './src/js/scripts.js',
-            modules: './src/js/modules/*.js',
-            dest: './dist/js',
-            langs: "./src/js/lang/*.json"
+            modules: './src/js/modules/**/*.js',
+            dest: './dist/js'
         },
         maps: {
             dest: '../maps'
         },
         template: './dist/index.html',
+        locales: './dist/js/lang/*.json',
         dist: './dist'
     },
     names: {

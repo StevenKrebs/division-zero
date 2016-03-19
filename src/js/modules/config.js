@@ -55,3 +55,8 @@ exports.scrollSettings.scrollType = function() {
 };
 
 //Language file settings
+exports.angularRoutes = {};
+
+exports.angularRoutes.locales = function() {
+    return "/js/lang/"
+}

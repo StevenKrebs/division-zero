@@ -1,5 +1,4 @@
 {
-  //About
   "info-about"              : "Wer wir sind",
   "Game_label"              : "Spiel:",
   "Game_url"                : "//tomclancy-thedivision.ubi.com/game/de-de/home/",
@@ -14,7 +13,6 @@
   "Time-Zone_value"         : "CET",
   "Audience_value"          : "Casual",
   "Audience_label"          : "Zielgruppe:",
-  //Rules
   "info-rules"              : "Was wir wollen",
   "Min-age_label"           : "Mindestalter:",
   "Min-age_value"           : "18",
@@ -28,7 +26,6 @@
   "Exploiting_value"        : "Exploiting",
   "Hacking_value"           : "Hacking",
   "Griefing_value"          : "Griefplay!",
-  //Goals
   "info-goals"              : "Was wir bieten",
   "Enjoying_label"          : "Gemeinsam",
   "Enjoying_value"          : "das Spiel genießen",
@@ -43,19 +40,17 @@
   "Rooted_label"            : "Verwurzelt",
   "Rooted_filler"           : "in der",
   "Rooted_value"            : "Community",
-  //Application
   "Join"                    : "Tritt uns bei!",
-  "Join_the_team"           : "Du willst dem Team beitreten?",
+  "Join_the_team"           : "Du willst Team /0/ beitreten?",
   "form_Nickname_ph"        : "Dein Nickname...",
-  "form_Nickname_error"     : "We need your callsign, agent!",
+  "form_Nickname_error"     : "Wir brauchen dein Rufzeichen, Agent!",
   "form_E-Mail_ph"          : "Deine E-Mail-Adresse...",
-  "form_E-Mail_error"       : "We need your contact address, agent!",
+  "form_E-Mail_error"       : "Wir brauchen eine Kontaktadresse, Agent!",
   "form_Uplay_ph"           : "Dein Uplay-Anzeigename...",
-  "form_Uplay_error"        : "We need your network ID, agent!",
+  "form_Uplay_error"        : "Wir brauchen deine Netz-Kennung, Agent!",
   "Reach_out_1"             : "Fülle einfach dieses Formular aus.",
   "Reach_out_2"             : "Wir melden uns bei dir!",
   "Submit"                  : "Abschicken",
-  //Discord
   "Team Network"            : "Team-Netzwerk",
   "no_agent_online"         : "Kein Agent online!",
   "one_agent_online"        : "1 Agent online:",

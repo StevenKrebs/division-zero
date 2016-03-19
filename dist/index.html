@@ -119,19 +119,21 @@
                     <article id="community-apply" ng-controller="formCtrl">
                         <div class="headline"><i class="icon ion-person-add x2"></i><span>{{'Join' | translate}}</span></div>
                         <div class="content">
-                            <div id="form-result"><span id="form-result-text"></span><span id="retry"><i class="icon ion-android-refresh"></i>{{'Retry' | translate}}</span></div>
                             <div id="form">
-                                <form name="application" novalidate>
+                                <form name="application" ng-submit="submitApplication()" novalidate>
                                     <h3 id="community-apply-info">{{'Join_the_team' | translate}}</h3>
                                     <ul class="formfield">
                                         <li>
-                                            <input type="text" id="Agent-handle" name="Agent-handle" ng-model="agent.nickname" required placeholder="{{'form_Nickname_ph' | translate}}" data-error="{{'form_Nickname_error' | translate}}" autocomplete="off">
+                                            <input type="text" ng-model="agent.nickname" required placeholder="{{'form_Nickname_ph' | translate}}" autocomplete="off">
+                                            <span class="form-input-error" ng-if="application_nickname_error">{{'form_Nickname_error' | translate}}</span>
                                         </li>
                                         <li>
-                                            <input type="email" id="Agent-email" name="Agent-email" ng-model="agent.email" required placeholder="{{'form_E-Mail_ph' | translate}}" data-error="{{'form_E-Mail_error' | translate}}" autocomplete="off">
+                                            <input type="email" ng-model="agent.email" required placeholder="{{'form_E-Mail_ph' | translate}}" autocomplete="off">
+                                            <span class="form-input-error" ng-if="application_email_error">{{'form_E-Mail_error' | translate}}</span>
                                         </li>
                                         <li>
-                                            <input type="text" id="Agent-account" name="Agent-account" ng-model="agent.uplay" required placeholder="{{'form_Uplay_ph' | translate}}" data-error="{{'form_Uplay_error' | translate}}" autocomplete="off">
+                                            <input type="text" ng-model="agent.uplay" required placeholder="{{'form_Uplay_ph' | translate}}" autocomplete="off">
+                                            <span class="form-input-error" ng-if="application_uplay_error">{{'form_Uplay_error' | translate}}</span>
                                         </li>
                                     </ul>
                                     <div class="submitfield">

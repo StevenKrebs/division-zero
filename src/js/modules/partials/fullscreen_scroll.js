@@ -1,5 +1,5 @@
 var scrollmanagement    = module.exports            = {},
-    config              = require('./config.js');
+    config              = require('../config.js');
     window.scrollTimer  = false;
 
 scrollmanagement.scenescroll = function() {

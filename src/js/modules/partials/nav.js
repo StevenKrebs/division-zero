@@ -1,5 +1,5 @@
 var velocity    = require('velocity-animate'),
-    config      = require('./config.js');
+    config      = require('../config.js');
 
 $('nav a').each(function() {
     $(this).click(function(event) {
@@ -10,7 +10,7 @@ $('nav a').each(function() {
 });
 
 module.exports.getScrollPosMobile = function() {
-    if ($(document).scrollTop() + $(window).height() >= $('footer').position().top) {
+    if ($(document).scrollTop() + $(window).height() >= $('footer').position().top + $('footer').height() / 2) {
         $('nav a').removeClass('highlight');
         $('nav a[href="#footer"]').addClass('highlight');
     } else {

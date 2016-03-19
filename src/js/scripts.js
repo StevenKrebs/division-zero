@@ -1,4 +1,4 @@
-/* Global Plugins */
+//Global Plugins
 var $ = jQuery = require('jquery-browserify'),
     angular     = require('angular'),
     exports     = module.exports        = {};
@@ -9,7 +9,7 @@ require('angular-route');
 exports.division_zero = angular.module("division_zero", []);
 
 /* JS-Modules */
-require('bulk-require')(__dirname, ['modules/*.js']);
+require('bulk-require')(__dirname, ['modules/**/*.js']);
 
 
 

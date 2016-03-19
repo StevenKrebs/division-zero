@@ -1,19 +1,18 @@
 // Adding event listeners
 
 //ScrollMagic
-var animator        = require('./scrollmagic.js'),
-    nav       = require('./nav.js'),
+var animator        = require('./scroll-animations.js'),
+    nav             = require('./nav.js'),
     desktop         = animator.desktop,
     mobile          = animator.mobile,
     controller,desktopParallax,desktopInfo,desktopCommunity,
-    svginject       = require('./jquery.svginject.js'),
+    svginject       = require('../plugins/svgInject.js'),
     velocity        = require('velocity-animate'),
     scrollmanager   = require('./fullscreen_scroll.js'),
-    config          = require('./config.js');
+    config          = require('../config.js');
 
 //Plugins
-var imagesLoaded    = require('imagesloaded');
-imagesLoaded.makeJQueryPlugin( $ );
+var imagesLoaded    = require('imagesloaded').makeJQueryPlugin( $ );
 
 //Actual Listeners
 
@@ -31,7 +30,7 @@ $(window).on({
         $('.loader').show();
     },
     load: function() {
-
+        $(window).scrollTop(0,0);
     },
     scroll:function() {
         if (config.windowSizes.checkTablet()) {
@@ -45,15 +44,12 @@ $(window).on({
 $(document).ready(function(){
     $('body').addClass('locked');
     $('.svg').svgInject();
-    $('nav a[href="#header"]').addClass('highlight');
     $('body').imagesLoaded({background:true}).always(function() {
-        var scrollspeed,scrolltype;
         $('.loader').velocity("fadeOut",{delay: config.timing.slower()}).promise().done(function() {
             $('main').velocity("fadeIn")
                 .promise().done(function () {
                 if (config.windowSizes.checkTablet()) {
                     $('.desktop-nav').fadeIn(config.timing.fast());
-                    $('nav').fadeIn(config.timing.fast());
                     scrollmanager.scenescroll();
                     controller = animator.createController(),
                     desktopParallax = desktop.createParallax(controller),
@@ -61,10 +57,12 @@ $(document).ready(function(){
                     desktopCommunity = desktop.createCommunityAnim(controller);
                 } else if (config.windowSizes.checkMobile()) {
                     $('.mobile-nav').fadeIn(config.timing.fast());
-                    $('nav').fadeIn(config.timing.fast());
                 }
                 $('footer').velocity("fadeIn").promise().done(function() {
                     $('body').removeClass('locked');
+                    nav.getScrollPosDesktop();
+                    nav.getScrollPosMobile();
+                    $('nav').fadeIn(config.timing.fast());
                 });
             });
         });
