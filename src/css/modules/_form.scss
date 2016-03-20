@@ -1,8 +1,17 @@
 #form-result {
   text-align: center;
   #form-result-text {
-    line-height: 240px;
+    line-height: 300%;
     color: $highlight;
+    ul {
+      li {
+        line-height: 100%;
+        color: $color;
+        span {
+          @include text-shadow;
+        }
+      }
+    }
   }
   #retry {
     margin: 0 auto;
@@ -54,6 +63,7 @@ form {
     }
   }
   input:not(#submit){
+    @include font;
     padding: 8px 8px 7px;
     border: none;
     transition: border 0.3s;

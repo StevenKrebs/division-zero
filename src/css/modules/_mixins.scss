@@ -37,6 +37,7 @@
   margin-bottom: 5px;
   padding: 10px 15px;
   box-shadow: $shadow;
+  overflow-wrap: break-word;
 }
 
 @mixin font {

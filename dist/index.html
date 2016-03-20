@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <title>Team /0/</title>
         <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no" />
-        <meta name="description" content="A gaming communty for Tom Clancy's The Division" />
+        <meta name="description" content="A gaming community for Tom Clancy's The Division" />
         <meta name="keywords" content="Team Zero, /0/, ARPG, Tom Clancy's The Division, The Division, Division-Zero" />
         <link rel="stylesheet" href="css/styles.min.css" />
         <link rel="canonical" href="http://division-zero.org" />
@@ -121,7 +121,14 @@
                         <div class="content">
                             <div id="form" ng-controller="formCtrl">
                                 <div id="form-result" ng-if="success || error">
-                                    <span id="form-result-text" ng-if="success">{{'applicationSuccess' | translate}}</span>
+                                    <span id="form-result-text" ng-if="success">
+                                        {{'applicationSuccess' | translate}}
+                                        <ul class="form-result-details">
+                                            <li><span>{{'resultNickname' | translate}}</span>{{formInputNickname}}</li>
+                                            <li><span>{{'resultEmail' | translate}}</span>{{formInputEmail}}</li>
+                                            <li><span>{{'resultUplay' | translate}}</span>{{formInputUplay}}</li>
+                                        </ul>
+                                    </span>
                                     <span id="form-result-text" ng-if="error">{{'applicationError' | translate}}</span>
                                     <br />
                                     <span id="retry" ng-if="error" ng-click="retry()"><i class="icon ion-android-refresh"></i>{{'Retry' | translate}}</span>
