@@ -33,7 +33,9 @@
     "angular": "^1.5.1",
     "angular-route": "^1.5.1",
     "angular-translate": "^2.10.0",
-    "angular-translate-loader-static-files": "^2.10.0"
+    "angular-translate-loader-static-files": "^2.10.0",
+    "angular-fullpage.js": "^0.2.3",
+    "fullpage.js": "^2.7.8"
   },
   "scripts": {
     "build": "gulp build",
