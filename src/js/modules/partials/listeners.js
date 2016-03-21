@@ -49,7 +49,6 @@ $(document).ready(function(){
         $('.loader').velocity("fadeOut",{delay: config.timing.slower()}).promise().done(function() {
             if (config.windowSizes.checkTablet()) {
                 $('.desktop-nav').fadeIn(config.timing.fast());
-                scrollmanager.scenescroll();
                 controller = animator.createController(),
                 desktopParallax = desktop.createParallax(controller),
                 desktopInfo = desktop.createInfoAnim(controller),
@@ -66,7 +65,7 @@ $(document).ready(function(){
         });
 
         $('.forward').click(function () {
-            $('main').velocity("scroll", {duration: config.scrollSettings.scrollSpeed(), easing: config.scrollSettings.scrollType(), begin: function() {window.scrollTimer = true;}, complete: function() {window.scrollTimer = false}});
+            $('#info').velocity("scroll", {duration: config.scrollSettings.scrollSpeed(), easing: config.scrollSettings.scrollType(), begin: function() {window.scrollTimer = true;}, complete: function() {window.scrollTimer = false}});
         });
 
         $('.backward').click(function () {

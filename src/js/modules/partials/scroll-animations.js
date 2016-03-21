@@ -40,7 +40,7 @@ desktop.createParallax = function(controller, debug) {
         }
     );
     var parallax = new scrollmagic.Scene({
-        triggerElement: "main",
+        triggerElement: "#info",
         triggerHook: "onEnter",
         duration: "200%"
     }).setTween(parallaxEffect).addTo(controller);

@@ -1,12 +1,10 @@
-var scrollmanagement    = module.exports            = {},
-    config              = require('../../config.js'),
-    angular             = require('angular'),
+var angular             = require('angular'),
     app                 = angular.module('division_zero');
 
-//Required lib
-//require('fullpage.js');
-//Angular directives
-//require('angular-fullpage.js');
+//Angular directive
+require('angular-scrollify');
+app.requires.push('hj.scrollify');
+
 
 
 // app.controller('scrollCtrl',['$scope', function() {
