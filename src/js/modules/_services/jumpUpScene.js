@@ -37,7 +37,6 @@ app.factory('jumpUpScene', function() {
         });
         timeline.pause();
         scene.on("enter",function() {
-            console.log('play');
             timeline.play();
         });
         scene.addTo($smController);
