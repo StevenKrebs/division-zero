@@ -7,7 +7,7 @@ app.directive('jumpUp',['jumpUpScene', function(jumpUpScene){
         restrict: 'A',
         link: function($scope, $elem) {
             if(config.windowSizes.checkDesktop() && $scope.loaded) {
-                jumpUpScene.setAnimation($elem.find('article'), $elem, $scope.controller, true);
+                jumpUpScene.setAnimation($elem.find('article'), $elem, $scope.controller);
             }
         }
     }

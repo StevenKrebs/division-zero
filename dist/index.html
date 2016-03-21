@@ -40,7 +40,7 @@
         </div>
         <nav ng-controller="navCtrl" ng-show="loaded" class="ng-hide">
             <ul class="mobile-nav" ng-if="mobile && loaded">
-                <li><span scroll-to-scene="#header" class="icon ion-ios-home"></span></li>
+                <li><span scroll-to-scene="#header" class="icon ion-ios-home highlight"></span></li>
                 <li><span scroll-to-scene="#info-about" class="icon ion-eye"></span></li>
                 <li><span scroll-to-scene="#info-rules" class="icon ion-flash"></span></li>
                 <li><span scroll-to-scene="#info-goals" class="icon ion-android-locate"></span></li>
@@ -49,13 +49,13 @@
                 <li><span scroll-to-scene="#footer" class="icon ion-cloud"></span></li>
             </ul>
             <ul class="desktop-nav" ng-if="desktop && loaded">
-                <li><span scroll-to-scene="#header" class="icon ion-ios-home"></span></li>
+                <li><span scroll-to-scene="#header" class="icon ion-ios-home highlight"></span></li>
                 <li><span scroll-to-scene="#info" class="icon ion-eye"></span></li>
                 <li><span scroll-to-scene="#community" class="icon ion-android-wifi"></span></li>
                 <li><span scroll-to-scene="#footer" class="icon ion-cloud"></span></li>
             </ul>
         </nav>
-        <header id="header">
+        <header id="header" class="scene mobile-scene">
             <div class="overlay">
                 <div class="shortlinks">
                     <ul>
@@ -72,9 +72,9 @@
                 <div class="jumper icon ion-ios-arrow-down blink x3" scroll-to-scene="#info"></div>
             </div>
         </header>
-        <section id="info" ng-if="loaded" parallax jump-up>
+        <section id="info" ng-if="loaded" parallax jump-up class="scene">
             <div class="flexbox">
-                <article id="info-about">
+                <article id="info-about" class="mobile-scene">
                     <div class="headline"><i class="icon ion-eye x2"></i><span>{{'info-about' | translate}}</span></div>
                     <div class="content">
                         <ul>
@@ -87,7 +87,7 @@
                         </ul>
                     </div>
                 </article>
-                <article id="info-rules">
+                <article id="info-rules" class="mobile-scene">
                     <div class="headline"><i class="icon ion-flash x2"></i><span>{{'info-rules' | translate}}</span></div>
                     <div class="content">
                         <ul>
@@ -100,7 +100,7 @@
                         </ul>
                     </div>
                 </article>
-                <article id="info-goals">
+                <article id="info-goals" class="mobile-scene">
                     <div class="headline"><i class="icon ion-android-locate x2"></i><span>{{'info-goals' | translate}}</span></div>
                     <div class="content">
                         <ul>
@@ -115,9 +115,9 @@
                 </article>
             </div>
         </section>
-        <section id="community" ng-if="loaded" jump-up>
+        <section id="community" ng-if="loaded" jump-up class="scene">
             <div class="flexbox overlay">
-                <article id="community-apply">
+                <article id="community-apply" class="mobile-scene">
                     <div class="headline"><i class="icon ion-person-add x2"></i><span>{{'Join' | translate}}</span></div>
                     <div class="content">
                         <div id="form" ng-controller="formCtrl">
@@ -125,9 +125,9 @@
                             <span id="form-result-text" ng-if="success">
                                 {{'applicationSuccess' | translate}}
                                 <ul class="form-result-details">
-                                    <li><span>{{'resultNickname' | translate}}</span>{{formInputNickname}}</li>
-                                    <li><span>{{'resultEmail' | translate}}</span>{{formInputEmail}}</li>
-                                    <li><span>{{'resultUplay' | translate}}</span>{{formInputUplay}}</li>
+                                    <li>{{'resultNickname' | translate}}<span>{{formInputNickname}}</span></li>
+                                    <li>{{'resultEmail' | translate}}<span>{{formInputEmail}}</span></li>
+                                    <li>{{'resultUplay' | translate}}<span>{{formInputUplay}}</span></li>
                                 </ul>
                             </span>
                                 <span id="form-result-text" ng-if="error">{{'applicationError' | translate}}</span>
@@ -159,7 +159,7 @@
                         </div>
                     </div>
                 </article>
-                <article id="community-discord" ng-controller="discordCtrl">
+                <article id="community-discord" ng-controller="discordCtrl" class="mobile-scene">
                     <div class="headline"><i class="icon ion-android-wifi x2"></i><span>{{'Team Network' | translate}}</span></div>
                     <div class="content">
                         <div id="discord-userlist">
@@ -177,7 +177,7 @@
                 </article>
             </div>
         </section>
-        <footer id="footer" ng-if="loaded">
+        <footer id="footer" ng-if="loaded" class="scene mobile-scene">
             <div class="jumper icon ion-ios-arrow-up blink x3" scroll-to-scene="#header"></div>
             <span>Made with <i class="icon ion-ios-heart"></i> by <a href="mailto:admin@division-zero.org">Team /0/</a><br />Like what you see? Fork it on <a href="//github.com/StevenKrebs/division-zero" target="_blank">Github</a>.</span>
         </footer>

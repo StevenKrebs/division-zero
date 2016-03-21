@@ -11,7 +11,6 @@ require('gsap/src/uncompressed/plugins/CSSPlugin.js');
 
 app.factory('jumpUpScene', function() {
     function setAnimation($elem, $trigger, $smController, debug) {
-        console.log($elem, $trigger, $smController, debug);
         var timeline = new TimelineMax();
         timeline.add(
             TweenMax.fromTo($elem,2,

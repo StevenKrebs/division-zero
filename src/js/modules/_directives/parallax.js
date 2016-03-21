@@ -7,7 +7,7 @@ app.directive('parallax',['parallaxScene', function(parallaxScene){
         restrict: 'A',
         link: function($scope, $elem) {
             if(config.windowSizes.checkDesktop() && $scope.loaded) {
-                parallaxScene.setAnimation($elem, $elem, $scope.controller, $scope.debug);
+                parallaxScene.setAnimation($elem, $elem, $scope.controller);
             }
         }
     }
