@@ -28,13 +28,11 @@
     "vinyl-source-stream": "^0.4.6",
     "vinyl-buffer": "^1.0.0",
     "jquery": "^2.2.2",
-    "imagesloaded": "^4.1.0",
     "scrollmagic": "^2.0.5",
     "gsap": "^1.18.2",
     "velocity-animate": "^1.2.3",
     "angular": "^1.5.1",
     "angular-animate": "^1.5.2",
-    "angular-images-loaded": "^0.1.1",
     "angular-route": "^1.5.1",
     "angular-translate": "^2.10.0",
     "angular-translate-loader-static-files": "^2.10.0"
