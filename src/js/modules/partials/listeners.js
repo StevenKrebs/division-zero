@@ -8,7 +8,6 @@ var animator        = require('./scroll-animations.js'),
     controller,desktopParallax,desktopInfo,desktopCommunity,
     svginject       = require('../plugins/svgInject.js'),
     velocity        = require('velocity-animate'),
-    scrollmanager   = require('./fullscreen_scroll.js'),
     config          = require('../config.js');
 
 //Plugins
@@ -27,7 +26,9 @@ $(window).on({
         }
     },
     beforeunload: function() {
-        $('.loader').show();
+        $('.loader').show().promise().done(function() {
+            $(window).scrollTop(0,0);
+        });
     },
     load: function() {
         $(window).scrollTop(0,0);
@@ -46,24 +47,21 @@ $(document).ready(function(){
     $('.svg').svgInject();
     $('body').imagesLoaded({background:true}).always(function() {
         $('.loader').velocity("fadeOut",{delay: config.timing.slower()}).promise().done(function() {
-            $('main').velocity("fadeIn")
-                .promise().done(function () {
-                if (config.windowSizes.checkTablet()) {
-                    $('.desktop-nav').fadeIn(config.timing.fast());
-                    scrollmanager.scenescroll();
-                    controller = animator.createController(),
-                    desktopParallax = desktop.createParallax(controller),
-                    desktopInfo = desktop.createInfoAnim(controller),
-                    desktopCommunity = desktop.createCommunityAnim(controller);
-                } else if (config.windowSizes.checkMobile()) {
-                    $('.mobile-nav').fadeIn(config.timing.fast());
-                }
-                $('footer').velocity("fadeIn").promise().done(function() {
-                    $('body').removeClass('locked');
-                    nav.getScrollPosDesktop();
-                    nav.getScrollPosMobile();
-                    $('nav').fadeIn(config.timing.fast());
-                });
+            if (config.windowSizes.checkTablet()) {
+                $('.desktop-nav').fadeIn(config.timing.fast());
+                scrollmanager.scenescroll();
+                controller = animator.createController(),
+                desktopParallax = desktop.createParallax(controller),
+                desktopInfo = desktop.createInfoAnim(controller),
+                desktopCommunity = desktop.createCommunityAnim(controller);
+            } else if (config.windowSizes.checkMobile()) {
+                $('.mobile-nav').fadeIn(config.timing.fast());
+            }
+            $('footer').velocity("fadeIn").promise().done(function() {
+                $('body').removeClass('locked');
+                nav.getScrollPosDesktop();
+                nav.getScrollPosMobile();
+                $('nav').fadeIn(config.timing.fast());
             });
         });
 
