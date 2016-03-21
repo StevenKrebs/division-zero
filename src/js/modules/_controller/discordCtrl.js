@@ -5,6 +5,6 @@ var serverID    = require('../_configs/config.js').discord(),
 
 app.controller('discordCtrl', ['$scope', '$http', function($scope, $http) {
     $http.get("https://discordapp.com/api/servers/"+ serverID +"/widget.json").then(function(response) {
-        $scope.discordUserList      = response.data.members;
+        $scope.discordUserList  = response.data.members;
     });
 }]);

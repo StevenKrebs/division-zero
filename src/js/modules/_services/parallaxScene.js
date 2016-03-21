@@ -32,7 +32,7 @@ app.factory('parallaxScene', function() {
             scene.addIndicators();
         }
         return scene;
-    };
+    }
     return {
         setAnimation : setAnimation
     }

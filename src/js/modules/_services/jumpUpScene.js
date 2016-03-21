@@ -50,7 +50,7 @@ app.factory('jumpUpScene', function() {
         if (debug == true) {
             scene.addIndicators();
         }
-    };
+    }
     return {
         setAnimation : setAnimation
     }
