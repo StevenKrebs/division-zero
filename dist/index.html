@@ -31,14 +31,14 @@
 <!--                TTTTTTTTTTT      eeeeeeeeeeeeee  aaaaaaaaaa  aaaammmmmm   mmmmmm   mmmmmm     ///////                 000000000  ///////                        -->
 
     </head>
-    <body>
+    <body ng-controller="bodyCtrl">
         <div class="loader">
             <div class="loaderContainer">
                 <div class="circle"></div>
                 <div class="circle-inner"></div>
             </div>
         </div>
-        <nav>
+        <nav ng-controller="navCtrl">
             <ul class="mobile-nav">
                 <li><a href="#header" class="icon ion-ios-home"></a></li>
                 <li><a href="#info-about" class="icon ion-eye"></a></li>
@@ -55,8 +55,8 @@
                 <li><a href="#footer" class="icon ion-cloud"></a></li>
             </ul>
         </nav>
-        <div class="fullpage-wrapper" hj-scrollify="pane in data.panes">
-            <header class="scrollify__pane" id="header">
+        <div class="fullpage-wrapper">
+            <header id="header">
                 <div class="overlay">
                     <div class="shortlinks">
                         <ul>
@@ -73,48 +73,50 @@
                     <div class="forward icon ion-ios-arrow-down blink x3"></div>
                 </div>
             </header>
-            <section class="flexbox scrollify__pane" id="info">
-                <article id="info-about">
-                    <div class="headline"><i class="icon ion-eye x2"></i><span>{{'info-about' | translate}}</span></div>
-                    <div class="content">
-                        <ul>
-                            <li><span class="label">{{'Game_label' | translate}}</span><a href="{{'Game_url' | translate}}" target="_blank" class="">{{'Game_value' | translate}}</a></li>
-                            <li><span class="label">{{'Platform_label' | translate}}</span>{{'Platform_value' | translate}}</li>
-                            <li><span class="label">{{'Clan-Tag_label' | translate}}</span>{{'Clan-Tag_value' | translate}}</li>
-                            <li><span class="label">{{'Languages_label' | translate}}</span>{{'Languages_value' | translate}}</li>
-                            <li><span class="label">{{'Time-Zone_label' | translate}}</span>{{'Time-Zone_value' | translate}}</li>
-                            <li><span class="label">{{'Audience_label' | translate}}</span>{{'Audience_value' | translate}}</li>
-                        </ul>
-                    </div>
-                </article>
-                <article id="info-rules">
-                    <div class="headline"><i class="icon ion-flash x2"></i><span>{{'info-rules' | translate}}</span></div>
-                    <div class="content">
-                        <ul>
-                            <li><span class="label">{{'Min-age_label' | translate}}</span>{{'Min-age_value' | translate}}</li>
-                            <li><span class="label">{{'Headset_label' | translate}}</span>{{'Headset_value' | translate}}</li>
-                            <li><span class="label">{{'Activity_label' | translate}}</span>{{'Activity_value' | translate}}</li>
-                            <li><span class="label">{{'Exploiting_label' | translate}}</span>{{'Exploiting_value' | translate}}</li>
-                            <li><span class="label">{{'Hacking_label' | translate}}</span>{{'Hacking_value' | translate}}</li>
-                            <li><span class="label">{{'Griefing_label' | translate}}</span>{{'Griefing_value' | translate}}</li>
-                        </ul>
-                    </div>
-                </article>
-                <article id="info-goals">
-                    <div class="headline"><i class="icon ion-android-locate x2"></i><span>{{'info-goals' | translate}}</span></div>
-                    <div class="content">
-                        <ul>
-                            <li><span class="label">{{'Enjoying_label' | translate}}</span>{{'Enjoying_value' | translate}}</li>
-                            <li><span class="label">{{'Approach_label' | translate}}</span>{{'Approach_value' | translate}}</li>
-                            <li><span class="label">{{'Peers_label' | translate}}</span>{{'Peers_value' | translate}}</li>
-                            <li><span class="label">{{'Interests_label' | translate}}</span>{{'Interests_value' | translate}}</li>
-                            <li><span class="label">{{'Content-Range_label' | translate}}</span>{{'Content-Range_value' | translate}}</li>
-                            <li><span class="label">{{'Rooted_label' | translate}}</span>{{'Rooted_filler' | translate}} <a href="//thedivisiondiscord.com" target="_blank">{{'Rooted_value' | translate}}</a></li>
-                        </ul>
-                    </div>
-                </article>
+            <section id="info">
+                <div class="flexbox overlay">
+                    <article id="info-about">
+                        <div class="headline"><i class="icon ion-eye x2"></i><span>{{'info-about' | translate}}</span></div>
+                        <div class="content">
+                            <ul>
+                                <li><span class="label">{{'Game_label' | translate}}</span><a href="{{'Game_url' | translate}}" target="_blank" class="">{{'Game_value' | translate}}</a></li>
+                                <li><span class="label">{{'Platform_label' | translate}}</span>{{'Platform_value' | translate}}</li>
+                                <li><span class="label">{{'Clan-Tag_label' | translate}}</span>{{'Clan-Tag_value' | translate}}</li>
+                                <li><span class="label">{{'Languages_label' | translate}}</span>{{'Languages_value' | translate}}</li>
+                                <li><span class="label">{{'Time-Zone_label' | translate}}</span>{{'Time-Zone_value' | translate}}</li>
+                                <li><span class="label">{{'Audience_label' | translate}}</span>{{'Audience_value' | translate}}</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article id="info-rules">
+                        <div class="headline"><i class="icon ion-flash x2"></i><span>{{'info-rules' | translate}}</span></div>
+                        <div class="content">
+                            <ul>
+                                <li><span class="label">{{'Min-age_label' | translate}}</span>{{'Min-age_value' | translate}}</li>
+                                <li><span class="label">{{'Headset_label' | translate}}</span>{{'Headset_value' | translate}}</li>
+                                <li><span class="label">{{'Activity_label' | translate}}</span>{{'Activity_value' | translate}}</li>
+                                <li><span class="label">{{'Exploiting_label' | translate}}</span>{{'Exploiting_value' | translate}}</li>
+                                <li><span class="label">{{'Hacking_label' | translate}}</span>{{'Hacking_value' | translate}}</li>
+                                <li><span class="label">{{'Griefing_label' | translate}}</span>{{'Griefing_value' | translate}}</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article id="info-goals">
+                        <div class="headline"><i class="icon ion-android-locate x2"></i><span>{{'info-goals' | translate}}</span></div>
+                        <div class="content">
+                            <ul>
+                                <li><span class="label">{{'Enjoying_label' | translate}}</span>{{'Enjoying_value' | translate}}</li>
+                                <li><span class="label">{{'Approach_label' | translate}}</span>{{'Approach_value' | translate}}</li>
+                                <li><span class="label">{{'Peers_label' | translate}}</span>{{'Peers_value' | translate}}</li>
+                                <li><span class="label">{{'Interests_label' | translate}}</span>{{'Interests_value' | translate}}</li>
+                                <li><span class="label">{{'Content-Range_label' | translate}}</span>{{'Content-Range_value' | translate}}</li>
+                                <li><span class="label">{{'Rooted_label' | translate}}</span>{{'Rooted_filler' | translate}} <a href="//thedivisiondiscord.com" target="_blank">{{'Rooted_value' | translate}}</a></li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
             </section>
-            <section id="community" class="scrollify__pane">
+            <section id="community">
                 <div class="flexbox overlay">
                     <article id="community-apply">
                         <div class="headline"><i class="icon ion-person-add x2"></i><span>{{'Join' | translate}}</span></div>
@@ -176,7 +178,7 @@
                     </article>
                 </div>
             </section>
-            <footer class="scrollify__pane" id="footer">
+            <footer id="footer">
                 <div class="backward icon ion-ios-arrow-up blink x3"></div>
                 <span>Made with <i class="icon ion-ios-heart"></i> by <a href="mailto:admin@division-zero.org">Team /0/</a><br />Like what you see? Fork it on <a href="//github.com/StevenKrebs/division-zero" target="_blank">Github</a>.</span>
             </footer>
