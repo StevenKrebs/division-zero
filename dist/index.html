@@ -55,7 +55,7 @@
                 <li><span scroll-to-scene="#footer" class="icon ion-cloud"></span></li>
             </ul>
         </nav>
-        <header id="header" class="ng-hide" ng-show="loaded">
+        <header id="header">
             <div class="overlay">
                 <div class="shortlinks">
                     <ul>
@@ -72,7 +72,7 @@
                 <div class="jumper icon ion-ios-arrow-down blink x3" scroll-to-scene="#info"></div>
             </div>
         </header>
-        <section id="info" class="ng-hide" ng-if="loaded" ng-show="loaded" parallax jump-up>
+        <section id="info" ng-if="loaded" parallax jump-up>
             <div class="flexbox">
                 <article id="info-about">
                     <div class="headline"><i class="icon ion-eye x2"></i><span>{{'info-about' | translate}}</span></div>
@@ -115,7 +115,7 @@
                 </article>
             </div>
         </section>
-        <section id="community" class="ng-hide" ng-if="loaded" ng-show="loaded" jump-up>
+        <section id="community" ng-if="loaded" jump-up>
             <div class="flexbox overlay">
                 <article id="community-apply">
                     <div class="headline"><i class="icon ion-person-add x2"></i><span>{{'Join' | translate}}</span></div>
@@ -177,7 +177,7 @@
                 </article>
             </div>
         </section>
-        <footer id="footer" class="ng-hide" ng-if="loaded" ng-show="loaded">
+        <footer id="footer" ng-if="loaded">
             <div class="jumper icon ion-ios-arrow-up blink x3" scroll-to-scene="#header"></div>
             <span>Made with <i class="icon ion-ios-heart"></i> by <a href="mailto:admin@division-zero.org">Team /0/</a><br />Like what you see? Fork it on <a href="//github.com/StevenKrebs/division-zero" target="_blank">Github</a>.</span>
         </footer>

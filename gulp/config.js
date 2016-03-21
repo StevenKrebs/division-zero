@@ -20,6 +20,7 @@ module.exports = {
     },
     names: {
         styles: 'styles.min.css',
-        scripts: 'scripts.min.js'
+        scripts: 'scripts.min.js',
+        temp: 'scripts.js'
     }
 };

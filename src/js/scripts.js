@@ -1,6 +1,6 @@
 //Global Plugins
-var $ = jQuery = require('jquery-browserify'),
-    angular     = require('angular'),
+    global.$    = global.jQuery = require('jquery');
+var angular     = require('angular'),
     exports     = module.exports        = {};
 
 //Plugins

@@ -14,8 +14,8 @@
   },
   "devDependencies": {
     "browser-sync": "^2.11.1",
+    "browserify": "^13.0.0",
     "gulp": "^3.9.1",
-    "gulp-browserify": "^0.5.1",
     "gulp-sass": "^2.2.0",
     "gulp-sass-glob": "^1.0.5",
     "gulp-clean-css": "^2.0.3",
@@ -25,20 +25,19 @@
     "gulp-uglify": "^1.5.3",
     "bulkify": "^1.1.1",
     "require-dir": "^0.3.0",
-    "jquery-browserify": "^1.8.1",
+    "vinyl-source-stream": "^0.4.6",
+    "vinyl-buffer": "^1.0.0",
+    "jquery": "^2.2.2",
     "imagesloaded": "^4.1.0",
     "scrollmagic": "^2.0.5",
     "gsap": "^1.18.2",
     "velocity-animate": "^1.2.3",
-    "velocity": "^0.7.2",
     "angular": "^1.5.1",
     "angular-animate": "^1.5.2",
-    "angular-velocity": "^0.3.1",
     "angular-images-loaded": "^0.1.1",
     "angular-route": "^1.5.1",
     "angular-translate": "^2.10.0",
-    "angular-translate-loader-static-files": "^2.10.0",
-    "angular-scrollify": "^0.2.5"
+    "angular-translate-loader-static-files": "^2.10.0"
 
   },
   "scripts": {
