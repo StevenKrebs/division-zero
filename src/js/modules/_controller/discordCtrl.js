@@ -1,5 +1,5 @@
 //Get Discord Data
-var serverID    = require('../_configs/config.js').discord(),
+var serverID    = require('../config.js').discord(),
     angular     = require('angular'),
     app         = angular.module('division_zero');
 
