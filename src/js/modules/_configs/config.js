@@ -9,12 +9,12 @@ exports.discord = function() {
 //Window size values
 exports.windowSizes = {};
 
-exports.windowSizes.tablet = function() {
+exports.windowSizes.desktop = function() {
     return 1024;
 };
 
-exports.windowSizes.checkTablet = function() {
-   return $(window).height() > exports.windowSizes.tablet() || $(window).width() > exports.windowSizes.tablet()
+exports.windowSizes.checkDesktop = function() {
+   return $(window).height() > exports.windowSizes.desktop() || $(window).width() > exports.windowSizes.desktop()
 };
 
 exports.windowSizes.mobile = function() {
@@ -22,7 +22,7 @@ exports.windowSizes.mobile = function() {
 };
 
 exports.windowSizes.checkMobile = function() {
-    return $(window).height() <= exports.windowSizes.tablet() || $(window).width() <= exports.windowSizes.tablet()
+    return $(window).height() <= exports.windowSizes.desktop() || $(window).width() <= exports.windowSizes.desktop()
 };
 
 //Generic animation timings
@@ -59,4 +59,4 @@ exports.angularRoutes = {};
 
 exports.angularRoutes.locales = function() {
     return "/js/lang/"
-}
+};

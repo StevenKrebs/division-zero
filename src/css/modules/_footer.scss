@@ -1,5 +1,4 @@
 footer {
-  display: none;
   text-align: center;
   vertical-align: middle;
   background: url("#{$imgpath}/footer.jpg") top center no-repeat $overlay;
@@ -16,9 +15,5 @@ footer {
         text-decoration: underline;
       }
     }
-  }
-  .backward {
-    @include grow;
-    margin: 0 auto $size;
   }
 }

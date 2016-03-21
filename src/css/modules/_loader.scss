@@ -1,4 +1,5 @@
 .loader {
+  @include fader;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -8,20 +9,11 @@
   background-color: $body;
   width: 100%;
   height: 100vh;
-  z-index: 2;
+  z-index: 3;
   .loaderContainer {
+    transition: none;
     width: 100px;
     height: 100px;
     margin-top: -50px;
   }
-}
-
-.imgChecker1 {
-  visibility: hidden;
-  z-index: 1;
-}
-
-.imgChecker2 {
-  visibility: hidden;
-  z-index: 1;
 }

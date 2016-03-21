@@ -1,6 +1,6 @@
 /* Basic setup */
 html {
-  @inlcude font;
+  @include font;
   -webkit-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -13,7 +13,7 @@ body {
   background-color: $body;
   -webkit-font-smoothing: antialiased;
   width: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 a {
@@ -40,8 +40,7 @@ i {
 }
 
 /* Sections */
-
-header, main, footer {
+header, section, footer {
   width: 100%;
   max-width: 2560px;
   margin: 0 auto;

@@ -79,8 +79,4 @@ header {
       display: block;
     }
   }
-  .forward {
-    margin: $size auto 0;
-    @include grow;
-  }
 }

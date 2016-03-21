@@ -58,6 +58,26 @@
   text-shadow: $shadow;
 }
 
+@mixin fader {
+  transition: 1s linear all;
+  opacity: 1;
+  &.ng-hide {
+    opacity: 0;
+  }
+}
+
+@mixin glow {
+  @include text-shadow;
+  text-decoration: none;
+  color: darken(white,10%);
+  &:hover {
+    @include media(desktop) {
+      transition-duration: .5s;
+      color: $highlight;
+    }
+  }
+}
+
 @mixin x1 {
   font-size: $size;
   width: $size;
@@ -110,4 +130,13 @@
 
 .grow {
   @include grow;
+}
+
+@mixin jumper {
+  margin: $size auto 0;
+  @include grow;
+}
+
+.jumper {
+  @include jumper;
 }

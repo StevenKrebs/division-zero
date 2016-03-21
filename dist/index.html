@@ -32,157 +32,155 @@
 
     </head>
     <body ng-controller="bodyCtrl">
-        <div class="loader">
+        <div class="loader" ng-hide="loaded">
             <div class="loaderContainer">
                 <div class="circle"></div>
                 <div class="circle-inner"></div>
             </div>
         </div>
-        <nav ng-controller="navCtrl">
-            <ul class="mobile-nav">
-                <li><a href="#header" class="icon ion-ios-home"></a></li>
-                <li><a href="#info-about" class="icon ion-eye"></a></li>
-                <li><a href="#info-rules" class="icon ion-flash"></a></li>
-                <li><a href="#info-goals" class="icon ion-android-locate"></a></li>
-                <li><a href="#community-apply" class="icon ion-person-add"></a></li>
-                <li><a href="#community-discord" class="icon ion-android-wifi"></a></li>
-                <li><a href="#footer" class="icon ion-cloud"></a></li>
+        <nav ng-controller="navCtrl" ng-show="loaded" class="ng-hide">
+            <ul class="mobile-nav" ng-if="mobile && loaded">
+                <li><span scroll-to-scene="#header" class="icon ion-ios-home"></span></li>
+                <li><span scroll-to-scene="#info-about" class="icon ion-eye"></span></li>
+                <li><span scroll-to-scene="#info-rules" class="icon ion-flash"></span></li>
+                <li><span scroll-to-scene="#info-goals" class="icon ion-android-locate"></span></li>
+                <li><span scroll-to-scene="#community-apply" class="icon ion-person-add"></span></li>
+                <li><span scroll-to-scene="#community-discord" class="icon ion-android-wifi"></span></li>
+                <li><span scroll-to-scene="#footer" class="icon ion-cloud"></span></li>
             </ul>
-            <ul class="desktop-nav">
-                <li><a href="#header" class="icon ion-ios-home"></a></li>
-                <li><a href="#info" class="icon ion-eye"></a></li>
-                <li><a href="#community" class="icon ion-android-wifi"></a></li>
-                <li><a href="#footer" class="icon ion-cloud"></a></li>
+            <ul class="desktop-nav" ng-if="desktop && loaded">
+                <li><span scroll-to-scene="#header" class="icon ion-ios-home"></span></li>
+                <li><span scroll-to-scene="#info" class="icon ion-eye"></span></li>
+                <li><span scroll-to-scene="#community" class="icon ion-android-wifi"></span></li>
+                <li><span scroll-to-scene="#footer" class="icon ion-cloud"></span></li>
             </ul>
         </nav>
-        <div class="fullpage-wrapper">
-            <header id="header">
-                <div class="overlay">
-                    <div class="shortlinks">
+        <header id="header" class="ng-hide" ng-show="loaded">
+            <div class="overlay">
+                <div class="shortlinks">
+                    <ul>
+                        <li><a href="//twitter.com/team_zero_org" target="_blank"><i class="icon ion-social-twitter x2"></i></a></li>
+                        <li><a href="//voice.division-zero.org" target="_blank" id="discord-serverlink"><img class="svg" src="img/Discord-Logo+Wordmark-White.svg" alt="Discord"/></a></li>
+                    </ul>
+                </div>
+                <div class="cover">
+                    <div class="cover-content">
+                        <img src="img/logo.svg" alt="Team /0/"/>
+                        <sub>First to respond - Last to retreat</sub>
+                    </div>
+                </div>
+                <div class="jumper icon ion-ios-arrow-down blink x3" scroll-to-scene="#info"></div>
+            </div>
+        </header>
+        <section id="info" class="ng-hide" ng-if="loaded" ng-show="loaded" parallax jump-up>
+            <div class="flexbox">
+                <article id="info-about">
+                    <div class="headline"><i class="icon ion-eye x2"></i><span>{{'info-about' | translate}}</span></div>
+                    <div class="content">
                         <ul>
-                            <li><a href="//twitter.com/team_zero_org" target="_blank"><i class="icon ion-social-twitter x2"></i></a></li>
-                            <li><a href="//voice.division-zero.org" target="_blank" id="discord-serverlink"><img class="svg" src="img/Discord-Logo+Wordmark-White.svg" alt="Discord"/></a></li>
+                            <li><span class="label">{{'Game_label' | translate}}</span><a href="{{'Game_url' | translate}}" target="_blank" class="">{{'Game_value' | translate}}</a></li>
+                            <li><span class="label">{{'Platform_label' | translate}}</span>{{'Platform_value' | translate}}</li>
+                            <li><span class="label">{{'Clan-Tag_label' | translate}}</span>{{'Clan-Tag_value' | translate}}</li>
+                            <li><span class="label">{{'Languages_label' | translate}}</span>{{'Languages_value' | translate}}</li>
+                            <li><span class="label">{{'Time-Zone_label' | translate}}</span>{{'Time-Zone_value' | translate}}</li>
+                            <li><span class="label">{{'Audience_label' | translate}}</span>{{'Audience_value' | translate}}</li>
                         </ul>
                     </div>
-                    <div class="cover">
-                        <div class="cover-content">
-                            <img src="img/logo.svg" alt="Team /0/"/>
-                            <sub>First to respond - Last to retreat</sub>
-                        </div>
+                </article>
+                <article id="info-rules">
+                    <div class="headline"><i class="icon ion-flash x2"></i><span>{{'info-rules' | translate}}</span></div>
+                    <div class="content">
+                        <ul>
+                            <li><span class="label">{{'Min-age_label' | translate}}</span>{{'Min-age_value' | translate}}</li>
+                            <li><span class="label">{{'Headset_label' | translate}}</span>{{'Headset_value' | translate}}</li>
+                            <li><span class="label">{{'Activity_label' | translate}}</span>{{'Activity_value' | translate}}</li>
+                            <li><span class="label">{{'Exploiting_label' | translate}}</span>{{'Exploiting_value' | translate}}</li>
+                            <li><span class="label">{{'Hacking_label' | translate}}</span>{{'Hacking_value' | translate}}</li>
+                            <li><span class="label">{{'Griefing_label' | translate}}</span>{{'Griefing_value' | translate}}</li>
+                        </ul>
                     </div>
-                    <div class="forward icon ion-ios-arrow-down blink x3"></div>
-                </div>
-            </header>
-            <section id="info">
-                <div class="flexbox overlay">
-                    <article id="info-about">
-                        <div class="headline"><i class="icon ion-eye x2"></i><span>{{'info-about' | translate}}</span></div>
-                        <div class="content">
-                            <ul>
-                                <li><span class="label">{{'Game_label' | translate}}</span><a href="{{'Game_url' | translate}}" target="_blank" class="">{{'Game_value' | translate}}</a></li>
-                                <li><span class="label">{{'Platform_label' | translate}}</span>{{'Platform_value' | translate}}</li>
-                                <li><span class="label">{{'Clan-Tag_label' | translate}}</span>{{'Clan-Tag_value' | translate}}</li>
-                                <li><span class="label">{{'Languages_label' | translate}}</span>{{'Languages_value' | translate}}</li>
-                                <li><span class="label">{{'Time-Zone_label' | translate}}</span>{{'Time-Zone_value' | translate}}</li>
-                                <li><span class="label">{{'Audience_label' | translate}}</span>{{'Audience_value' | translate}}</li>
-                            </ul>
-                        </div>
-                    </article>
-                    <article id="info-rules">
-                        <div class="headline"><i class="icon ion-flash x2"></i><span>{{'info-rules' | translate}}</span></div>
-                        <div class="content">
-                            <ul>
-                                <li><span class="label">{{'Min-age_label' | translate}}</span>{{'Min-age_value' | translate}}</li>
-                                <li><span class="label">{{'Headset_label' | translate}}</span>{{'Headset_value' | translate}}</li>
-                                <li><span class="label">{{'Activity_label' | translate}}</span>{{'Activity_value' | translate}}</li>
-                                <li><span class="label">{{'Exploiting_label' | translate}}</span>{{'Exploiting_value' | translate}}</li>
-                                <li><span class="label">{{'Hacking_label' | translate}}</span>{{'Hacking_value' | translate}}</li>
-                                <li><span class="label">{{'Griefing_label' | translate}}</span>{{'Griefing_value' | translate}}</li>
-                            </ul>
-                        </div>
-                    </article>
-                    <article id="info-goals">
-                        <div class="headline"><i class="icon ion-android-locate x2"></i><span>{{'info-goals' | translate}}</span></div>
-                        <div class="content">
-                            <ul>
-                                <li><span class="label">{{'Enjoying_label' | translate}}</span>{{'Enjoying_value' | translate}}</li>
-                                <li><span class="label">{{'Approach_label' | translate}}</span>{{'Approach_value' | translate}}</li>
-                                <li><span class="label">{{'Peers_label' | translate}}</span>{{'Peers_value' | translate}}</li>
-                                <li><span class="label">{{'Interests_label' | translate}}</span>{{'Interests_value' | translate}}</li>
-                                <li><span class="label">{{'Content-Range_label' | translate}}</span>{{'Content-Range_value' | translate}}</li>
-                                <li><span class="label">{{'Rooted_label' | translate}}</span>{{'Rooted_filler' | translate}} <a href="//thedivisiondiscord.com" target="_blank">{{'Rooted_value' | translate}}</a></li>
-                            </ul>
-                        </div>
-                    </article>
-                </div>
-            </section>
-            <section id="community">
-                <div class="flexbox overlay">
-                    <article id="community-apply">
-                        <div class="headline"><i class="icon ion-person-add x2"></i><span>{{'Join' | translate}}</span></div>
-                        <div class="content">
-                            <div id="form" ng-controller="formCtrl">
-                                <div id="form-result" ng-if="success || error">
-                                <span id="form-result-text" ng-if="success">
-                                    {{'applicationSuccess' | translate}}
-                                    <ul class="form-result-details">
-                                        <li><span>{{'resultNickname' | translate}}</span>{{formInputNickname}}</li>
-                                        <li><span>{{'resultEmail' | translate}}</span>{{formInputEmail}}</li>
-                                        <li><span>{{'resultUplay' | translate}}</span>{{formInputUplay}}</li>
-                                    </ul>
-                                </span>
-                                    <span id="form-result-text" ng-if="error">{{'applicationError' | translate}}</span>
-                                    <br />
-                                    <span id="retry" ng-if="error" ng-click="retry()"><i class="icon ion-android-refresh"></i>{{'Retry' | translate}}</span>
-                                </div>
-                                <form name="application" novalidate ng-show="!error && !success">
-                                    <h3 id="community-apply-info">{{'Join_the_team' | translate}}</h3>
-                                    <ul class="formfield">
-                                        <li>
-                                            <input type="text" name="Agent_nickname" ng-model="formInputNickname" required placeholder="{{'form_Nickname_ph' | translate}}" autocomplete="off">
-                                            <span class="form-input-error" ng-if="application.Agent_nickname.$error.required && submitted">{{'form_Nickname_empty' | translate}}</span>
-                                        </li>
-                                        <li>
-                                            <input type="email" name="Agent_email" ng-model="formInputEmail" required placeholder="{{'form_E-Mail_ph' | translate}}" autocomplete="off">
-                                            <span class="form-input-error" ng-if="application.Agent_email.$touched && application.Agent_email.$invalid && submitted">{{'form_E-Mail_error' | translate}}</span>
-                                            <span class="form-input-error" ng-if="application.Agent_email.$untouched && submitted">{{'form_E-Mail_empty' | translate}}</span>
-                                        </li>
-                                        <li>
-                                            <input type="text" name="Agent_uplay" ng-model="formInputUplay" required placeholder="{{'form_Uplay_ph' | translate}}" autocomplete="off">
-                                            <span class="form-input-error" ng-if="application.Agent_uplay.$error.required && submitted">{{'form_Uplay_empty' | translate}}</span>
-                                        </li>
-                                    </ul>
-                                    <div class="submitfield">
-                                        <span class="form-info">{{'Reach_out_1' | translate}}<br />{{'Reach_out_2' | translate}}</span>
-                                        <span class="submit" id="submit" ng-click="submitApplication()"><i class="icon ion-android-send"></i>{{'Submit' | translate}}</span>
-                                    </div>
-                                </form>
+                </article>
+                <article id="info-goals">
+                    <div class="headline"><i class="icon ion-android-locate x2"></i><span>{{'info-goals' | translate}}</span></div>
+                    <div class="content">
+                        <ul>
+                            <li><span class="label">{{'Enjoying_label' | translate}}</span>{{'Enjoying_value' | translate}}</li>
+                            <li><span class="label">{{'Approach_label' | translate}}</span>{{'Approach_value' | translate}}</li>
+                            <li><span class="label">{{'Peers_label' | translate}}</span>{{'Peers_value' | translate}}</li>
+                            <li><span class="label">{{'Interests_label' | translate}}</span>{{'Interests_value' | translate}}</li>
+                            <li><span class="label">{{'Content-Range_label' | translate}}</span>{{'Content-Range_value' | translate}}</li>
+                            <li><span class="label">{{'Rooted_label' | translate}}</span>{{'Rooted_filler' | translate}} <a href="//thedivisiondiscord.com" target="_blank">{{'Rooted_value' | translate}}</a></li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <section id="community" class="ng-hide" ng-if="loaded" ng-show="loaded" jump-up>
+            <div class="flexbox overlay">
+                <article id="community-apply">
+                    <div class="headline"><i class="icon ion-person-add x2"></i><span>{{'Join' | translate}}</span></div>
+                    <div class="content">
+                        <div id="form" ng-controller="formCtrl">
+                            <div id="form-result" ng-if="success || error">
+                            <span id="form-result-text" ng-if="success">
+                                {{'applicationSuccess' | translate}}
+                                <ul class="form-result-details">
+                                    <li><span>{{'resultNickname' | translate}}</span>{{formInputNickname}}</li>
+                                    <li><span>{{'resultEmail' | translate}}</span>{{formInputEmail}}</li>
+                                    <li><span>{{'resultUplay' | translate}}</span>{{formInputUplay}}</li>
+                                </ul>
+                            </span>
+                                <span id="form-result-text" ng-if="error">{{'applicationError' | translate}}</span>
+                                <br />
+                                <span id="retry" ng-if="error" ng-click="retry()"><i class="icon ion-android-refresh"></i>{{'Retry' | translate}}</span>
                             </div>
-                        </div>
-                    </article>
-                    <article id="community-discord" ng-controller="discordCtrl">
-                        <div class="headline"><i class="icon ion-android-wifi x2"></i><span>{{'Team Network' | translate}}</span></div>
-                        <div class="content">
-                            <div id="discord-userlist">
-                                <h3 ng-if="discordUserList.length < 1">{{'no_agent_online' | translate}}</h3>
-                                <h3 ng-if="discordUserList.length == 1">{{'one_agent_online' | translate}}</h3>
-                                <h3 ng-if="discordUserList.length > 1">{{discordUserList.length}}{{'multiple_agents_online' | translate}}</h3>
-                                <ul ng-show="discordUserList.length">
-                                    <li ng-repeat="user in discordUserList">
-                                        <img ng-src="{{user.avatar_url}}" class="user_avatar"/><span class="user_status" data-status="{{user.status}}"></span><span class="user_name" data-id="{{user.discriminator}}">{{user.username}}</span><span class="user_game" ng-if="user.game.name">({{user.game.name}})</span>
+                            <form name="application" novalidate ng-show="!error && !success">
+                                <h3 id="community-apply-info">{{'Join_the_team' | translate}}</h3>
+                                <ul class="formfield">
+                                    <li>
+                                        <input type="text" name="Agent_nickname" ng-model="formInputNickname" required placeholder="{{'form_Nickname_ph' | translate}}" autocomplete="off">
+                                        <span class="form-input-error" ng-if="application.Agent_nickname.$error.required && submitted">{{'form_Nickname_empty' | translate}}</span>
+                                    </li>
+                                    <li>
+                                        <input type="email" name="Agent_email" ng-model="formInputEmail" required placeholder="{{'form_E-Mail_ph' | translate}}" autocomplete="off">
+                                        <span class="form-input-error" ng-if="application.Agent_email.$touched && application.Agent_email.$invalid && submitted">{{'form_E-Mail_error' | translate}}</span>
+                                        <span class="form-input-error" ng-if="application.Agent_email.$untouched && submitted">{{'form_E-Mail_empty' | translate}}</span>
+                                    </li>
+                                    <li>
+                                        <input type="text" name="Agent_uplay" ng-model="formInputUplay" required placeholder="{{'form_Uplay_ph' | translate}}" autocomplete="off">
+                                        <span class="form-input-error" ng-if="application.Agent_uplay.$error.required && submitted">{{'form_Uplay_empty' | translate}}</span>
                                     </li>
                                 </ul>
-                                <div class="join"><a href="//voice.division-zero.org" target="_blank"><i class="icon ion-log-in"></i>{{'Login' | translate}}</a></div>
-                            </div>
+                                <div class="submitfield">
+                                    <span class="form-info">{{'Reach_out_1' | translate}}<br />{{'Reach_out_2' | translate}}</span>
+                                    <span class="submit" id="submit" ng-click="submitApplication()"><i class="icon ion-android-send"></i>{{'Submit' | translate}}</span>
+                                </div>
+                            </form>
                         </div>
-                    </article>
-                </div>
-            </section>
-            <footer id="footer">
-                <div class="backward icon ion-ios-arrow-up blink x3"></div>
-                <span>Made with <i class="icon ion-ios-heart"></i> by <a href="mailto:admin@division-zero.org">Team /0/</a><br />Like what you see? Fork it on <a href="//github.com/StevenKrebs/division-zero" target="_blank">Github</a>.</span>
-            </footer>
-        </div>
+                    </div>
+                </article>
+                <article id="community-discord" ng-controller="discordCtrl">
+                    <div class="headline"><i class="icon ion-android-wifi x2"></i><span>{{'Team Network' | translate}}</span></div>
+                    <div class="content">
+                        <div id="discord-userlist">
+                            <h3 ng-if="discordUserList.length < 1">{{'no_agent_online' | translate}}</h3>
+                            <h3 ng-if="discordUserList.length == 1">{{'one_agent_online' | translate}}</h3>
+                            <h3 ng-if="discordUserList.length > 1">{{discordUserList.length}}{{'multiple_agents_online' | translate}}</h3>
+                            <ul ng-show="discordUserList.length">
+                                <li ng-repeat="user in discordUserList">
+                                    <img ng-src="{{user.avatar_url}}" class="user_avatar"/><span class="user_status" data-status="{{user.status}}"></span><span class="user_name" data-id="{{user.discriminator}}">{{user.username}}</span><span class="user_game" ng-if="user.game.name">({{user.game.name}})</span>
+                                </li>
+                            </ul>
+                            <div class="join"><a href="//voice.division-zero.org" target="_blank"><i class="icon ion-log-in"></i>{{'Login' | translate}}</a></div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <footer id="footer" class="ng-hide" ng-if="loaded" ng-show="loaded">
+            <div class="jumper icon ion-ios-arrow-up blink x3" scroll-to-scene="#header"></div>
+            <span>Made with <i class="icon ion-ios-heart"></i> by <a href="mailto:admin@division-zero.org">Team /0/</a><br />Like what you see? Fork it on <a href="//github.com/StevenKrebs/division-zero" target="_blank">Github</a>.</span>
+        </footer>
         <script src="js/scripts.min.js"></script>
     </body>
 </html>

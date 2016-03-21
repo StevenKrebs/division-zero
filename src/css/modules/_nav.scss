@@ -1,5 +1,5 @@
 nav {
-  display: none;
+  @include fader;
   @include x2;
   width: 22px;
   position: fixed;
@@ -14,12 +14,9 @@ nav {
   ul {
     li{
       margin: .5 * $size 0;
+      span {
+        @include glow;
+      }
     }
-  }
-  .mobile-nav {
-    display: none;
-  }
-  .desktop-nav {
-    display: none;
   }
 }

@@ -1,5 +1,5 @@
 var angular     = require('angular'),
-    config      = require('../../config.js'),
+    config      = require('./config.js'),
     app         = angular.module('division_zero');
 
 //Plugins
