@@ -10,8 +10,8 @@ app.directive('scrollToScene', function() {
         scope: {
             scrollToScene: "@"
         },
-        link: function(scope, $elm) {
-            $elm.on('click', function () {
+        link: function(scope, elem) {
+            elem.on('click', function () {
                 $(scope.scrollToScene).velocity("scroll", {
                     duration: config.scrollSettings.scrollSpeed(),
                     easing: config.scrollSettings.scrollType()

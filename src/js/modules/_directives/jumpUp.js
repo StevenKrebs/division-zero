@@ -5,9 +5,9 @@ var angular     =   require('angular'),
 app.directive('jumpUp',['jumpUpScene', function(jumpUpScene){
     return {
         restrict: 'A',
-        link: function($scope, $elem) {
-            if(config.windowSizes.checkDesktop() && $scope.loaded) {
-                jumpUpScene.setAnimation($elem.find('article'), $elem, $scope.controller);
+        link: function(scope, elem) {
+            if(config.windowSizes.checkDesktop() && scope.loaded) {
+                jumpUpScene.setAnimation(elem.find('article'), elem, scope.controller);
             }
         }
     }

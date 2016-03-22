@@ -2,7 +2,7 @@ var angular     =   require('angular'),
     config      =   require('../config.js'),
     app         =   angular.module('division_zero');
 
-app.controller('navCtrl',['$scope','$window', 'scrollPos', function($scope, $window, scrollPos){
+app.controller('navCtrl',['$scope','$window','scrollPos', function($scope, $window, scrollPos){
     if(config.windowSizes.checkDesktop()) {
         $scope.desktop = true;
     } else {

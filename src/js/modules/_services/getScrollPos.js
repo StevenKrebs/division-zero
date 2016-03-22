@@ -3,8 +3,8 @@ var angular         = require('angular'),
     config          = require('../config.js');
 
 app.factory('scrollPos', function() {
-   function getScrollPos(scrollPos, $menuItems) {
-       $($menuItems).each(function() {
+   function getScrollPos(scrollPos, menuItems) {
+       $(menuItems).each(function() {
            var link = $(this),
                href = $(link.attr('scroll-to-scene')),
                topPos = $(href).position().top,

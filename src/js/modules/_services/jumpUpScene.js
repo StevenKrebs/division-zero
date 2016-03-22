@@ -10,10 +10,10 @@ require('scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js'),
 require('gsap/src/uncompressed/plugins/CSSPlugin.js');
 
 app.factory('jumpUpScene', function() {
-    function setAnimation($elem, $trigger, $smController, debug) {
+    function setAnimation(elem, trigger, smController, debug) {
         var timeline = new TimelineMax();
         timeline.add(
-            TweenMax.fromTo($elem,2,
+            TweenMax.fromTo(elem,2,
                 {
                     css: {
                         'opacity': 0,
@@ -31,7 +31,7 @@ app.factory('jumpUpScene', function() {
             )
         );
         var scene = new scrollmagic.Scene({
-            triggerElement: $trigger[0],
+            triggerElement: trigger[0],
             triggerHook: 'onCenter',
             duration: "80%"
         });
@@ -39,7 +39,7 @@ app.factory('jumpUpScene', function() {
         scene.on("enter",function() {
             timeline.play();
         });
-        scene.addTo($smController);
+        scene.addTo(smController);
         scene.on("end", function (e) {
             if (e.scrollDirection === "REVERSE") {
                 scene.reverse(false)
@@ -48,6 +48,7 @@ app.factory('jumpUpScene', function() {
         if (debug == true) {
             scene.addIndicators();
         }
+        return scene;
     }
     return {
         setAnimation : setAnimation
