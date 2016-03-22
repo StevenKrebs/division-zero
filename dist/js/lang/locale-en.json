@@ -59,6 +59,7 @@
   "Submit"                  : "Submit",
   "Retry"                   : "Retry",
   "Team Network"            : "Team Network",
+  "discord_user_list_error" : "Error, network coverage failing!",
   "no_agent_online"         : "No agent online!",
   "one_agent_online"        : "1 agent online:",
   "multiple_agents_online"  : " agents online:",

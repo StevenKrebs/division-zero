@@ -61,6 +61,7 @@
   "Submit"                  : "Abschicken",
   "Retry"                   : "Wiederholen",
   "Team Network"            : "Team-Netzwerk",
+  "discord_user_list_error" : "Fehler, keine Verbindung zum Netzwerk!",
   "no_agent_online"         : "Kein Agent online!",
   "one_agent_online"        : "1 Agent online:",
   "multiple_agents_online"  : " Agenten online:",
