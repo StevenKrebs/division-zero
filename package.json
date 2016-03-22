@@ -35,7 +35,8 @@
     "angular-animate": "^1.5.2",
     "angular-route": "^1.5.1",
     "angular-translate": "^2.10.0",
-    "angular-translate-loader-static-files": "^2.10.0"
+    "angular-translate-loader-static-files": "^2.10.0",
+    "angular-un-svg": "^1.0.4"
 
   },
   "scripts": {
