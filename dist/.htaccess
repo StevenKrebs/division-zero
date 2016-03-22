@@ -1,3 +1,9 @@
 RewriteEngine On
-RewriteCond %{HTTP_HOST} ^www.division-zero.org$ [NC]
-RewriteRule ^(.*)$ http://division-zero.org/$1 [R=301,L]
+RewriteCond %{HTTP_HOST} ^www\.
+RewriteCond %{HTTPS}s ^on(s)|off
+RewriteCond http%1://%{HTTP_HOST} ^(https?://)(www\.)?(.+)$
+RewriteRule ^ %1%3%{REQUEST_URI} [R=301,L]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} (.+)/$
+RewriteRule ^ %1 [R=301,L]

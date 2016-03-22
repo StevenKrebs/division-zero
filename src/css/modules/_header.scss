@@ -49,6 +49,9 @@ header {
       vertical-align: middle;
       filter: drop-shadow(1px 1px 1px black);
       -webkit-filter: drop-shadow(1px 1px 1px black);
+      path {
+        fill: $color;
+      }
       &:hover {
         transform: scale(1.2);
         transition: all 0.2s ease;
