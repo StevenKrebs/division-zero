@@ -31,8 +31,7 @@
   width: 100px;
   height: 100px;
   position: absolute;
-  -moz-animation: spinPulse 1s infinite ease-in-out;
-  -webkit-animation: spinPulse 1s infinite linear;
+  animation: spinPulse 1s infinite linear;
 }
 
 .circle-inner {
@@ -48,62 +47,33 @@
   position: relative;
   top: 20px;
   left: 20px;
-  -moz-animation: spinoffPulse 1s infinite linear;
-  -webkit-animation: spinoffPulse 1s infinite linear;
+  animation: spinoffPulse 1s infinite linear;
 }
 
-@-moz-keyframes spinPulse {
+@keyframes spinPulse {
   0% {
-    -moz-transform: rotate(160deg);
+    transform: rotate(160deg);
     opacity: 0;
     box-shadow: 0 0 1px $highlight;
   }
 
   50% {
-    -moz-transform: rotate(145deg);
+    transform: rotate(145deg);
     opacity: 1;
   }
 
   100% {
-    -moz-transform: rotate(-320deg);
+    transform: rotate(-320deg);
     opacity: 0;
   }
 }
 
-@-moz-keyframes spinoffPulse {
+@keyframes spinoffPulse {
   0% {
-    -moz-transform: rotate(0deg);
+    transform: rotate(0deg);
   }
 
   100% {
-    -moz-transform: rotate(360deg);
-  }
-}
-
-@-webkit-keyframes spinPulse {
-  0% {
-    -webkit-transform: rotate(160deg);
-    opacity: 0;
-    box-shadow: 0 0 1px $highlight;
-  }
-
-  50% {
-    -webkit-transform: rotate(145deg);
-    opacity: 1;
-  }
-
-  100% {
-    -webkit-transform: rotate(-320deg);
-    opacity: 0;
-  }
-}
-
-@-webkit-keyframes spinoffPulse {
-  0% {
-    -webkit-transform: rotate(0deg);
-  }
-
-  100% {
-    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }

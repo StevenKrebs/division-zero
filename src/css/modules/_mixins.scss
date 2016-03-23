@@ -47,7 +47,6 @@
 
 @mixin filter {
   filter: drop-shadow($shadow);
-  -webkit-filter: drop-shadow($shadow);
 }
 
 @mixin bold {
@@ -121,7 +120,6 @@
       @include media(desktop) {
         transform: scale(1.2);
         transition: all 0.2s ease;
-        -webkit-transition: all 0.2s ease;
         color: $highlight;
       }
     }

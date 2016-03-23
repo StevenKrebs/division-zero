@@ -12,6 +12,7 @@ var gulp        = require('gulp'),
     sass        = require('gulp-sass'),
     glob        = require('gulp-sass-glob'),
     cleanCSS    = require('gulp-clean-css'),
+    prefix      = require('gulp-autoprefixer'),
 
 //Source mapping Dependencies
     sourcemaps  = require('gulp-sourcemaps');
@@ -21,6 +22,7 @@ gulp.task('_styles', function() {
         .pipe(gulpif(environment.dev, sourcemaps.init()))
         .pipe(glob())
         .pipe(sass())
+        .pipe(prefix({browsers: ['last 2 versions']}))
         .pipe(gulpif(!environment.dev, cleanCSS({
             processImportFrom: ['local']
         })))

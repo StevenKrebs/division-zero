@@ -1,9 +1,6 @@
 /* Basic setup */
 html {
   @include font;
-  -webkit-text-size-adjust: 100%;
-  -moz-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
   text-size-adjust: 100%;
 }
 
@@ -12,6 +9,7 @@ body {
   color: $color;
   background-color: $body;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   width: 100%;
   overflow-x: hidden;
 }

@@ -1,5 +1,5 @@
 {
-  "author": "Steven Krebs & Tim Kopplow",
+  "author": "Steven Krebs",
   "description": "Covers the development of the website available @ division-zero.org",
   "keywords": [],
   "license": "MIT",
@@ -21,6 +21,7 @@
     "gulp-sass": "^2.2.0",
     "gulp-sass-glob": "^1.0.5",
     "gulp-clean-css": "^2.0.3",
+    "gulp-autoprefixer": "^3.1.0",
     "gulp-rename": "^1.2.2",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-task-listing": "^1.0.1",
@@ -40,7 +41,7 @@
     "angular-translate-loader-static-files": "^2.10.0"
   },
   "scripts": {
-    "build": "gulp serve --deploy",
+    "build": "gulp build",
     "dev": "gulp serve --dev",
     "scripts": "gulp _scripts",
     "styles": "gulp _styles"
