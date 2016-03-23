@@ -1,4 +1,7 @@
 nav {
+  @include media(mini) {
+    display: none;
+  }
   @include x2;
   width: 22px;
   position: fixed;

@@ -3,7 +3,7 @@ module.exports = {
         base: './',
         styles: {
             src: './src/css/styles.scss',
-            modules: './src/css/modules/*.scss',
+            modules: './src/css/modules/**/*.scss',
             dest: './dist/css'
         },
         scripts: {

@@ -2,6 +2,11 @@
 
 //Media Queries
 @mixin media($bp) {
+  @if $bp == mini {
+    @media (max-width: $mobile) {
+      @content;
+    }
+  }
   @if $bp == mobile {
     @media (max-width: $tablet) {
       @content;
@@ -9,6 +14,11 @@
   }
   @if $bp == desktop {
     @media (min-width: ($tablet + 1px)) {
+      @content;
+    }
+  }
+  @if $bp == large {
+    @media (min-width: $desktop) {
       @content;
     }
   }
