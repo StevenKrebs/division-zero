@@ -54,7 +54,7 @@ header {
         height: auto;
         @include filter;
         @include media(mobile) {
-          max-width: 450px;
+          max-width: 350px;
         }
       }
     }
