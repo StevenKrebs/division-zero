@@ -1,8 +1,8 @@
 var gulp            = require('gulp'),
-    taskListing     = require('gulp-task-listing');
+    util            = require('gulp-util');
 
-gulp.task('default',taskListing.withFilters(
-    null, 'default'
-));
+environment = {
+    dev     :   !!util.env.dev
+};
 
 require('require-dir')('./gulp/tasks', { recurse: true });

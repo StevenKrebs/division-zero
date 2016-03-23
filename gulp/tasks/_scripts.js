@@ -2,6 +2,7 @@
 var gulp        = require('gulp'),
     rename      = require('gulp-rename'),
     config      = require('../config'),
+    gulpif      = require('gulp-if'),
 
 // Browser sync
     browserSync = require('browser-sync'),
@@ -25,10 +26,10 @@ gulp.task('_scripts', function() {
         .bundle()
         .pipe(source(config.names.temp))
         .pipe(buffer())
-        .pipe(sourcemaps.init())
-        .pipe(uglify())
+        .pipe(gulpif(environment.dev, sourcemaps.init()))
+        .pipe(gulpif(!environment.dev, uglify()))
         .pipe(rename(config.names.scripts))
-        .pipe(sourcemaps.write(config.paths.maps.dest))
+        .pipe(gulpif(environment.dev, sourcemaps.write(config.paths.maps.dest)))
         .pipe(gulp.dest(config.paths.scripts.dest))
         .pipe(reload({stream:true, once: true}));
 });

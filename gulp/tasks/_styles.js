@@ -2,6 +2,7 @@
 var gulp        = require('gulp'),
     rename      = require('gulp-rename'),
     config      = require('../config.js'),
+    gulpif      = require('gulp-if'),
 
 // Browser sync
     browserSync = require('browser-sync'),
@@ -17,14 +18,14 @@ var gulp        = require('gulp'),
 
 gulp.task('_styles', function() {
     return gulp.src(config.paths.styles.src)
-        .pipe(sourcemaps.init())
+        .pipe(gulpif(environment.dev, sourcemaps.init()))
         .pipe(glob())
         .pipe(sass())
-        .pipe(cleanCSS({
+        .pipe(gulpif(!environment.dev, cleanCSS({
             processImportFrom: ['local']
-        }))
+        })))
         .pipe(rename(config.names.styles))
-        .pipe(sourcemaps.write(config.paths.maps.dest))
+        .pipe(gulpif(environment.dev, sourcemaps.write(config.paths.maps.dest)))
         .pipe(gulp.dest(config.paths.styles.dest))
         .pipe(reload({stream:true}));
 });

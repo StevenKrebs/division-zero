@@ -16,6 +16,8 @@
     "browser-sync": "^2.11.1",
     "browserify": "^13.0.0",
     "gulp": "^3.9.1",
+    "gulp-if": "^2.0.0",
+    "gulp-util": "^3.0.7",
     "gulp-sass": "^2.2.0",
     "gulp-sass-glob": "^1.0.5",
     "gulp-clean-css": "^2.0.3",
@@ -35,13 +37,11 @@
     "angular-animate": "^1.5.2",
     "angular-route": "^1.5.1",
     "angular-translate": "^2.10.0",
-    "angular-translate-loader-static-files": "^2.10.0",
-    "angular-un-svg": "^1.0.4"
-
+    "angular-translate-loader-static-files": "^2.10.0"
   },
   "scripts": {
-    "build": "gulp build",
-    "serve": "gulp serve",
+    "build": "gulp serve --deploy",
+    "dev": "gulp serve --dev",
     "scripts": "gulp _scripts",
     "styles": "gulp _styles"
   }

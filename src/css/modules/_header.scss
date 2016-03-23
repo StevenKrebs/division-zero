@@ -42,25 +42,6 @@ header {
         }
       }
     }
-    img, svg {
-      margin: 0 5px;
-      width: 90px;
-      height: auto;
-      vertical-align: middle;
-      filter: drop-shadow(1px 1px 1px black);
-      -webkit-filter: drop-shadow(1px 1px 1px black);
-      path {
-        fill: darken($color,10%);
-      }
-      &:hover {
-        transform: scale(1.2);
-        transition: all 0.2s ease;
-        -webkit-transition: all 0.2s ease;
-        path {
-          fill: $highlight;
-        }
-      }
-    }
   }
   .cover {
     display: block;

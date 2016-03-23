@@ -12,7 +12,7 @@ Covers the development of the website available @ division-zero.org
  - *get coffee*
 
 ##### or this
- - run `gulp serve`
+ - run `gulp serve --dev`
  - *feel the joy*
 
   `gulp serve` is the default command while you do actual development.
