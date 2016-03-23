@@ -6,10 +6,11 @@ var angular     = require('angular'),
 require('angular-route');
 app.requires.push('ngRoute');
 
-app.config(['$routeProvider', function($routeProvider) {
+app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $routeProvider.when("", {
         templateUrl: "index.html"
     }).otherwise({
         redirectTo: ""
     });
+    $locationProvider.html5Mode(true);
 }]);
