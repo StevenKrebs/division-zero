@@ -60,3 +60,11 @@ exports.angularRoutes = {};
 exports.angularRoutes.locales = function() {
     return "/js/lang/"
 };
+
+//Angular generic settings
+
+exports.angularSettings = {};
+
+exports.angularSettings.appName = function() {
+    return 'division_zero';
+}

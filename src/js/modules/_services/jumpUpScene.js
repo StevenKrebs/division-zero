@@ -1,8 +1,8 @@
 var angular         = require('angular'),
-    app             = angular.module('division_zero'),
     scrollmagic     = require('scrollmagic'),
     gsap            = require('gsap'),
-    config          = require('../config.js');
+    config          = require('../config.js'),
+    app         =   angular.module(config.angularSettings.appName());
 
 //Plugins
 require('scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js'),

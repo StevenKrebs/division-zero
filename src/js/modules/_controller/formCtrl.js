@@ -1,6 +1,6 @@
 var angular = require('angular'),
     config  = require('../config.js'),
-    app     = angular.module('division_zero');
+    app     = angular.module(config.angularSettings.appName());
 
 // Form management
 app.controller("formCtrl",["$scope", "$http", "$translate", function($scope, $http, $translate) {

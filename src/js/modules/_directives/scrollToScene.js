@@ -1,7 +1,7 @@
 var angular     =   require('angular'),
-    app         =   angular.module('division_zero'),
-    velocity    =   require('velocity-animate'),
-    config      =   require('../config.js');
+    config      =   require('../config.js'),
+    app         =   angular.module(config.angularSettings.appName()),
+    velocity    =   require('velocity-animate');
     
 
 app.directive('scrollToScene', function() {

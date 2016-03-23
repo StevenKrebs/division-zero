@@ -1,6 +1,6 @@
 var angular     =   require('angular'),
-    app         =   angular.module('division_zero'),
-    config      =   require('../config.js');
+    config      =   require('../config.js'),
+    app         =   angular.module(config.angularSettings.appName());
 
 app.directive('jumpUp',['jumpUpScene', function(jumpUpScene){
     return {
