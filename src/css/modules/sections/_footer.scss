@@ -4,7 +4,7 @@ footer {
   background: url("#{$imgpath}/footer.jpg") top center no-repeat $overlay;
   background-size: cover;
   box-shadow: $inset;
-  padding: 3 * $size - 10 0;
+  padding: 5 * $size 0;
     span {
     line-height: 120%;
     i {

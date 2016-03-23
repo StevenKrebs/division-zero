@@ -131,7 +131,7 @@
 }
 
 @mixin jumper {
-  margin: $size auto 0;
+  margin: .5 * $size auto;
   @include grow;
 }
 
