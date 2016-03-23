@@ -50,7 +50,7 @@ header {
       filter: drop-shadow(1px 1px 1px black);
       -webkit-filter: drop-shadow(1px 1px 1px black);
       path {
-        fill: $color;
+        fill: darken($color,10%);
       }
       &:hover {
         transform: scale(1.2);

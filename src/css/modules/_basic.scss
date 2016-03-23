@@ -19,7 +19,7 @@ body {
 a {
   @include text-shadow;
   text-decoration: none;
-  color: darken(white,10%);
+  color: darken($color,10%);
   &:hover {
     @include media(desktop) {
       transition-duration: .5s;
