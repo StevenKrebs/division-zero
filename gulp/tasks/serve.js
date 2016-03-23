@@ -13,8 +13,7 @@ gulp.task('serve', ['_styles', '_scripts'], function () {
             baseDir: config.paths.dist
         }
     });
-    gulp.watch(config.paths.scripts.modules, ['_scripts']);
-    gulp.watch(config.paths.styles.modules, ['_styles']);
-    gulp.watch(config.paths.locales, reload);
-    gulp.watch(config.paths.template, reload);
+    gulp.watch([config.paths.scripts.modules, config.paths.scripts.src], ['_scripts']);
+    gulp.watch([config.paths.styles.modules, config.paths.styles.src],['_styles']);
+    gulp.watch([config.paths.locales, config.paths.template], reload);
 });
