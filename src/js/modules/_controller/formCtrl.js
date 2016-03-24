@@ -13,7 +13,7 @@ app.controller("formCtrl",["$scope", "$http", "$translate", function($scope, $ht
                 "recipient" :   "application@division-zero.org",
                 "subject"   :   "Neue Bewerbung für Team /0/ von " + $scope.formInputNickname,
                 "Name"      :   $scope.formInputNickname,
-                "E-Mail"    :   $scope.formInputEmail,
+                "EMail"     :   $scope.formInputEmail,
                 "Uplay"     :   $scope.formInputUplay,
                 "lang"      :   $translate.proposedLanguage()
             };

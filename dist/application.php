@@ -11,12 +11,12 @@
 
     // Build the email content.
     $email_content = "Name: $name\n";
-    $email_content .= "Email: $email\n";
+    $email_content .= "Email: $mail\n";
     $email_content .= "Uplay-Account: $uplay\n";
     $email_content .= "Sprache: $lang";
 
     // Build the email headers.
-    $email_headers = "From: $name <$email>";
+    $email_headers = "From: $name <$mail>";
 
     // Send the email.
     if (mail($recipient, $subject, $email_content, $email_headers)) {
