@@ -11,29 +11,28 @@ require('gsap/src/uncompressed/plugins/CSSPlugin.js');
 
 //Parallax scene
 app.factory('parallaxScene', function() {
-    function setAnimation (elem, trigger, smController, debug){
-        var parallaxEffect = new TweenMax.fromTo(elem, 1,
-            {
-                css: {
-                    'background-position': "50% 200px"
-                }, ease: Linear.easeNone
-            },{
-                css: {
-                    'background-position': "50% -200px"
-                }, ease: Linear.easeNone
-            }
-        );
-        var scene = new scrollmagic.Scene({
-            triggerElement: trigger[0],
-            triggerHook: "onEnter",
-            duration: "200%"
-        }).setTween(parallaxEffect).addTo(smController);
-        if (debug == true) {
-            scene.addIndicators();
-        }
-        return scene;
-    }
     return {
-        setAnimation : setAnimation
+        setAnimation : function(elem, trigger, smController, debug){
+            var parallaxEffect = new TweenMax.fromTo(elem, 1,
+                {
+                    css: {
+                        'background-position': "50% 200px"
+                    }, ease: Linear.easeNone
+                },{
+                    css: {
+                        'background-position': "50% -200px"
+                    }, ease: Linear.easeNone
+                }
+            );
+            var scene = new scrollmagic.Scene({
+                triggerElement: trigger[0],
+                triggerHook: "onEnter",
+                duration: "200%"
+            }).setTween(parallaxEffect).addTo(smController);
+            if (debug == true) {
+                scene.addIndicators();
+            }
+            return scene;
+        }
     }
 });

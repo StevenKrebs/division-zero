@@ -4,11 +4,10 @@ var angular         = require('angular'),
     app         =   angular.module(config.angularConfig.global.appName);
 
 //Controller service
-app.factory('scrollmagicController', function() {
-    function createController() {
-        return new scrollmagic.Controller();
-    }
+app.service('scrollmagicController', function() {
     return {
-        createController : createController
+        createController : function() {
+            return new scrollmagic.Controller();
+        }
     }
 });
