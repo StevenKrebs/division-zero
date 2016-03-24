@@ -1,6 +1,6 @@
 var angular     = require('angular'),
     config      = require('./../config.js'),
-    app         = angular.module(config.angularSettings.appName());
+    app         = angular.module(config.angularConfig.global.appName);
 
 //Plugins
 require('angular-translate');
@@ -11,7 +11,7 @@ app.config(['$translateProvider', function ($translateProvider) {
     var fileNameConvention = {
         files : [
             {
-                prefix    :   config.angularRoutes.locales() + 'locale-',
+                prefix    :   config.angularConfig.routes.locales + 'locale-',
                 suffix    :   '.json'
             }
         ]

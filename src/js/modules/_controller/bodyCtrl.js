@@ -1,17 +1,15 @@
 var angular         =   require('angular'),
     config          =   require('../config.js'),
-    app             =   angular.module(config.angularSettings.appName());
+    app             =   angular.module(config.angularConfig.global.appName);
 
 //angular modules
 require('angular-animate');
 app.requires.push('ngAnimate');
 
-app.controller('bodyCtrl',['$scope','$timeout', 'scrollmagicController', function($scope, $timeout, scrollmagicController) {
+app.controller('bodyCtrl',['$scope','$timeout', function($scope, $timeout) {
     $timeout(function() {
-        $scope.controller = scrollmagicController.createController();
-    }, 1500).then(function() {
         $scope.loaded = true;
-    });
+    }, 1500);
     $scope.$on('$destroy', function() {
         $scope.loaded = false;
     })

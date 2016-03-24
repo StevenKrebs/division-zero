@@ -1,6 +1,6 @@
 var angular     = require('angular'),
     config      = require('../config'),
-    app         = angular.module(config.angularSettings.appName());
+    app         = angular.module(config.angularConfig.global.appName);
 
 //Plugins
 require('angular-route');

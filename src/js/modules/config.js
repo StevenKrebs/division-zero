@@ -1,70 +1,55 @@
-var exports = module.exports = {};
+var config = module.exports = {};
 
-//Discord server ID
-exports.discord = function() {
-    var discord_server = '148016303809101825';
-    return discord_server
+config.windowSizes = {
+    desktop: 1024,
+    mobile: 768,
+    check: {
+        desktop: function () {
+            return $(window).height() > config.windowSizes.desktop || $(window).width() > config.windowSizes.desktop
+        },
+        mobile: function () {
+            return $(window).height() < config.windowSizes.desktop || $(window).width() < config.windowSizes.desktop
+        }
+    }
 };
 
-//Window size values
-exports.windowSizes = {};
-
-exports.windowSizes.desktop = function() {
-    return 1024;
+config.timing =  {
+    slower: 2000,
+    slow: 1800,
+    regular: 1500,
+    fast: 1000
 };
 
-exports.windowSizes.checkDesktop = function() {
-   return $(window).height() > exports.windowSizes.desktop() || $(window).width() > exports.windowSizes.desktop()
+config.scrollSettings =  {
+    scrollSpeed: config.timing.regular,
+    scrollType: "swing",
+    scrollPos: {
+        getTrigger: function() {
+            return $(document).scrollTop() + $(window).height() / 2
+        },
+        menuItems: {
+            getDesktopItems: function() {
+                return $('.desktop-nav span')
+            },
+            getMobileItems: function(){
+                return $('.mobile-nav span')
+            }
+        },
+        identifier: 'scroll-to-scene',
+        highlight: 'highlight'
+    }
 };
 
-exports.windowSizes.mobile = function() {
-    return 768;
+config.angularConfig = {
+    global: {
+        appName: 'division_zero'
+    },
+    routes: {
+        locales: "/js/lang/"
+    }
 };
 
-exports.windowSizes.checkMobile = function() {
-    return $(window).height() <= exports.windowSizes.desktop() || $(window).width() <= exports.windowSizes.desktop()
-};
+config.discord = {
+    serverID: '148016303809101825'
 
-//Generic animation timings
-exports.timing = {};
-
-exports.timing.slow = function() {
-    return 1800
-};
-
-exports.timing.slower = function() {
-    return 2000
-};
-
-exports.timing.regular = function() {
-    return 1500
-};
-
-exports.timing.fast = function() {
-    return 1000
-};
-
-//Scroll behaviour settings
-exports.scrollSettings = {};
-
-exports.scrollSettings.scrollSpeed = function() {
-    return exports.timing.regular()
-};
-exports.scrollSettings.scrollType = function() {
-    return "swing"
-};
-
-//Language file settings
-exports.angularRoutes = {};
-
-exports.angularRoutes.locales = function() {
-    return "/js/lang/"
-};
-
-//Angular generic settings
-
-exports.angularSettings = {};
-
-exports.angularSettings.appName = function() {
-    return 'division_zero';
 }

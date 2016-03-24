@@ -1,6 +1,6 @@
 var angular         =   require('angular'),
     config          =   require('../config.js'),
-    app             =   angular.module(config.angularSettings.appName());
+    app             =   angular.module(config.angularConfig.global.appName);
 
 
 app.controller('headCtrl',['$scope', '$translate', function($scope, $translate) {

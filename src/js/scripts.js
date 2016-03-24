@@ -4,7 +4,7 @@ var angular     = require('angular'),
     exports     = module.exports        = {},
     config      = require('./modules/config');
 
-exports.angularApp = angular.module(config.angularSettings.appName(), []);
+exports.angularApp = angular.module(config.angularConfig.global.appName, []);
 
 /* JS-Modules */
 require('bulk-require')(__dirname, ['modules/**/*.js']);

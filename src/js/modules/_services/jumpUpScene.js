@@ -2,7 +2,7 @@ var angular         = require('angular'),
     scrollmagic     = require('scrollmagic'),
     gsap            = require('gsap'),
     config          = require('../config.js'),
-    app         =   angular.module(config.angularSettings.appName());
+    app         =   angular.module(config.angularConfig.global.appName);
 
 //Plugins
 require('scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js'),
