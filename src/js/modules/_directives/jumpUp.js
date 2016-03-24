@@ -11,7 +11,7 @@ app.directive('jumpUp',['jumpUpScene', 'scrollmagicController', 'checkWindowSize
         },
         link: function(scope, elem) {
             if(checkWindowSize.getDesktop() && scope.loaded) {
-                jumpUpScene.setAnimation($(elem).find(scope.jumpUp), elem, scrollmagicController.createController());
+                jumpUpScene.setAnimation($(elem).find(scope.jumpUp), elem, scrollmagicController.createController(), config.debugConfig.status);
             }
         }
     }

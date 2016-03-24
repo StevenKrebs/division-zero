@@ -44,3 +44,7 @@ config.angularConfig = {
 config.discord = {
     serverID: '148016303809101825'
 };
+
+config.debugConfig = {
+    status : false
+};

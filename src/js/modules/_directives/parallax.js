@@ -7,7 +7,7 @@ app.directive('parallax',['parallaxScene', 'scrollmagicController', 'checkWindow
         restrict: 'A',
         link: function(scope, elem) {
             if(checkWindowSize.getDesktop && scope.loaded) {
-                parallaxScene.setAnimation(elem, elem, scrollmagicController.createController());
+                parallaxScene.setAnimation(elem, elem, scrollmagicController.createController(), config.debugConfig.status);
             }
         }
     }
