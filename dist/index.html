@@ -35,7 +35,7 @@
     </head>
     <body ng-controller="bodyCtrl">
         <div class="loader" ng-hide="loaded">
-            <div class="loaderContainer">
+            <div class="loaderContainer" ng-if="!loaded">
                 <div class="circle"></div>
                 <div class="circle-inner"></div>
             </div>
