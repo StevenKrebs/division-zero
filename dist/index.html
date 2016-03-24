@@ -41,7 +41,7 @@
             </div>
         </div>
         <nav ng-controller="navCtrl" ng-show="loaded" class="ng-hide">
-            <ul class="mobile-nav" ng-if="mobile && loaded">
+            <ul class="mobile-nav" ng-if="!desktop && loaded">
                 <li><span scroll-to-scene="#header" class="icon ion-ios-home highlight"></span></li>
                 <li><span scroll-to-scene="#info-about" class="icon ion-eye"></span></li>
                 <li><span scroll-to-scene="#info-rules" class="icon ion-flash"></span></li>

@@ -2,7 +2,7 @@ var angular     =   require('angular'),
     config      =   require('../config.js'),
     app         =   angular.module(config.angularConfig.global.appName);
 
-app.directive('jumpUp',['jumpUpScene', 'scrollmagicController', function(jumpUpScene, scrollmagicController){
+app.directive('jumpUp',['jumpUpScene', 'scrollmagicController', 'checkWindowSize', function(jumpUpScene, scrollmagicController, checkWindowSize){
     return {
         restrict: 'A',
         scope: {
@@ -10,7 +10,7 @@ app.directive('jumpUp',['jumpUpScene', 'scrollmagicController', function(jumpUpS
             loaded : '&'
         },
         link: function(scope, elem) {
-            if(config.windowSizes.check.desktop() && scope.loaded) {
+            if(checkWindowSize.getDesktop() && scope.loaded) {
                 jumpUpScene.setAnimation($(elem).find(scope.jumpUp), elem, scrollmagicController.createController());
             }
         }

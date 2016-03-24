@@ -2,15 +2,7 @@ var config = module.exports = {};
 
 config.windowSizes = {
     desktop: 1024,
-    mobile: 768,
-    check: {
-        desktop: function () {
-            return $(window).height() > config.windowSizes.desktop || $(window).width() > config.windowSizes.desktop
-        },
-        mobile: function () {
-            return $(window).height() < config.windowSizes.desktop || $(window).width() < config.windowSizes.desktop
-        }
-    }
+    mobile: 768
 };
 
 config.timing =  {
