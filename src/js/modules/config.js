@@ -1,7 +1,7 @@
 var config = module.exports = {};
 
 config.windowSizes = {
-    desktop: 1024,
+    desktop: 1134,
     mobile: 768
 };
 
