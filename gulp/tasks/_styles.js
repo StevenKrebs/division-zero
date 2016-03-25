@@ -19,15 +19,13 @@ var gulp        = require('gulp'),
 
 gulp.task('_styles', function() {
     return gulp.src(config.paths.styles.src)
-        .pipe(gulpif(environment.dev, sourcemaps.init()))
+        .pipe(gulpif(environment.dev, sourcemaps.init(config.compiler.sourcemaps)))
         .pipe(glob())
         .pipe(sass())
-        .pipe(prefix({browsers: ['last 2 versions']}))
-        .pipe(gulpif(!environment.dev, cleanCSS({
-            processImportFrom: ['local']
-        })))
+        .pipe(prefix({browsers: config.compiler.browsers}))
+        .pipe(gulpif(!environment.dev, cleanCSS(config.compiler.cleanCSS)))
         .pipe(rename(config.names.styles))
         .pipe(gulpif(environment.dev, sourcemaps.write(config.paths.maps.dest)))
         .pipe(gulp.dest(config.paths.styles.dest))
-        .pipe(reload({stream:true}));
+        .pipe(reload(config.compiler.browserSync.styles));
 });
