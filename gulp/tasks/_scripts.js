@@ -1,3 +1,12 @@
+/**
+ * _scripts
+ * //division-zero.org
+ * @author Steven Krebs
+ * @description gulp subtask for script bundling
+ * @copyright 2016, Steven Krebs
+ * @license MIT
+ */
+
 // Gulp Dependencies
 var gulp        = require('gulp'),
     rename      = require('gulp-rename'),
@@ -20,9 +29,9 @@ var gulp        = require('gulp'),
 
 gulp.task('_scripts', function() {
     return browserify({
-            entries: config.paths.scripts.src,
-            transform: [bulkify]
-        })
+        entries: config.paths.scripts.src,
+        transform: [bulkify]
+    })
         .bundle()
         .pipe(source(config.names.temp))
         .pipe(buffer())

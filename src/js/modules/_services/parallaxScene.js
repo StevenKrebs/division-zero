@@ -1,8 +1,17 @@
+/**
+ * parallaxScene
+ * //division-zero.org
+ * @author Steven Krebs
+ * @description angular.js service to provide the actual parallax effect
+ * @copyright 2016, Steven Krebs
+ * @license MIT
+ */
+
 var angular         = require('angular'),
     scrollmagic     = require('scrollmagic'),
     gsap            = require('gsap'),
     config          = require('../config.js'),
-    app         =   angular.module(config.angularConfig.global.appName);
+    app             =   angular.module(config.angularConfig.global.appName);
 
 //Plugins
 require('scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js'),

@@ -1,3 +1,12 @@
+/**
+ * _styles
+ * //division-zero.org
+ * @author Steven Krebs
+ * @description gulp subtask for css-preprocessing
+ * @copyright 2016, Steven Krebs
+ * @license MIT
+ */
+
 // Gulp Dependencies
 var gulp        = require('gulp'),
     rename      = require('gulp-rename'),

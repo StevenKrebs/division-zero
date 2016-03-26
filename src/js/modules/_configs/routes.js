@@ -1,3 +1,12 @@
+/**
+ * routes
+ * //division-zero.org
+ * @author Steven Krebs
+ * @description angular.js routing configuration
+ * @copyright 2016, Steven Krebs
+ * @license MIT
+ */
+
 var angular     = require('angular'),
     config      = require('../config'),
     app         = angular.module(config.angularConfig.global.appName);

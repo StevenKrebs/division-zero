@@ -1,3 +1,11 @@
+/**
+ * formCtrl
+ * //division-zero.org
+ * @author Steven Krebs
+ * @file angular.js controller for the application form. 
+ * @description Checks the form, creates a JSON to be posted to a php-script on the server.
+ * Copyright 2016. MIT licensed.
+ */
 var angular = require('angular'),
     config  = require('../config.js'),
     app     = angular.module(config.angularConfig.global.appName);

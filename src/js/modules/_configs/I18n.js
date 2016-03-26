@@ -1,3 +1,12 @@
+/**
+ * I18n
+ * //division-zero.org
+ * @author Steven Krebs
+ * @description angular.js configuration for Internationalization
+ * @copyright 2016,
+ * @license MIT
+ */
+
 var angular     = require('angular'),
     config      = require('./../config.js'),
     app         = angular.module(config.angularConfig.global.appName);
@@ -16,13 +25,13 @@ app.config(['$translateProvider', function ($translateProvider) {
             }
         ]
     };
-    
+
     var langMap = {
         'en_UK' : 'en',
         'en_US' : 'en',
         'de_DE' : 'de'
     };
-    
+
     $translateProvider
         .useStaticFilesLoader(fileNameConvention)
         .registerAvailableLanguageKeys(['en','de'], langMap)
@@ -30,5 +39,3 @@ app.config(['$translateProvider', function ($translateProvider) {
         .fallbackLanguage('en')
         .useSanitizeValueStrategy('escape');
 }]);
-
-    

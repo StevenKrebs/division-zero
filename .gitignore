@@ -1,4 +1,4 @@
-/dist/maps
+/.idea
 /dist/css
 /dist/js/scripts.min.js
 /npm-debug.log

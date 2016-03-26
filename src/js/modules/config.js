@@ -1,3 +1,12 @@
+/**
+ * config.js
+ * //division-zero.org
+ * @author Steven Krebs
+ * @description Provides (mostly script internal) settings
+ * @copyright 2016, Steven Krebs
+ * @license MIT
+ */
+
 var config = module.exports = {};
 
 config.windowSizes = {

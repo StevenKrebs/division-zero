@@ -1,3 +1,12 @@
+/**
+ * config
+ * //division-zero.org
+ * @author Steven Krebs
+ * @description gulp-configuration file
+ * @copyright 2016, Steven Krebs
+ * @license MIT
+ */
+
 module.exports = {
     paths: {
         base: './',

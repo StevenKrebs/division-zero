@@ -1,3 +1,12 @@
+/**
+ * getScrollPos
+ * //division-zero.org
+ * @author Steven Krebs
+ * @description angular.js service to get the scroll position (relevant for scroll based animations)
+ * @copyright 2016, Steven Krebs
+ * @license MIT
+ */
+
 var angular         = require('angular'),
     config          = require('../config.js'),
     app         =   angular.module(config.angularConfig.global.appName);
