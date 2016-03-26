@@ -19,8 +19,9 @@ module.exports = {
         dist: './dist'
     },
     names: {
-        styles: 'styles.min.css',
-        scripts: 'scripts.min.js',
+        rename: {
+            suffix: '.min'
+        },
         temp: 'scripts.js'
     },
     compiler: {
