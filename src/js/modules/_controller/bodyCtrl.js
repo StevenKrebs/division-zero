@@ -6,11 +6,13 @@ var angular         =   require('angular'),
 require('angular-animate');
 app.requires.push('ngAnimate');
 
-app.controller('bodyCtrl',['$scope','$timeout', function($scope, $timeout) {
-    $timeout(function() {
-        $scope.loaded = true;
-    }, 1500);
+app.controller('bodyCtrl',['$scope', '$timeout', function($scope, $timeout) {
     $scope.$on('$destroy', function() {
-        $scope.loaded = false;
+            $scope.loaded = false;
+    });
+    $scope.$on('$includeContentLoaded', function() {
+        $timeout(function() {
+            $scope.loaded = true;
+        }, config.timing.regular);
     })
 }]);
