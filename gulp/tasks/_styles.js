@@ -24,7 +24,7 @@ gulp.task('_styles', function() {
         .pipe(sass())
         .pipe(prefix({browsers: config.compiler.browsers}))
         .pipe(gulpif(!environment.dev, cleanCSS(config.compiler.cleanCSS)))
-        .pipe(rename(config.names.rename.suffix))
+        .pipe(rename(config.names.rename))
         .pipe(gulpif(environment.dev, sourcemaps.write(config.paths.maps.dest)))
         .pipe(gulp.dest(config.paths.styles.dest))
         .pipe(reload(config.compiler.browserSync.styles));

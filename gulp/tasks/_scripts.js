@@ -28,7 +28,7 @@ gulp.task('_scripts', function() {
         .pipe(buffer())
         .pipe(gulpif(environment.dev, sourcemaps.init(config.compiler.sourcemaps)))
         .pipe(gulpif(!environment.dev, uglify()))
-        .pipe(rename(config.names.rename.suffix))
+        .pipe(rename(config.names.rename))
         .pipe(gulpif(environment.dev, sourcemaps.write(config.paths.maps.dest)))
         .pipe(gulp.dest(config.paths.scripts.dest))
         .pipe(reload(config.compiler.browserSync.scripts));
