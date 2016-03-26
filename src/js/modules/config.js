@@ -38,7 +38,8 @@ config.angularConfig = {
     },
     routes: {
         locales: "/js/lang/"
-    }
+    },
+    debug: false
 };
 
 config.discord = {
