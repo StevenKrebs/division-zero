@@ -11,9 +11,6 @@ module.exports = {
             modules: './src/js/modules/**/*.js',
             dest: './dist/js',
         },
-        maps: {
-            dest: '../maps'
-        },
         template: './dist/index.html',
         locales: './dist/js/lang/*.json',
         dist: './dist'
