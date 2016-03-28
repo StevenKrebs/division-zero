@@ -12,6 +12,7 @@ var gulp        = require('gulp'),
     rename      = require('gulp-rename'),
     config      = require('../config'),
     gulpif      = require('gulp-if'),
+    gutil       = require('gulp-util'),
 
 // Browser sync
     browserSync = require('browser-sync'),
@@ -20,6 +21,7 @@ var gulp        = require('gulp'),
 // Script Dependencies
     browserify  = require('browserify'),
     bulkify     = require('bulkify'),
+    watchify    = require('watchify'),
     uglify      = require('gulp-uglify'),
     source      = require('vinyl-source-stream'),
     buffer      = require('vinyl-buffer'),
@@ -27,18 +29,25 @@ var gulp        = require('gulp'),
 //Source mapping Dependencies
     sourcemaps  = require('gulp-sourcemaps');
 
-gulp.task('_scripts', function() {
-    return browserify({
-        entries: config.paths.scripts.src,
-        transform: [bulkify]
-    })
-        .bundle()
-        .pipe(source(config.names.temp))
-        .pipe(buffer())
-        .pipe(gulpif(environment.dev, sourcemaps.init(config.compiler.sourcemaps)))
-        .pipe(gulpif(!environment.dev, uglify()))
-        .pipe(rename(config.names.rename))
-        .pipe(gulpif(environment.dev, sourcemaps.write()))
-        .pipe(gulp.dest(config.paths.scripts.dest))
-        .pipe(reload(config.compiler.browserSync.scripts));
-});
+var browserifyConfig = {
+    entries: [config.paths.scripts.src],
+    transform: [bulkify]
+},
+    b = watchify(browserify(browserifyConfig));
+
+gulp.task('_scripts', bundle);
+b.on('update', bundle);
+
+function bundle() {
+    return b.bundle()
+            .on('error', gutil.log.bind(gutil, 'Browserify Error'))
+            .pipe(source(config.names.temp))
+            .pipe(buffer())
+            .pipe(gulpif(environment.dev, sourcemaps.init(config.compiler.sourcemaps)))
+            .pipe(gulpif(!environment.dev, uglify()))
+            .on('error', gutil.log.bind(gutil, 'Uglify Error'))
+            .pipe(rename(config.names.rename))
+            .pipe(gulpif(environment.dev, sourcemaps.write()))
+            .pipe(gulp.dest(config.paths.scripts.dest))
+            .pipe(reload(config.compiler.browserSync.scripts));
+}

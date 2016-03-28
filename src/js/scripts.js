@@ -8,7 +8,7 @@
  */
 
 //Global Plugins
-global.$    = global.jQuery = require('jquery');
+global.$        = global.jQuery = require('jquery');
 var angular     = require('angular'),
     exports     = module.exports        = {},
     config      = require('./modules/config');

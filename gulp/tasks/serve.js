@@ -23,7 +23,7 @@ gulp.task('serve', ['_styles', '_scripts'], function () {
             baseDir: config.paths.dist
         }
     });
-    gulp.watch([config.paths.scripts.modules, config.paths.scripts.src], ['_scripts']);
+    //scripts are handled via watchify, thus no gulp.watch for it.
     gulp.watch([config.paths.styles.modules, config.paths.styles.src],['_styles']);
     gulp.watch([config.paths.locales, config.paths.template], reload);
 });
