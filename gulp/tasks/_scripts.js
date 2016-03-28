@@ -1,6 +1,6 @@
 /**
  * _scripts
- * //division-zero.org
+ * //angularCMS
  * @author Steven Krebs
  * @description gulp subtask for script bundling
  * @copyright 2016, Steven Krebs
@@ -22,6 +22,7 @@ var gulp        = require('gulp'),
     browserify  = require('browserify'),
     bulkify     = require('bulkify'),
     watchify    = require('watchify'),
+    tsify       = require('tsify'),
     uglify      = require('gulp-uglify'),
     source      = require('vinyl-source-stream'),
     buffer      = require('vinyl-buffer'),
@@ -30,16 +31,17 @@ var gulp        = require('gulp'),
     sourcemaps  = require('gulp-sourcemaps');
 
 var browserifyConfig = {
-    entries: [config.paths.scripts.src],
-    transform: [bulkify]
-},
+        entries: [config.paths.scripts.src],
+        transform: [bulkify]
+    },
     b = watchify(browserify(browserifyConfig));
 
-gulp.task('_scripts', bundle);
-b.on('update', bundle);
+gulp.task('_scripts', bundler);
+b.on('update', bundler);
 
-function bundle() {
-    return b.bundle()
+function bundler() {
+    return b.plugin(tsify, { noImplicitAny: true })
+            .bundle()
             .on('error', gutil.log.bind(gutil, 'Browserify Error'))
             .pipe(source(config.names.temp))
             .pipe(buffer())

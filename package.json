@@ -16,6 +16,7 @@
     "browser-sync": "^2.11.1",
     "browserify": "^13.0.0",
     "watchify": "^3.7.0",
+    "tsify": "^0.14.1",
     "gulp": "^3.9.1",
     "gulp-if": "^2.0.0",
     "gulp-util": "^3.0.7",
