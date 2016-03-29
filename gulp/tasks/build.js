@@ -1,6 +1,5 @@
 /**
  * build.js
- * //division-zero.org
  * @author Steven Krebs
  * @description gulp task to build script & style files
  * @param --dev activates a debuggable, sourcemapped buildstream

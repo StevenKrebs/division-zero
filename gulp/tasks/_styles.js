@@ -1,6 +1,5 @@
 /**
  * _styles
- * //division-zero.org
  * @author Steven Krebs
  * @description gulp subtask for css-preprocessing
  * @copyright 2016, Steven Krebs
@@ -34,12 +33,12 @@ gulp.task('_styles', function() {
         .on('error', gutil.log.bind(gutil, 'Globbing Error'))
         .pipe(sass())
         .on('error', gutil.log.bind(gutil, 'Preprocessor Error'))
-        .pipe(prefix({browsers: config.compiler.browsers}))
+        .pipe(prefix({browsers: config.compiler.styles.browsers}))
         .on('error', gutil.log.bind(gutil, 'Prefixer Error'))
-        .pipe(gulpif(!environment.dev, cleanCSS(config.compiler.cleanCSS)))
+        .pipe(gulpif(!environment.dev, cleanCSS(config.compiler.styles.cleanCSS)))
         .on('error', gutil.log.bind(gutil, 'Compressing Error'))
         .pipe(rename(config.names.rename))
         .pipe(gulpif(environment.dev, sourcemaps.write()))
         .pipe(gulp.dest(config.paths.styles.dest))
-        .pipe(reload(config.compiler.browserSync.styles));
+        .pipe(reload(config.compiler.styles.browserSync));
 });

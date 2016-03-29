@@ -12,6 +12,6 @@ var angular     = require('angular'),
     app         = angular.module(config.angularConfig.global.appName);
 
 app.config(['$compileProvider', function ($compileProvider) {
-    // disable debug info
+    // change debug option
     $compileProvider.debugInfoEnabled(config.angularConfig.debug);
 }]);
