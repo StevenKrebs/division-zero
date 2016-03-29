@@ -7,21 +7,23 @@
  * @license MIT
  */
 
-var angular         = require('angular'),
-    scrollmagic     = require('scrollmagic'),
+declare var TimelineMax:any, Expo: any, TweenMax: any;
+
+var angular:any     = require('angular'),
+    scrollmagic:any = require('scrollmagic'),
     gsap            = require('gsap'),
-    config          = require('../config.js'),
-    app             =   angular.module(config.angularConfig.global.appName);
+    config          = require('../config'),
+    app             = angular.module(config.angularConfig.global.appName);
 
 //Plugins
-require('scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js'),
-require('scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js'),
-require('gsap/src/uncompressed/plugins/CSSPlugin.js');
+    require('scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js'),
+    require('scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js'),
+    require('gsap/src/uncompressed/plugins/CSSPlugin.js');
 
 app.factory('jumpUpScene', function() {
     return {
-        setAnimation : function(elem, trigger, smController, debug) {
-            var timeline = new TimelineMax();
+        setAnimation : function(elem:any, trigger:string, smController:any, debug:boolean) {
+            var timeline:any = new TimelineMax();
             timeline.add(
                 TweenMax.fromTo(elem,2,
                     {
@@ -50,7 +52,7 @@ app.factory('jumpUpScene', function() {
                 timeline.play();
             });
             scene.addTo(smController);
-            scene.on("end", function (e) {
+            scene.on("end", function (e:any) {
                 if (e.scrollDirection === "REVERSE") {
                     scene.reverse(false)
                 }

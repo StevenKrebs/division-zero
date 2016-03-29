@@ -7,18 +7,18 @@
  * @license MIT
  */
 
-var angular     =   require('angular'),
-    config      =   require('../config.js'),
+var angular:any =   require('angular'),
+    config      =   require('../config'),
     app         =   angular.module(config.angularConfig.global.appName);
 
-app.directive('jumpUp',['jumpUpScene', 'scrollmagicController', 'checkWindowSize', function(jumpUpScene, scrollmagicController, checkWindowSize){
+app.directive('jumpUp',['jumpUpScene', 'scrollmagicController', 'checkWindowSize', function(jumpUpScene:any, scrollmagicController:any, checkWindowSize:any){
     return {
         restrict: 'A',
         scope: {
             jumpUp : '@',
             loaded : '&'
         },
-        link: function(scope, elem) {
+        link: function(scope:any, elem:any) {
             if(checkWindowSize.getDesktop() && scope.loaded) {
                 jumpUpScene.setAnimation($(elem).find(scope.jumpUp), elem, scrollmagicController.createController(), config.debugConfig.status);
             }

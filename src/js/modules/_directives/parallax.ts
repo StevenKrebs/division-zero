@@ -7,14 +7,14 @@
  * @license MIT
  */
 
-var angular     =   require('angular'),
-    config      =   require('../config.js'),
+var angular:any =   require('angular'),
+    config      =   require('../config'),
     app         =   angular.module(config.angularConfig.global.appName);
 
-app.directive('parallax',['parallaxScene', 'scrollmagicController', 'checkWindowSize', function(parallaxScene, scrollmagicController, checkWindowSize){
+app.directive('parallax',['parallaxScene', 'scrollmagicController', 'checkWindowSize', function(parallaxScene:any, scrollmagicController:any, checkWindowSize:any){
     return {
         restrict: 'A',
-        link: function(scope, elem) {
+        link: function(scope:any, elem:any) {
             if(checkWindowSize.getDesktop && scope.loaded) {
                 parallaxScene.setAnimation(elem, elem, scrollmagicController.createController(), config.debugConfig.status);
             }

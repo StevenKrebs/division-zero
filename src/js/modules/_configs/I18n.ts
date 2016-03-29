@@ -7,8 +7,8 @@
  * @license MIT
  */
 
-var angular     = require('angular'),
-    config      = require('./../config.js'),
+var angular:any = require('angular'),
+    config      = require('./../config'),
     app         = angular.module(config.angularConfig.global.appName);
 
 //Plugins
@@ -16,7 +16,7 @@ require('angular-translate');
 require('angular-translate-loader-static-files');
 
 app.requires.push('pascalprecht.translate');
-app.config(['$translateProvider', function ($translateProvider) {
+app.config(['$translateProvider', function ($translateProvider:any) {
     var fileNameConvention = {
         files : [
             {

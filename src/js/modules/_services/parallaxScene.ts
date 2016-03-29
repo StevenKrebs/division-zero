@@ -7,21 +7,24 @@
  * @license MIT
  */
 
-var angular         = require('angular'),
-    scrollmagic     = require('scrollmagic'),
+declare var TweenMax: any;
+declare var Linear: any;
+
+var angular:any     = require('angular'),
+    scrollmagic:any = require('scrollmagic'),
     gsap            = require('gsap'),
-    config          = require('../config.js'),
+    config          = require('../config'),
     app             =   angular.module(config.angularConfig.global.appName);
 
 //Plugins
 require('scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js'),
-require('scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js'),
-require('gsap/src/uncompressed/plugins/CSSPlugin.js');
+    require('scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js'),
+    require('gsap/src/uncompressed/plugins/CSSPlugin.js');
 
 //Parallax scene
 app.factory('parallaxScene', function() {
     return {
-        setAnimation : function(elem, trigger, smController, debug){
+        setAnimation : function(elem:any, trigger:string, smController:any, debug:boolean){
             var parallaxEffect = new TweenMax.fromTo(elem, 1,
                 {
                     css: {

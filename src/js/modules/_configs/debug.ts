@@ -6,12 +6,13 @@
  * @copyright 2016,
  * @license MIT
  */
+declare var require: any;
 
-var angular     = require('angular'),
+var angular:any = require('angular'),
     config      = require('../config'),
     app         = angular.module(config.angularConfig.global.appName);
 
-app.config(['$compileProvider', function ($compileProvider) {
+app.config(['$compileProvider', function ($compileProvider:any) {
     // change debug option
     $compileProvider.debugInfoEnabled(config.angularConfig.debug);
 }]);

@@ -7,10 +7,10 @@
  * @license MIT
  */
 
-var angular         =   require('angular'),
-    config          =   require('../config.js'),
+var angular:any     =   require('angular'),
+    config          =   require('../config'),
     app             =   angular.module(config.angularConfig.global.appName);
 
-app.controller('headCtrl',['$scope', '$translate', function($scope, $translate) {
+app.controller('headCtrl',['$scope', '$translate', function($scope:any, $translate:any) {
     $scope.lang = $translate.proposedLanguage() || $translate.use();
 }]);

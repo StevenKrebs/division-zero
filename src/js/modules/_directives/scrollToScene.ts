@@ -7,10 +7,10 @@
  * @license MIT
  */
 
-var angular     =   require('angular'),
-    config      =   require('../config.js'),
-    app         =   angular.module(config.angularConfig.global.appName),
-    velocity    =   require('velocity-animate');
+var angular:any     =   require('angular'),
+    config          =   require('../config'),
+    app             =   angular.module(config.angularConfig.global.appName),
+    velocity        =   require('velocity-animate');
 
 
 app.directive('scrollToScene', function() {
@@ -19,7 +19,7 @@ app.directive('scrollToScene', function() {
         scope: {
             scrollToScene: "@"
         },
-        link: function(scope, elem) {
+        link: function(scope:any, elem:any) {
             elem.on('click', function () {
                 $(scope.scrollToScene).velocity("scroll", {
                     duration: config.scrollSettings.scrollSpeed,

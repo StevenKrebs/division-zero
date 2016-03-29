@@ -7,15 +7,15 @@
  * @license MIT
  */
 
-var angular         =   require('angular'),
-    config          =   require('../config.js'),
+var angular:any     =   require('angular'),
+    config          =   require('../config'),
     app             =   angular.module(config.angularConfig.global.appName);
 
 //angular modules
 require('angular-animate');
 app.requires.push('ngAnimate');
 
-app.controller('bodyCtrl',['$scope', '$timeout', function($scope, $timeout) {
+app.controller('bodyCtrl',['$scope', '$timeout', function($scope:any, $timeout:any) {
     $scope.$on('$destroy', function() {
         $scope.loaded = false;
     });
@@ -25,4 +25,3 @@ app.controller('bodyCtrl',['$scope', '$timeout', function($scope, $timeout) {
         }, config.timing.regular);
     })
 }]);
- 
