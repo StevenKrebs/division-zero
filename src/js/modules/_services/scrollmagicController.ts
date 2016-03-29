@@ -7,10 +7,10 @@
  * @license MIT
  */
 
-var angular         = require('angular'),
-    scrollmagic     = require('scrollmagic'),
-    config          = require('../config.js'),
-    app         =   angular.module(config.angularConfig.global.appName);
+var angular:any         = require('angular'),
+    scrollmagic:any     = require('scrollmagic'),
+    config              = require('../config'),
+    app                 = angular.module(config.angularConfig.global.appName);
 
 //Controller service
 app.service('scrollmagicController', function() {

@@ -7,7 +7,7 @@
  * @license MIT
  */
 
-var angular     = require('angular'),
+var angular:any = require('angular'),
     config      = require('../config'),
     app         = angular.module(config.angularConfig.global.appName);
 
@@ -15,7 +15,7 @@ var angular     = require('angular'),
 require('angular-route');
 app.requires.push('ngRoute');
 
-app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+app.config(['$routeProvider', '$locationProvider', function($routeProvider:any, $locationProvider:any) {
     $routeProvider.when("", {
         templateUrl: "index.html"
     }).otherwise({

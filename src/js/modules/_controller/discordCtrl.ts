@@ -7,12 +7,12 @@
  * @license MIT
  */
 
-var config      = require('../config.js'),
-    angular     = require('angular'),
+var config      = require('../config'),
+    angular:any = require('angular'),
     app         = angular.module(config.angularConfig.global.appName);
 
-app.controller('discordCtrl', ['$scope', '$http', function($scope, $http) {
-    $http.get("https://discordapp.com/api/servers/"+ config.discord.serverID +"/widget.json").then(function(response) {
+app.controller('discordCtrl', ['$scope', '$http', function($scope:any, $http:any) {
+    $http.get("https://discordapp.com/api/servers/"+ config.discord.serverID +"/widget.json").then(function(response:any) {
         $scope.discordUserList  = response.data.members;
     });
 }]);

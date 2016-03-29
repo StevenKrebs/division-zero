@@ -7,11 +7,11 @@
  * @license MIT
  */
 
-var angular     =   require('angular'),
-    config      =   require('../config.js'),
+var angular:any =   require('angular'),
+    config      =   require('../config'),
     app         =   angular.module(config.angularConfig.global.appName);
 
-app.controller('navCtrl',['$scope','$window','scrollPos','checkWindowSize', function($scope, $window, scrollPos, checkWindowSize){
+app.controller('navCtrl',['$scope','$window','scrollPos','checkWindowSize', function($scope:any, $window:any, scrollPos:any, checkWindowSize:any){
     function checkSizes() {
         $scope.desktop = checkWindowSize.getDesktop();
     }

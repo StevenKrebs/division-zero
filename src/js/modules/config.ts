@@ -7,7 +7,10 @@
  * @license MIT
  */
 
-var config = module.exports = {};
+declare var module:any;
+declare var $:any;
+
+var config:any = module['exports'] = {};
 
 config.windowSizes = {
     desktop: 1134,

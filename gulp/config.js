@@ -16,7 +16,10 @@ module.exports.paths = {
         dest: './dist/css'
     },
     scripts: {
-        src: './src/js/scripts.js',
+        src: [
+            './src/js/scripts.ts',
+            './typings/browser.d.ts'
+        ],
         modules: './src/js/modules/**/*.js',
         dest: './dist/js'
     },
@@ -58,7 +61,8 @@ module.exports.compiler = {
         browserify: {
             entries: [module.exports.paths.scripts.src],
             cache: {},
-            packageCache: {}
+            packageCache: {},
+            debug: true
         },
         browserSync: {
             stream: true,
@@ -68,7 +72,10 @@ module.exports.compiler = {
             poll: true
         },
         tsify: {
-            noImplicitAny: true
+            module: "commonjs",
+            target: "es5",
+            sourceMap: true,
+            noImplicitAny: false
         }
     }
 };
