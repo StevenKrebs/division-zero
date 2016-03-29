@@ -1,6 +1,5 @@
 /**
  * serve
- * //division-zero.org
  * @author Steven Krebs
  * @description gulp task for local showcasing, mostly used during development
  * @param --dev should be issued to build debuggable and sourcemapped files

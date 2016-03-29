@@ -1,6 +1,5 @@
 /**
  * _scripts
- * //division-zero.org
  * @author Steven Krebs
  * @description gulp subtask for script bundling
  * @copyright 2016, Steven Krebs
@@ -22,6 +21,7 @@ var gulp        = require('gulp'),
     browserify  = require('browserify'),
     bulkify     = require('bulkify'),
     watchify    = require('watchify'),
+    tsify       = require('tsify'),
     uglify      = require('gulp-uglify'),
     source      = require('vinyl-source-stream'),
     buffer      = require('vinyl-buffer'),
@@ -29,17 +29,22 @@ var gulp        = require('gulp'),
 //Source mapping Dependencies
     sourcemaps  = require('gulp-sourcemaps');
 
-var browserifyConfig = {
-    entries: [config.paths.scripts.src],
-    transform: [bulkify]
-},
-    b = watchify(browserify(browserifyConfig));
+var b = watchify(browserify(config.compiler.scripts.browserify), config.compiler.scripts.watchify);
 
-gulp.task('_scripts', bundle);
-b.on('update', bundle);
+gulp.task('_scripts', bundler);
+b.on('update', function(ids){
+    gutil.log('[' + gutil.colors.blue('Watchify') + '] ' + "File(s) changed: " + gutil.colors.magenta(ids));
+    bundler()
+});
 
-function bundle() {
-    return b.bundle()
+b.on('log', function(msg) {
+   gutil.log('[' + gutil.colors.blue('Watchify') + '] ' + "Finished: " + gutil.colors.magenta(msg));
+});
+
+function bundler() {
+    return b.plugin(tsify, config.compiler.scripts.tsify)
+            .transform(bulkify)
+            .bundle()
             .on('error', gutil.log.bind(gutil, 'Browserify Error'))
             .pipe(source(config.names.temp))
             .pipe(buffer())
@@ -49,5 +54,5 @@ function bundle() {
             .pipe(rename(config.names.rename))
             .pipe(gulpif(environment.dev, sourcemaps.write()))
             .pipe(gulp.dest(config.paths.scripts.dest))
-            .pipe(reload(config.compiler.browserSync.scripts));
+            .pipe(reload(config.compiler.scripts.browserSync));
 }
