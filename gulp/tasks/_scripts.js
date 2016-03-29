@@ -29,8 +29,6 @@ var gulp        = require('gulp'),
 //Source mapping Dependencies
     sourcemaps  = require('gulp-sourcemaps');
 
-
-
 gulp.task('_scripts', bundler);
 
 //Set if dev or deploy
