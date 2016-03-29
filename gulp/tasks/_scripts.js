@@ -38,7 +38,7 @@ var b = null;
 if (environment.dev) {
     b = watchify(browserify(config.compiler.scripts.browserify), config.compiler.scripts.watchify);
     b.on('update', function(ids){
-        gutil.log('[' + gutil.colors.blue('Watchify') + '] ' + "File(s) changed: " + gutil.colors.magenta(ids));
+        gutil.log('[' + gutil.colors.blue('Watchify') + '] ' + "File(s) changed: " + gutil.colors.cyan(ids));
         bundler()
     });
 
