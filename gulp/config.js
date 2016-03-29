@@ -56,7 +56,9 @@ module.exports.compiler = {
     },
     scripts: {
         browserify: {
-            entries: [module.exports.paths.scripts.src]
+            entries: [module.exports.paths.scripts.src],
+            cache: {},
+            packageCache: {}
         },
         browserSync: {
             stream: true,

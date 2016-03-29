@@ -29,18 +29,27 @@ var gulp        = require('gulp'),
 //Source mapping Dependencies
     sourcemaps  = require('gulp-sourcemaps');
 
-var b = watchify(browserify(config.compiler.scripts.browserify), config.compiler.scripts.watchify);
+
 
 gulp.task('_scripts', bundler);
-b.on('update', function(ids){
-    gutil.log('[' + gutil.colors.blue('Watchify') + '] ' + "File(s) changed: " + gutil.colors.magenta(ids));
-    bundler()
-});
 
-b.on('log', function(msg) {
-   gutil.log('[' + gutil.colors.blue('Watchify') + '] ' + "Finished: " + gutil.colors.magenta(msg));
-});
+//Set if dev or deploy
+var b = null;
+if (environment.dev) {
+    b = watchify(browserify(config.compiler.scripts.browserify), config.compiler.scripts.watchify);
+    b.on('update', function(ids){
+        gutil.log('[' + gutil.colors.blue('Watchify') + '] ' + "File(s) changed: " + gutil.colors.magenta(ids));
+        bundler()
+    });
 
+    b.on('log', function(msg) {
+        gutil.log('[' + gutil.colors.blue('Watchify') + '] ' + "Finished: " + gutil.colors.magenta(msg));
+    });
+} else {
+    b = browserify(config.compiler.scripts.browserify);
+}
+
+//The actual building pipe
 function bundler() {
     return b.plugin(tsify, config.compiler.scripts.tsify)
             .transform(bulkify)
