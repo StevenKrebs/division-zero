@@ -1,6 +1,5 @@
 /**
- * config.js
- * //division-zero.org
+ * config-object
  * @author Steven Krebs
  * @description Provides (mostly script internal) settings
  * @copyright 2016, Steven Krebs
