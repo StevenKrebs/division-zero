@@ -39,7 +39,7 @@ app.directive('scrollSpy',['scrollSpyService', '$window', '$timeout', function(s
                 $timeout(function() {
                     getActiveMenuItem();
                     scope.$apply();
-                },200)
+                },100)
             }
 
             angular.element($window).bind({
