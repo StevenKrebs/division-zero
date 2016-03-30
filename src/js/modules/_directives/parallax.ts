@@ -26,8 +26,8 @@ app.directive('parallax',['parallaxScene', 'scrollmagicController', 'checkWindow
 }]);
 
 //Plugins
-require('scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js'),
-require('scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js'),
+require('scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js');
+require('scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js');
 require('gsap/src/uncompressed/plugins/CSSPlugin.js');
 
 //Parallax scene

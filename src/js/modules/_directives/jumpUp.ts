@@ -9,11 +9,11 @@
 
 declare var TimelineMax:any, Expo: any, TweenMax: any;
 
-var angular:any =   require('angular'),
-    config      =   require('../config'),
+var angular:any     = require('angular'),
+    config          = require('../config'),
     scrollmagic:any = require('scrollmagic'),
     gsap            = require('gsap'),
-    app         =   angular.module(config.angularConfig.global.appName);
+    app             = angular.module(config.angularConfig.global.appName);
 
 app.directive('jumpUp',['jumpUpScene', 'scrollmagicController', 'checkWindowSize', function(jumpUpScene:any, scrollmagicController:any, checkWindowSize:any){
     return {
@@ -31,9 +31,9 @@ app.directive('jumpUp',['jumpUpScene', 'scrollmagicController', 'checkWindowSize
 }]);
 
 //Plugins
-require('scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js'),
-    require('scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js'),
-    require('gsap/src/uncompressed/plugins/CSSPlugin.js');
+require('scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js');
+require('scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js');
+require('gsap/src/uncompressed/plugins/CSSPlugin.js');
 
 app.factory('jumpUpScene', function() {
     return {

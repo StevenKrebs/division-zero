@@ -8,8 +8,7 @@
 
 var angular:any     =   require('angular'),
     config          =   require('../config'),
-    app             =   angular.module(config.angularConfig.global.appName),
-    velocity        =   require('velocity-animate');
+    app             =   angular.module(config.angularConfig.global.appName);
 
 app.directive('scrollSpy',['scrollSpyService', '$window', '$timeout', function(scrollSpyService:any, $window:any, $timeout:any) {
     return {

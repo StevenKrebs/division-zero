@@ -11,16 +11,15 @@ var angular:any     = require('angular'),
     app             = angular.module(config.angularConfig.global.appName),
     velocity        = require('velocity-animate');
 
-
 app.directive('scrollToScene', function() {
     return {
         restrict: 'A',
         scope: {
             href: "@"
         },
-        link: function(scope:any, elem:any) {
-            elem.on('click', function (e:any) {
-                e.preventDefault();
+        link: function(scope:any, element:any) {
+            element.on('click', function (event:any) {
+                event.preventDefault();
                 $(scope.href).velocity("scroll", {
                     duration: config.scrollSettings.scrollSpeed,
                     easing: config.scrollSettings.scrollType

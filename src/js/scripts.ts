@@ -8,7 +8,7 @@
  */
 
 //declarations
-declare var require: any, global: any, module: any, __dirname: any;
+declare var require: any, global: any, module: any, __dirname: any, jQuery: JQueryStatic;
 
 //Global Plugins
 global['$']         = global['jQuery'] = require('jquery');
