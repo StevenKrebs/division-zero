@@ -1,6 +1,5 @@
 /**
  * headCtrl
- * //division-zero.org
  * @author Steven Krebs
  * @description angular.js controller to take care of the meta-information
  * @copyright 2016, Steven Krebs

@@ -40,10 +40,10 @@
                 <div class="circle-inner"></div>
             </div>
         </div>
-        <nav ng-controller="navCtrl" class="ng-hide" ng-include="'/partials/nav.html'" ng-show="loaded"></nav>
-        <header id="header" class="scene mobile-scene" ng-include="'/partials/header.html'"></header>
-        <section id="info" parallax class="scene" jump-up="article" ng-include="'/partials/info.html'" ng-if="loaded"></section>
-        <section id="community" class="scene" jump-up="article" ng-include="'/partials/community.html'" ng-if="loaded"></section>
-        <footer id="footer" class="scene mobile-scene" ng-include="'/partials/footer.html'"  ng-if="loaded"></footer>
+        <header id="header" class="scene mobile-scene" ng-include="'/includes/header.html'"></header>
+        <nav ng-controller="navCtrl" class="ng-hide" ng-include="'/includes/nav.html'" ng-show="loaded"></nav>
+        <section id="info" parallax class="scene" jump-up="article" ng-include="'/includes/info.html'" ng-if="loaded"></section>
+        <section id="community" class="scene" jump-up="article" ng-include="'/includes/community.html'" ng-if="loaded"></section>
+        <footer id="footer" class="scene mobile-scene" ng-include="'/includes/footer.html'"  ng-if="loaded"></footer>
     </body>
 </html>

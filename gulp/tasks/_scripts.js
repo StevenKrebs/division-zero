@@ -32,9 +32,9 @@ var gulp        = require('gulp'),
 gulp.task('_scripts', bundler);
 
 //Set if dev or deploy
-var b = null;
+var b = browserify(config.compiler.scripts.browserify);
 if (environment.dev) {
-    b = watchify(browserify(config.compiler.scripts.browserify), config.compiler.scripts.watchify);
+    b.plugin(watchify, config.compiler.scripts.watchify);
     b.on('update', function(ids){
         gutil.log('[' + gutil.colors.blue('Watchify') + '] ' + "File(s) changed: " + gutil.colors.cyan(ids));
         bundler()
@@ -43,14 +43,12 @@ if (environment.dev) {
     b.on('log', function(msg) {
         gutil.log('[' + gutil.colors.blue('Watchify') + '] ' + "Finished: " + gutil.colors.magenta(msg));
     });
-} else {
-    b = browserify(config.compiler.scripts.browserify);
 }
+b.plugin(tsify, config.compiler.scripts.tsify);
 
 //The actual building pipe
 function bundler() {
-    return b.plugin(tsify, config.compiler.scripts.tsify)
-            .transform(bulkify)
+    return b.transform(bulkify)
             .bundle()
             .on('error', gutil.log.bind(gutil, 'Browserify Error'))
             .pipe(source(config.names.temp))

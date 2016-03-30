@@ -30,17 +30,7 @@ config.scrollSettings =  {
     scrollPos: {
         getTrigger: function() {
             return $(document).scrollTop() + $(window).height() / 2
-        },
-        menuItems: {
-            getDesktopItems: function() {
-                return $('.desktop-nav span')
-            },
-            getMobileItems: function(){
-                return $('.mobile-nav span')
-            }
-        },
-        identifier: 'scroll-to-scene',
-        highlight: 'highlight'
+        }
     }
 };
 
@@ -51,7 +41,7 @@ config.angularConfig = {
     routes: {
         locales: "/js/lang/"
     },
-    debug: false
+    debug: true
 };
 
 config.discord = {

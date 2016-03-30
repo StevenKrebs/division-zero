@@ -1,6 +1,5 @@
 /**
  * routes
- * //division-zero.org
  * @author Steven Krebs
  * @description angular.js routing configuration
  * @copyright 2016, Steven Krebs

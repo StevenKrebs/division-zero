@@ -1,6 +1,5 @@
 /**
  * scrollmagicController
- * //division-zero.org
  * @author Steven Krebs
  * @description angular.js service to get the controller instance needed for scrollmagic.js to work
  * @copyright 2016, Steven Krebs

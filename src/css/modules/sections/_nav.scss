@@ -16,7 +16,7 @@ nav {
   ul {
     li{
       margin: .5 * $size 0;
-      span {
+      a {
         @include glow;
         cursor: pointer;
       }

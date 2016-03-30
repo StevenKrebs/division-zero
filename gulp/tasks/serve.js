@@ -24,5 +24,5 @@ gulp.task('serve', ['_styles', '_scripts'], function () {
     });
     //scripts are handled via watchify, thus no gulp.watch for it.
     gulp.watch([config.paths.styles.modules, config.paths.styles.src],['_styles']);
-    gulp.watch([config.paths.locales, config.paths.template], reload);
+    gulp.watch([config.paths.locales, config.paths.template, config.paths.includes], reload);
 });

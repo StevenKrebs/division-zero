@@ -1,6 +1,5 @@
 /**
  * bodyCtrl
- * //division-zero.org
  * @author Steven Krebs
  * @description angular.js bodyController to set a html-body focused scope
  * @copyright 2016, Steven Krebs

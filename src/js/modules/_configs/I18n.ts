@@ -1,6 +1,5 @@
 /**
  * I18n
- * //division-zero.org
  * @author Steven Krebs
  * @description angular.js configuration for Internationalization
  * @copyright 2016,

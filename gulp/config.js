@@ -24,6 +24,7 @@ module.exports.paths = {
         dest: './dist/js'
     },
     template: './dist/index.html',
+    includes: './dist/**/*.html',
     locales: './dist/js/lang/*.json',
     dist: './dist'
 };
@@ -75,7 +76,7 @@ module.exports.compiler = {
             module: "commonjs",
             target: "es5",
             sourceMap: true,
-            noImplicitAny: false
+            noImplicitAny: true
         }
     }
 };

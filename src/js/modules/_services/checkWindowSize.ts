@@ -1,6 +1,5 @@
 /**
  * checkWindowSize
- * //division-zero.org
  * @author Steven Krebs
  * @description angular.js service to provide constant window size checking
  * @copyright 2016, Steven Krebs

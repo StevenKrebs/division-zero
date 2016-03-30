@@ -1,6 +1,5 @@
 /**
  * debug
- * //division-zero.org
  * @author Steven Krebs
  * @description angular.js config for debug information
  * @copyright 2016,
