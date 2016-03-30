@@ -6,12 +6,9 @@
  * @license MIT
  */
 
-
-declare var TimelineMax:any, Expo: any, TweenMax: any;
-
-var angular:any     = require('angular'),
+var angular         = require('angular'),
     config          = require('../config'),
-    scrollmagic:any = require('scrollmagic'),
+    scrollmagic     = require('scrollmagic'),
     gsap            = require('gsap'),
     app             = angular.module(config.angularConfig.global.appName);
 

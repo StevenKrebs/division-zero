@@ -8,13 +8,12 @@
  */
 
 //declarations
-declare var require: any, global: any, module: any, __dirname: any, jQuery: JQueryStatic;
 
 //Global Plugins
 global['$']         = global['jQuery'] = require('jquery');
 var exports:any     = module['exports'] = {};
-var angular:any     = require('angular');
-var config:any      = require('./modules/config');
+var angular     = require('angular');
+var config      = require('./modules/config');
 
 //Create angular app
 exports['angularApp'] = angular['module'](config.angularConfig.global.appName, []);

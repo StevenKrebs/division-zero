@@ -6,8 +6,6 @@
  * @license MIT
  */
 
-declare var TweenMax: any, Linear: any;
-
 var angular         = require('angular'),
     config          = require('../config'),
     scrollmagic     = require('scrollmagic'),
@@ -34,7 +32,7 @@ require('gsap/src/uncompressed/plugins/CSSPlugin.js');
 app.factory('parallaxScene', function() {
     return {
         setAnimation : function(elem:any, trigger:string, smController:any, debug:boolean){
-            var parallaxEffect = new TweenMax.fromTo(elem, 1,
+            var parallaxEffect = TweenMax.fromTo(elem, 1,
                 {
                     css: {
                         'background-position': "50% 200px"

@@ -3206,7 +3206,7 @@ interface JQuery {
     queue(queueName: string, callback: Function): JQuery;
 }
 declare module "jquery" {
-    export = jQuery;
+    export = $;
 }
 declare var jQuery: JQueryStatic;
-declare var $: any;
+declare var $: JQueryStatic;

@@ -7,9 +7,6 @@
  * @license MIT
  */
 
-declare var module:any;
-declare var $:any;
-
 var config:any = module['exports'] = {};
 
 config.windowSizes = {
@@ -27,11 +24,6 @@ config.timing =  {
 config.scrollSettings =  {
     scrollSpeed: config.timing.regular,
     scrollType: "swing",
-    scrollPos: {
-        getTrigger: function() {
-            return $(document).scrollTop() + $(window).height() / 2
-        }
-    }
 };
 
 config.angularConfig = {
@@ -41,7 +33,7 @@ config.angularConfig = {
     routes: {
         locales: "/js/lang/"
     },
-    debug: true
+    debug: false
 };
 
 config.discord = {

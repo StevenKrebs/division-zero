@@ -76,7 +76,7 @@ module.exports.compiler = {
             module: "commonjs",
             target: "es5",
             sourceMap: true,
-            noImplicitAny: true
+            noImplicitAny: false
         }
     }
 };

@@ -7,7 +7,7 @@
  */
 
 var config      = require('../config'),
-    angular:any = require('angular'),
+    angular     = require('angular'),
     app         = angular.module(config.angularConfig.global.appName);
 
 app.controller('discordCtrl', ['$scope', '$http', function($scope:any, $http:any) {

@@ -6,7 +6,7 @@
  * @license MIT
  */
 
-var angular:any     = require('angular'),
+var angular         = require('angular'),
     config          = require('../config'),
     app             = angular.module(config.angularConfig.global.appName),
     velocity        = require('velocity-animate');

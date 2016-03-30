@@ -5,9 +5,8 @@
  * @copyright 2016,
  * @license MIT
  */
-declare var require: any;
 
-var angular:any = require('angular'),
+var angular     = require('angular'),
     config      = require('../config'),
     app         = angular.module(config.angularConfig.global.appName);
 

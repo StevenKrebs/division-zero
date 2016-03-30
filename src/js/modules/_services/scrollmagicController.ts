@@ -6,8 +6,8 @@
  * @license MIT
  */
 
-var angular:any         = require('angular'),
-    scrollmagic:any     = require('scrollmagic'),
+var angular             = require('angular'),
+    scrollmagic         = require('scrollmagic'),
     config              = require('../config'),
     app                 = angular.module(config.angularConfig.global.appName);
 
